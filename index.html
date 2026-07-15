@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>CHRIS — Créateur UGC · Montpellier</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Italiana&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&amp;family=Archivo:wght@200;300;400;500&amp;display=swap">
+  <style>
+    :root { --display: 'Bodoni Moda', serif; --display-italic: 'Cormorant Garamond', serif; --ds: 1; --logo-filter: none; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #0C0B09; color: #EFE7DA; font-family: 'Archivo', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    a { color: #C6A15B; text-decoration: none; }
+    a:hover { color: #EFE7DA; }
+    ::selection { background: #C6A15B; color: #0C0B09; }
+    @keyframes heroUp { from { opacity: 0; transform: translateY(70px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes frameIn { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0% 0); } }
+    @keyframes mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes pulseDot { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+    @keyframes kenburns { 0%, 100% { transform: scale(1.07) translate(0, 0); } 50% { transform: scale(1.16) translate(1.6%, -1.8%); } }
+    @keyframes kbPanA { 0%, 100% { transform: scale(1.09) translate(0, 0); } 50% { transform: scale(1.17) translate(-1.8%, -1.4%); } }
+    @keyframes kbPanB { 0%, 100% { transform: scale(1.09) translate(0, 0); } 50% { transform: scale(1.17) translate(1.8%, 1.3%); } }
+    @keyframes glowDrift { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-7vw, 6vh) scale(1.18); } }
+    @keyframes glowDrift2 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(8vw, -5vh) scale(1.12); } }
+    @keyframes neonPulse { 0%, 100% { box-shadow: 0 0 5px rgba(198,161,91,0.55), 0 0 16px rgba(198,161,91,0.32), inset 0 0 7px rgba(198,161,91,0.22); border-color: rgba(198,161,91,0.75); } 50% { box-shadow: 0 0 12px rgba(198,161,91,0.9), 0 0 34px rgba(198,161,91,0.5), inset 0 0 13px rgba(198,161,91,0.38); border-color: rgba(224,196,132,1); } }
+    @keyframes neonText { 0%, 100% { text-shadow: 0 0 4px rgba(198,161,91,0.45), 0 0 11px rgba(198,161,91,0.28); } 50% { text-shadow: 0 0 8px rgba(224,196,132,0.85), 0 0 22px rgba(198,161,91,0.5); } }
+  </style>
+</helmet>
+
+<div data-screen-label="Site Chris UGC" style="background: radial-gradient(1100px 750px at 88% -8%, rgba(198,161,91,0.11), transparent 62%), radial-gradient(900px 700px at -12% 42%, rgba(198,161,91,0.07), transparent 60%), radial-gradient(1000px 800px at 55% 108%, rgba(198,161,91,0.08), transparent 65%), #0C0B09; color: #EFE7DA; font-family: 'Archivo', sans-serif; font-weight: 300; overflow-x: hidden; position: relative; --display: 'Bodoni Moda', serif; --display-italic: 'Cormorant Garamond', serif; --ds: 1; --logo-filter: none;">
+
+  <!-- Lueurs ambiantes -->
+  <div aria-hidden="true" style="position: fixed; top: -22vh; right: -14vw; width: 55vw; height: 55vw; border-radius: 50%; background: radial-gradient(circle, rgba(198,161,91,0.16), transparent 62%); filter: blur(60px); mix-blend-mode: screen; pointer-events: none; z-index: 0; animation: glowDrift 22s ease-in-out infinite;"></div>
+  <div aria-hidden="true" style="position: fixed; bottom: -25vh; left: -16vw; width: 50vw; height: 50vw; border-radius: 50%; background: radial-gradient(circle, rgba(198,161,91,0.10), transparent 62%); filter: blur(70px); mix-blend-mode: screen; pointer-events: none; z-index: 0; animation: glowDrift2 28s ease-in-out infinite;"></div>
+
+  <!-- ===== NAV ===== -->
+  <nav data-screen-label="Navigation" style="position: fixed; top: 0; left: 0; right: 0; z-index: 900; display: flex; align-items: center; justify-content: space-between; padding: 20px 4vw; background: rgba(12,11,9,0.55); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(239,231,218,0.08); animation: heroUp 1s cubic-bezier(.19,1,.22,1) 0.15s both;">
+    <a href="#haut" style="font-family: var(--display); font-size: 22px; letter-spacing: 0.38em; color: #EFE7DA;" style-hover="color: #C6A15B;">CHRIS<span style="color: #C6A15B;">.</span></a>
+    <div style="display: flex; align-items: center; gap: 34px;">
+      <a href="#realisations" data-en="Work" style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(239,231,218,0.6);" style-hover="color: #EFE7DA;">Réalisations</a>
+      <a href="#apropos" data-en="About" style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(239,231,218,0.6);" style-hover="color: #EFE7DA;">À propos</a>
+      <a href="#photographie" data-en="Photography" style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(239,231,218,0.6);" style-hover="color: #EFE7DA;">Photographie</a>
+      <button id="lang-toggle" type="button" aria-label="Switch language" style="font-family: inherit; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(239,231,218,0.6); background: transparent; border: 0; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 5px; transition: color 0.3s;" style-hover="color: #EFE7DA;"><span id="lang-fr" style="color: #C6A15B;">FR</span><span style="opacity: 0.4;">/</span><span id="lang-en" style="color: rgba(239,231,218,0.45);">EN</span></button>
+      <a href="#contact" data-en="Collaborate" style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #C6A15B; border: 1px solid rgba(198,161,91,0.55); border-radius: 999px; padding: 12px 26px; transition: background 0.35s, color 0.35s;" style-hover="background: #C6A15B; color: #0C0B09;">Collaborer</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header id="haut" data-screen-label="Hero" style="position: relative; min-height: 60vh; display: flex; flex-direction: column; justify-content: center; padding: 84px 4vw 24px; box-sizing: border-box;">
+
+    <!-- Titre + portrait -->
+    <div style="position: relative; z-index: 2; display: grid; grid-template-columns: 1fr clamp(250px, 30vw, 460px); gap: clamp(28px, 4vw, 64px); align-items: stretch;">
+      <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 2vh; align-items: center; text-align: center;">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 0; animation: heroUp 1s cubic-bezier(.19,1,.22,1) 0.3s both;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #C6A15B; animation: pulseDot 2.6s ease-in-out infinite;"></span>
+          <span data-en-html="Chris — UGC Content Creator · &lt;span style=&quot;color: #C6A15B; font-weight: 500;&quot;&gt;Meta Ads&lt;/span&gt; · &lt;span style=&quot;color: #C6A15B; font-weight: 500;&quot;&gt;TikTok Ads&lt;/span&gt;" style="font-size: 11px; letter-spacing: 0.34em; text-transform: uppercase; color: rgba(239,231,218,0.65);">Chris — Créateur de contenu UGC · <span style="color: #C6A15B; font-weight: 500;">Meta Ads</span> · <span style="color: #C6A15B; font-weight: 500;">TikTok Ads</span></span>
+        </div>
+        <div>
+          <h1 style="margin: 0; font-weight: 400; line-height: 0.96; letter-spacing: 0.01em;">
+            <span data-en="CREATOR" style="display: block; font-family: var(--display); font-size: calc(var(--ds) * clamp(32px, 4.6vw, 78px)); animation: heroUp 1.1s cubic-bezier(.19,1,.22,1) 0.42s both;">CRÉATEUR</span>
+            <span data-en="of content" style="display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: calc(var(--ds) * clamp(28px, 4vw, 64px)); color: #C6A15B; padding-left: 0; margin: 0.5vh 0; animation: heroUp 1.1s cubic-bezier(.19,1,.22,1) 0.58s both;">de contenu</span>
+          </h1>
+          <div style="margin-top: 14px; animation: heroUp 1s cubic-bezier(.19,1,.22,1) 0.85s both;">
+            <p data-en-html="Natural vertical videos, designed to blend into the feed — and edited to convert on &lt;span style=&quot;color: #C6A15B; font-weight: 500;&quot;&gt;Meta Ads&lt;/span&gt; &amp;amp; &lt;span style=&quot;color: #C6A15B; font-weight: 500;&quot;&gt;TikTok Ads&lt;/span&gt;. Smiling, professional, impactful, expressive." style="margin: 0 auto; max-width: 760px; font-size: 16px; line-height: 1.7; font-weight: 300; color: rgba(239,231,218,0.75); text-wrap: balance;">Des vidéos verticales naturelles, pensées pour s'intégrer au feed — et montées pour convertir en <span style="color: #C6A15B; font-weight: 500;">Meta Ads</span> &amp; <span style="color: #C6A15B; font-weight: 500;">TikTok Ads</span>. Souriant, professionnel, impactant, expressif.</p>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 0; flex-wrap: wrap; animation: heroUp 1s cubic-bezier(.19,1,.22,1) 1s both;">
+          <a href="mailto:christdias.ugc@gmail.com?subject=Collaboration%20avec%20Chris%20%E2%80%94%20UGC" style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(239,231,218,0.78); border: 1px solid rgba(239,231,218,0.25); padding: 12px 22px; border-radius: 999px; transition: border-color 0.35s, color 0.35s;" style-hover="color: #EFE7DA; border-color: #C6A15B;">Email</a>
+          <a href="https://instagram.com/ugcby.chris" target="_blank" rel="noopener" style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(239,231,218,0.78); border: 1px solid rgba(239,231,218,0.25); padding: 12px 22px; border-radius: 999px; transition: border-color 0.35s, color 0.35s;" style-hover="color: #EFE7DA; border-color: #C6A15B;">Instagram</a>
+          <a href="https://tiktok.com/@oecchris" target="_blank" rel="noopener" style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(239,231,218,0.78); border: 1px solid rgba(239,231,218,0.25); padding: 12px 22px; border-radius: 999px; transition: border-color 0.35s, color 0.35s;" style-hover="color: #EFE7DA; border-color: #C6A15B;">TikTok</a>
+        </div>
+        <div style="width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 20px; border-top: 1px solid rgba(239,231,218,0.14); padding-top: 20px; animation: heroUp 1s cubic-bezier(.19,1,.22,1) 1.1s both;">
+          <div><div data-counter="136" style="font-family: var(--display); font-size: clamp(28px, 3vw, 42px); color: #C6A15B;">136K</div><div style="font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #C6A15B; margin-top: 6px;" data-en="Views · 1 video">Vues · 1 vidéo</div></div>
+          <div><div style="font-family: var(--display); font-size: clamp(28px, 3vw, 42px); color: #EFE7DA;">50<span style="color: #C6A15B;">+</span></div><div style="font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #C6A15B; margin-top: 6px;" data-en="Brands">Marques</div></div>
+          <div><div style="font-family: var(--display); font-size: clamp(28px, 3vw, 42px); color: #EFE7DA;">9<span style="color: #C6A15B;">:</span>16</div><div style="font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #C6A15B; margin-top: 6px;">Meta &amp; TikTok</div></div>
+        </div>
+      </div>
+
+      <!-- Portrait -->
+      <div style="position: relative; min-height: 300px; animation: frameIn 1.4s cubic-bezier(.19,1,.22,1) 0.55s both;">
+        <div style="position: relative; height: 100%; overflow: hidden; border: 1px solid rgba(198,161,91,0.75); animation: neonPulse 3.2s ease-in-out infinite;">
+          <img src="assets/portrait-hero.png" alt="Chris, créateur de contenu UGC" style="width: 100%; height: 132%; margin-top: -27%; object-fit: cover; object-position: center top; display: block; filter: brightness(0.94) contrast(1.03) saturate(0.92);">
+          <div style="position: absolute; inset: 0; background: linear-gradient(200deg, rgba(12,11,9,0) 52%, rgba(12,11,9,0.58) 100%);"></div>
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; padding: 42px 14px 14px; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(239,231,218,0.75);">
+            <span>Chris</span><span style="color: #C6A15B;">Montpellier, FR</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marquee outline -->
+    <div style="overflow: hidden; white-space: nowrap; border-top: 1px solid rgba(239,231,218,0.1); margin: 0 -4vw; padding: 2vh 0 2.5vh;">
+      <div data-mq="26" style="display: inline-flex; gap: 0; animation: mq 42s linear infinite; will-change: transform;">
+        <span style="font-family: var(--display); font-size: calc(var(--ds) * clamp(21px, 2.7vw, 44px)); color: transparent; -webkit-text-stroke: 1px rgba(239,231,218,0.28); flex-shrink: 0;">UGC — <span style="color: #E0C484; -webkit-text-stroke: 0; text-shadow: 0 0 8px rgba(224,196,132,0.7), 0 0 20px rgba(198,161,91,0.45); animation: neonText 2.6s ease-in-out infinite;">META ADS</span> — TIKTOK — MONTPELLIER — <span style="color: #E0C484; -webkit-text-stroke: 0; text-shadow: 0 0 8px rgba(224,196,132,0.7), 0 0 20px rgba(198,161,91,0.45); animation: neonText 2.6s ease-in-out infinite;">CONTENU VERTICAL</span> —&nbsp;</span>
+        <span style="font-family: var(--display); font-size: calc(var(--ds) * clamp(21px, 2.7vw, 44px)); color: transparent; -webkit-text-stroke: 1px rgba(239,231,218,0.28); flex-shrink: 0;">UGC — <span style="color: #E0C484; -webkit-text-stroke: 0; text-shadow: 0 0 8px rgba(224,196,132,0.7), 0 0 20px rgba(198,161,91,0.45); animation: neonText 2.6s ease-in-out infinite;">META ADS</span> — TIKTOK — MONTPELLIER — <span style="color: #E0C484; -webkit-text-stroke: 0; text-shadow: 0 0 8px rgba(224,196,132,0.7), 0 0 20px rgba(198,161,91,0.45); animation: neonText 2.6s ease-in-out infinite;">CONTENU VERTICAL</span> —&nbsp;</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MARQUES ===== -->
+  <section data-screen-label="Marques" style="padding: 40px 0 44px; border-top: 1px solid rgba(239,231,218,0.08);">
+    <div data-reveal="" style="display: flex; align-items: center; gap: 18px; padding: 0 4vw; margin-bottom: 30px;">
+      <span data-en="They trusted me" style="font-size: clamp(17px, 2vw, 28px); letter-spacing: 0.1em; text-transform: uppercase; color: #C6A15B;">Ils m'ont fait confiance</span>
+      <span style="flex: 1; height: 1px; background: rgba(239,231,218,0.12);"></span>
+    </div>
+    <div data-reveal="" style="overflow: hidden; white-space: nowrap; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);">
+      <div data-mq="30" style="display: inline-flex; align-items: center; animation: mq 40s linear infinite; will-change: transform;" style-hover="animation-play-state: paused;">
+        <img src="assets/brands/deezer.png" alt="Deezer" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 24px 30px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/pizzacosy.png" alt="Pizza Cosy" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 20px 30px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/midland.png" alt="Midland France" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 20px 30px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/maisonsiar-c.png" alt="Maison Siar" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 20px 30px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/reminiscence.png" alt="Réminiscence" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 30px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/requipizza-c.png" alt="Requi Pizza" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 18px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/deezer.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 24px 30px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/pizzacosy.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 20px 30px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/midland.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 20px 30px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/maisonsiar-c.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 20px 30px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/reminiscence.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 30px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/requipizza-c.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 18px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+      </div>
+    </div>
+    <div data-reveal="" data-reveal-delay="120" style="overflow: hidden; white-space: nowrap; margin-top: 14px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);">
+      <div data-mq="38" style="display: inline-flex; align-items: center; animation: mq 46s linear infinite reverse; will-change: transform;" style-hover="animation-play-state: paused;">
+        <img src="assets/brands/homesushi-c.png" alt="Home Sushi" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 18px 26px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/indus-c.png" alt="Indus" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 18px 26px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/relife-c.png" alt="Relife" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 18px 26px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/cupidonic-c.png" alt="Cupidonic" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 22px 26px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/synertech.png" alt="SynerTech" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 24px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/homesushi-c.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 18px 26px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/indus-c.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 18px 26px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/relife-c.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 18px 26px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/cupidonic-c.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 22px 26px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img src="assets/brands/synertech.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 24px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RÉALISATIONS ===== -->
+  <section id="realisations" data-screen-label="Réalisations" style="padding: 40px 4vw 24px; border-top: 1px solid rgba(239,231,218,0.08);">
+    <div data-reveal="" style="display: flex; align-items: center; gap: 22px; margin: 0 0 30px;">
+      <h2 data-en="Work." style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: calc(var(--ds) * clamp(27px, 3.6vw, 60px)); line-height: 1; color: #C6A15B; white-space: nowrap;">Réalisations.</h2>
+      <span style="flex: 1; height: 1px; background: rgba(239,231,218,0.14);"></span>
+    </div>
+
+    <!-- Filtre par catégorie -->
+    <div id="deck-filters" data-reveal="" style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px;">
+      <button data-filter="all" data-en-html="All &lt;span style=&quot;opacity: 0.6;&quot;&gt;16&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #0C0B09; background: #C6A15B; border: 1px solid #C6A15B; border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Tout <span style="opacity: 0.6;">16</span></button>
+      <button data-filter="I — Restaurants &amp; lieux" data-en-html="Restaurants &amp; venues &lt;span style=&quot;opacity: 0.5;&quot;&gt;4&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(239,231,218,0.7); background: transparent; border: 1px solid rgba(239,231,218,0.25); border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Restaurants &amp; lieux <span style="opacity: 0.5;">4</span></button>
+      <button data-filter="II — Applications" data-en-html="Apps &lt;span style=&quot;opacity: 0.5;&quot;&gt;4&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(239,231,218,0.7); background: transparent; border: 1px solid rgba(239,231,218,0.25); border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Applications <span style="opacity: 0.5;">4</span></button>
+      <button data-filter="III — Produits" data-en-html="Products &lt;span style=&quot;opacity: 0.5;&quot;&gt;4&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(239,231,218,0.7); background: transparent; border: 1px solid rgba(239,231,218,0.25); border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Produits <span style="opacity: 0.5;">4</span></button>
+      <button data-filter="IV — Trend" data-en-html="Trend &lt;span style=&quot;opacity: 0.5;&quot;&gt;3&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(239,231,218,0.7); background: transparent; border: 1px solid rgba(239,231,218,0.25); border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Trend <span style="opacity: 0.5;">3</span></button>
+      <button data-filter="V — Service" data-en-html="Service &lt;span style=&quot;opacity: 0.5;&quot;&gt;1&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(239,231,218,0.7); background: transparent; border: 1px solid rgba(239,231,218,0.25); border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Service <span style="opacity: 0.5;">1</span></button>
+    </div>
+
+    <!-- Deck auto-slide façon Tinder -->
+    <div data-reveal="" style="display: grid; grid-template-columns: 1fr auto 1fr; gap: clamp(22px, 4vw, 72px); align-items: center; justify-content: center; padding: 6px 0 6px;">
+      <div style="text-align: right;">
+        <div id="deck-group" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(19px, 2vw, 30px); color: #C6A15B; transition: opacity 0.4s, transform 0.4s;">I — Restaurants &amp; lieux</div>
+        <div id="deck-brand" style="margin: 14px 0 12px; font-family: var(--display); font-size: calc(var(--ds) * clamp(34px, 4vw, 66px)); line-height: 1.02; color: #EFE7DA; transition: opacity 0.4s, transform 0.4s;">L'Himalaya</div>
+        <div id="deck-count" style="font-size: 14px; letter-spacing: 0.24em; color: #C6A15B;">01 / 16</div>
+      </div>
+      <div id="deck" style="position: relative; width: min(72vw, 42vh, 320px); aspect-ratio: 9 / 15; margin: 0 auto; cursor: pointer; perspective: 1600px;">
+        <div data-card="" data-video="videos/01-himalaya.mp4" data-brand="L'Himalaya" data-cat="Buffet à volonté" data-group="I — Restaurants &amp; lieux" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+          <img src="assets/work-himalaya.png" alt="Campagne L'Himalaya" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
+          <span style="position: absolute; top: 14px; left: 14px; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #0C0B09; background: #C6A15B; padding: 7px 12px;">136K vues</span>
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+            <span style="color: #C6A15B;">N°01</span>
+            <span style="color: rgba(239,231,218,0.9);">L'Himalaya</span>
+          </div>
+        </div>
+        <div data-card="" data-video="videos/02-pizzacosy.mp4" data-brand="Pizza Cosy" data-cat="Restaurant" data-group="I — Restaurants &amp; lieux" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+          <img src="assets/work-pizzacosy.png" alt="Campagne Pizza Cosy" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+            <span style="color: #C6A15B;">N°02</span>
+            <span style="color: rgba(239,231,218,0.9);">Pizza Cosy</span>
+          </div>
+        </div>
+        <div data-card="" data-video="videos/03-reminiscence.mp4" data-brand="Réminiscence" data-cat="Parfum de niche" data-group="I — Restaurants &amp; lieux" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+          <img src="assets/work-reminiscence.png" alt="Campagne Réminiscence" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+            <span style="color: #C6A15B;">N°03</span>
+            <span style="color: rgba(239,231,218,0.9);">Réminiscence</span>
+          </div>
+        </div>
+        <div data-card="" data-video="videos/04-unitedsmash.mp4" data-brand="United Smash" data-cat="Fast food" data-group="I — Restaurants &amp; lieux" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+          <img src="assets/work-unitedsmash.png" alt="Campagne United Smash" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+            <span style="color: #C6A15B;">N°04</span>
+            <span style="color: rgba(239,231,218,0.9);">United Smash</span>
+          </div>
+        </div>
+        <div data-card="" data-video="videos/05-deezer.mp4" data-brand="Deezer" data-cat="App musique · été" data-group="II — Applications" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+          <img src="assets/work-deezer.png" alt="Campagne Deezer" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+            <span style="color: #C6A15B;">N°05</span>
+            <span style="color: rgba(239,231,218,0.9);">Deezer</span>
+          </div>
+        </div>
+        <div data-card="" data-video="videos/06-burcoeur.mp4" data-brand="Burcoeur" data-cat="App de rencontre" data-group="II — Applications" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+          <img src="assets/work-burcoeur.png" alt="Campagne Burcoeur" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+            <span style="color: #C6A15B;">N°06</span>
+            <span style="color: rgba(239,231,218,0.9);">Burcoeur</span>
+          </div>
+        </div>
+        <div data-card="" data-video="videos/07-croustypoulet.mp4" data-brand="Crousty Poulet" data-cat="App réduction food" data-group="II — Applications" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+          <img src="assets/work-croustypoulet.png" alt="Campagne Crousty Poulet" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+            <span style="color: #C6A15B;">N°07</span>
+            <span style="color: rgba(239,231,218,0.9);">Crousty Poulet</span>
+          </div>
+        </div>
+        <div data-card="" data-video="videos/08-froove.mp4" data-brand="Froove" data-cat="App réduction food" data-group="II — Applications" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+          <img src="assets/work-froove.png" alt="Campagne Froove" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+            <span style="color: #C6A15B;">N°08</span>
+            <span style="color: rgba(239,231,218,0.9);">Froove</span>
+          </div>
+        </div>
+        <div data-card="" data-video="videos/09-maisonsiar.mp4" data-brand="Maison Siar" data-cat="Parfum de niche" data-group="III — Produits" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+          <img src="assets/work-siar-1.png" alt="Campagne Maison Siar" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+            <span style="color: #C6A15B;">N°09</span>
+            <span style="color: rgba(239,231,218,0.9);">Maison Siar</span>
+          </div>
+        </div>
+        <div data-card="" data-video="videos/10-maisonsiar-boutique.mp4" data-brand="Maison Siar" data-cat="En boutique" data-group="III — Produits" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+          <img src="assets/work-siar-2.png" alt="Campagne Maison Siar boutique" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+            <span style="color: #C6A15B;">N°10</span>
+            <span style="color: rgba(239,231,218,0.9);">Maison Siar</span>
+          </div>
+        </div>
+        <div data-card="" data-video="videos/11-midland.mp4" data-brand="Midland" data-cat="Intercom motard" data-group="III — Produits" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+          <img src="assets/work-midland-1.png" alt="Campagne Midland" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+            <span style="color: #C6A15B;">N°11</span>
+            <span style="color: rgba(239,231,218,0.9);">Midland</span>
+          </div>
+        </div>
+        <div data-card="" data-video="videos/12-midland-route.mp4" data-brand="Midland" data-cat="Sur la route" data-group="III — Produits" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+          <img src="assets/work-midland-2.png" alt="Campagne Midland moto" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+            <span style="color: #C6A15B;">N°12</span>
+            <span style="color: rgba(239,231,218,0.9);">Midland</span>
+          </div>
+        </div>
+        <div data-card="" data-video="videos/13-relife.mp4" data-brand="Relife" data-cat="Trend" data-group="IV — Trend" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+          <img src="assets/work-relife.png" alt="Campagne Relife" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+            <span style="color: #C6A15B;">N°13</span>
+            <span style="color: rgba(239,231,218,0.9);">Relife</span>
+          </div>
+        </div>
+        <div data-card="" data-video="videos/14-deezer.mp4" data-brand="Deezer" data-cat="Trend" data-group="IV — Trend" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+          <img src="assets/work-deezer-trend.png" alt="Campagne Deezer" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+            <span style="color: #C6A15B;">N°14</span>
+            <span style="color: rgba(239,231,218,0.9);">Deezer</span>
+          </div>
+        </div>
+        <div data-card="" data-video="videos/15-bernimois.mp4" data-brand="Bernimois" data-cat="Trend" data-group="IV — Trend" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+          <img src="assets/work-bernimois.png" alt="Campagne Bernimois" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+            <span style="color: #C6A15B;">N°15</span>
+            <span style="color: rgba(239,231,218,0.9);">Bernimois</span>
+          </div>
+        </div>
+        <div data-card="" data-video="videos/16-pitaya.mp4" data-brand="Pitaya" data-cat="Service" data-group="V — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+          <img src="assets/work-pitaya.png" alt="Campagne Pitaya" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+            <span style="color: #C6A15B;">N°16</span>
+            <span style="color: rgba(239,231,218,0.9);">Pitaya</span>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: left;">
+        <div id="deck-cat" style="font-size: 14px; letter-spacing: 0.26em; text-transform: uppercase; color: #C6A15B; transition: opacity 0.4s, transform 0.4s;">Buffet à volonté</div>
+        <div style="display: flex; align-items: center; margin-top: 22px; max-width: 260px;">
+          <span style="position: relative; flex: 1; height: 1px; background: rgba(239,231,218,0.14);"><span id="deck-bar" style="position: absolute; left: 0; top: -0.5px; height: 2px; width: 6.3%; background: #C6A15B; transition: width 0.6s cubic-bezier(.19,1,.22,1);"></span></span>
+        </div>
+        <p data-en="Tap the card for the next one — the play button opens the video." style="margin: 24px 0 0; font-size: 14px; line-height: 1.8; color: rgba(239,231,218,0.5); max-width: 250px;">Touchez la carte pour la suivante — le bouton lecture ouvre la vidéo.</p>
+      </div>
+    </div>
+
+
+
+
+  </section>
+
+  <!-- ===== ÉTAT D'ESPRIT ===== -->
+  <section id="apropos" data-screen-label="À propos" style="position: relative; padding: 78px 4vw; border-top: 1px solid rgba(239,231,218,0.08); overflow: hidden;">
+    <div data-reveal="" style="display: flex; align-items: center; justify-content: center; gap: 18px; max-width: 540px; margin: 0 auto 36px;">
+      <span style="flex: 1; height: 1px; background: rgba(239,231,218,0.16);"></span>
+      <span data-en="The mindset" style="font-size: clamp(16px, 1.9vw, 28px); letter-spacing: 0.24em; text-transform: uppercase; color: #C6A15B; white-space: nowrap;">L'état d'esprit</span>
+      <span style="flex: 1; height: 1px; background: rgba(239,231,218,0.16);"></span>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; flex-wrap: nowrap; gap: clamp(9px, 1.3vw, 22px); line-height: 1.05; margin-top: 4.5vh;">
+      <span data-reveal="" data-en-html="Smiling&lt;span style=&quot;color: #C6A15B;&quot;&gt;.&lt;/span&gt;" style="font-family: var(--display); font-size: clamp(17px, 3vw, 52px); color: #EFE7DA; white-space: nowrap; transition: color 0.4s;" style-hover="color: #C6A15B;">Souriant<span style="color: #C6A15B;">.</span></span>
+      <span aria-hidden="true" style="align-self: center; color: rgba(198,161,91,0.8); font-size: clamp(6px, 0.8vw, 12px);">◆</span>
+      <span data-reveal="" data-reveal-delay="120" data-en-html="Professional&lt;span style=&quot;color: #C6A15B;&quot;&gt;.&lt;/span&gt;" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(19px, 3.3vw, 56px); color: #EFE7DA; white-space: nowrap; transition: color 0.4s;" style-hover="color: #C6A15B;">Professionnel<span style="color: #C6A15B;">.</span></span>
+      <span aria-hidden="true" style="align-self: center; color: rgba(198,161,91,0.8); font-size: clamp(6px, 0.8vw, 12px);">◆</span>
+      <span data-reveal="" data-reveal-delay="240" data-en-html="Impactful&lt;span style=&quot;color: #C6A15B;&quot;&gt;.&lt;/span&gt;" style="font-family: var(--display); font-size: clamp(17px, 3vw, 52px); color: #EFE7DA; white-space: nowrap; transition: color 0.4s;" style-hover="color: #C6A15B;">Impactant<span style="color: #C6A15B;">.</span></span>
+      <span aria-hidden="true" style="align-self: center; color: rgba(198,161,91,0.8); font-size: clamp(6px, 0.8vw, 12px);">◆</span>
+      <span data-reveal="" data-reveal-delay="360" data-en-html="Expressive&lt;span style=&quot;color: #C6A15B;&quot;&gt;.&lt;/span&gt;" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(19px, 3.3vw, 56px); color: #EFE7DA; white-space: nowrap; transition: color 0.4s;" style-hover="color: #C6A15B;">Expressif<span style="color: #C6A15B;">.</span></span>
+    </div>
+    <div data-reveal="" data-reveal-delay="300" style="display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 40px;">
+      <span style="width: 1px; height: 44px; background: rgba(198,161,91,0.6);"></span>
+      <span style="font-family: var(--display); font-size: 22px; letter-spacing: 0.34em; color: rgba(239,231,218,0.8);">CHRIS</span>
+    </div>
+  </section>
+
+  <!-- ===== PHOTOGRAPHIE ===== -->
+  <section id="photographie" data-screen-label="Photographie" style="padding: 40px 4vw;">
+    <div data-reveal="" style="display: flex; align-items: center; gap: 22px; margin: 0 0 30px;">
+      <h2 data-en="Photography." style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: calc(var(--ds) * clamp(27px, 3.6vw, 60px)); line-height: 1; color: #C6A15B; white-space: nowrap;">Photographie.</h2>
+      <span style="flex: 1; height: 1px; background: rgba(239,231,218,0.14);"></span>
+    </div>
+    <!-- Galerie défilante -->
+    <div data-reveal="" style="overflow: hidden; white-space: nowrap; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);">
+      <div data-mq="30" style="display: inline-flex; align-items: center; animation: mq 48s linear infinite; will-change: transform;" style-hover="animation-play-state: paused;">
+        <div style="flex-shrink: 0; height: 300px; width: 200px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-sandwich.png" alt="Portrait food" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanA 16s ease-in-out infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
+        <div style="flex-shrink: 0; height: 300px; width: 440px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-food.png" alt="Assiettes dressées" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanB 15s ease-in-out -6s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
+        <div style="flex-shrink: 0; height: 300px; width: 200px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-peace.png" alt="Mode streetwear" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanA 18s ease-in-out -9s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
+        <div style="flex-shrink: 0; height: 300px; width: 440px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-watch.png" alt="Détail montre et maille" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanB 17s ease-in-out -3s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
+        <div aria-hidden="true" style="flex-shrink: 0; height: 300px; width: 200px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-sandwich.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanA 16s ease-in-out infinite; will-change: transform;"></div>
+        <div aria-hidden="true" style="flex-shrink: 0; height: 300px; width: 440px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-food.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanB 15s ease-in-out -6s infinite; will-change: transform;"></div>
+        <div aria-hidden="true" style="flex-shrink: 0; height: 300px; width: 200px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-peace.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanA 18s ease-in-out -9s infinite; will-change: transform;"></div>
+        <div aria-hidden="true" style="flex-shrink: 0; height: 300px; width: 440px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-watch.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanB 17s ease-in-out -3s infinite; will-change: transform;"></div>
+      </div>
+    </div>
+    <div data-reveal="" data-reveal-delay="120" style="overflow: hidden; white-space: nowrap; margin-top: 14px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);">
+      <div data-mq="36" style="display: inline-flex; align-items: center; animation: mq 54s linear infinite reverse; will-change: transform;" style-hover="animation-play-state: paused;">
+        <div style="flex-shrink: 0; height: 258px; width: 176px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-dj.png" alt="DJ en lumière rouge" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanB 18s ease-in-out -4s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
+        <div style="flex-shrink: 0; height: 258px; width: 300px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-cocktails.png" alt="Cocktails" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanA 17s ease-in-out -2s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
+        <div style="flex-shrink: 0; height: 258px; width: 250px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-sushi.png" alt="Gastronomie japonaise" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanB 15s ease-in-out -5s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
+        <div style="flex-shrink: 0; height: 258px; width: 176px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-iphones.png" alt="Présentation produit — iPhone" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanA 16s ease-in-out -7s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
+        <div aria-hidden="true" style="flex-shrink: 0; height: 258px; width: 176px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-dj.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanB 18s ease-in-out -4s infinite; will-change: transform;"></div>
+        <div aria-hidden="true" style="flex-shrink: 0; height: 258px; width: 300px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-cocktails.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanA 17s ease-in-out -2s infinite; will-change: transform;"></div>
+        <div aria-hidden="true" style="flex-shrink: 0; height: 258px; width: 250px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-sushi.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanB 15s ease-in-out -5s infinite; will-change: transform;"></div>
+        <div aria-hidden="true" style="flex-shrink: 0; height: 258px; width: 176px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-iphones.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanA 16s ease-in-out -7s infinite; will-change: transform;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MATÉRIEL ===== -->
+  <section data-screen-label="Matériel" style="padding: 40px 4vw 64px; border-top: 1px solid rgba(239,231,218,0.08);">
+    <div data-reveal="" style="display: flex; align-items: center; gap: 22px; margin: 0 0 30px;">
+      <h2 data-en="Gear." style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: calc(var(--ds) * clamp(27px, 3.6vw, 60px)); line-height: 1; color: #C6A15B; white-space: nowrap;">Matériel.</h2>
+      <span style="flex: 1; height: 1px; background: rgba(239,231,218,0.14);"></span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(158px, 1fr)); gap: 14px;">
+      <figure data-reveal="" style="margin: 0;">
+        <div style="position: relative; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid rgba(198,161,91,0.75); animation: neonPulse 2.8s ease-in-out infinite; background: radial-gradient(120% 90% at 50% 32%, #DACDB4 0%, #A6947700 100%), radial-gradient(140% 120% at 50% 40%, #C6B694 0%, #9A886B 100%);">
+          <span aria-hidden="true" style="position: absolute; top: 4px; left: 16px; font-family: var(--display); font-size: clamp(66px, 8vw, 116px); line-height: 1; color: rgba(23,20,14,0.12);">01</span>
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 12px;">
+            <img src="assets/gear-iphone.png" alt="iPhone 16 Pro" style="max-width: 90%; max-height: 90%; object-fit: contain; filter: drop-shadow(0 18px 26px rgba(0,0,0,0.28)); transition: transform 0.9s cubic-bezier(.19,1,.22,1);" style-hover="transform: translateY(-8px) scale(1.05);">
+          </div>
+        </div>
+        <figcaption style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 17px; color: #EFE7DA;">iPhone 16 Pro</span>
+          <span style="font-size: 9.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #C6A15B;">Image</span>
+        </figcaption>
+      </figure>
+      <figure data-reveal="" data-reveal-delay="90" style="margin: 0;">
+        <div style="position: relative; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid rgba(198,161,91,0.75); animation: neonPulse 2.8s ease-in-out infinite; background: radial-gradient(120% 90% at 50% 32%, #DACDB4 0%, #A6947700 100%), radial-gradient(140% 120% at 50% 40%, #C6B694 0%, #9A886B 100%);">
+          <span aria-hidden="true" style="position: absolute; top: 4px; left: 16px; font-family: var(--display); font-size: clamp(66px, 8vw, 116px); line-height: 1; color: rgba(23,20,14,0.12);">02</span>
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 12px;">
+            <img src="assets/gear-djimic.png" alt="Micro DJI" style="max-width: 94%; max-height: 90%; object-fit: contain; filter: drop-shadow(0 18px 26px rgba(0,0,0,0.28)); transition: transform 0.9s cubic-bezier(.19,1,.22,1);" style-hover="transform: translateY(-8px) scale(1.05);">
+          </div>
+        </div>
+        <figcaption style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 17px; color: #EFE7DA;">Micro DJI</span>
+          <span style="font-size: 9.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #C6A15B;" data-en="Sound">Son</span>
+        </figcaption>
+      </figure>
+      <figure data-reveal="" data-reveal-delay="180" style="margin: 0;">
+        <div style="position: relative; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid rgba(198,161,91,0.75); animation: neonPulse 2.8s ease-in-out infinite; background: radial-gradient(120% 90% at 50% 32%, #DACDB4 0%, #A6947700 100%), radial-gradient(140% 120% at 50% 40%, #C6B694 0%, #9A886B 100%);">
+          <span aria-hidden="true" style="position: absolute; top: 4px; left: 16px; font-family: var(--display); font-size: clamp(66px, 8vw, 116px); line-height: 1; color: rgba(23,20,14,0.12);">03</span>
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 12px;">
+            <img src="assets/gear-ringlight.png" alt="Ring light" style="max-width: 90%; max-height: 90%; object-fit: contain; filter: drop-shadow(0 18px 26px rgba(0,0,0,0.28)); transition: transform 0.9s cubic-bezier(.19,1,.22,1);" style-hover="transform: translateY(-8px) scale(1.05);">
+          </div>
+        </div>
+        <figcaption style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 17px; color: #EFE7DA;">Ring Light</span>
+          <span style="font-size: 9.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #C6A15B;" data-en="Light">Lumière</span>
+        </figcaption>
+      </figure>
+      <figure data-reveal="" data-reveal-delay="270" style="margin: 0;">
+        <div style="position: relative; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid rgba(198,161,91,0.75); animation: neonPulse 2.8s ease-in-out infinite; background: radial-gradient(120% 90% at 50% 32%, #DACDB4 0%, #A6947700 100%), radial-gradient(140% 120% at 50% 40%, #C6B694 0%, #9A886B 100%);">
+          <span aria-hidden="true" style="position: absolute; top: 4px; left: 16px; font-family: var(--display); font-size: clamp(66px, 8vw, 116px); line-height: 1; color: rgba(23,20,14,0.12);">04</span>
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 12px;">
+            <img src="assets/gear-trepied.png" alt="Trépied" style="max-width: 150%; max-height: 150%; width: 150%; object-fit: contain; transform: scale(1.12); filter: drop-shadow(0 18px 26px rgba(0,0,0,0.28)); transition: transform 0.9s cubic-bezier(.19,1,.22,1);" style-hover="transform: translateY(-8px) scale(1.05);">
+          </div>
+        </div>
+        <figcaption style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 17px; color: #EFE7DA;">Trépied</span>
+          <span style="font-size: 9.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #C6A15B;" data-en="Stability">Stabilité</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" data-screen-label="Contact" style="position: relative; padding: 90px 4vw 64px; border-top: 1px solid rgba(239,231,218,0.08); overflow: hidden; text-align: center;">
+    <div aria-hidden="true" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-family: var(--display); font-size: 15vw; color: transparent; -webkit-text-stroke: 1px rgba(239,231,218,0.06); pointer-events: none; white-space: nowrap;">CHRIS</div>
+    <div style="position: relative;">
+      <h2 data-reveal="" data-en-html="So, shall we &lt;span style=&quot;font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; color: #C6A15B;&quot;&gt;collaborate&lt;/span&gt;?" style="margin: 0; font-family: var(--display); font-weight: 400; font-size: calc(var(--ds) * clamp(30px, 4vw, 62px)); line-height: 1.04;">Alors, on <span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; color: #C6A15B;">collabore</span>&nbsp;?</h2>
+      <p data-reveal="" data-reveal-delay="120" data-en="Tell me about your brand. I'll reply with format ideas." style="margin: 24px auto 0; max-width: 480px; font-size: 15px; line-height: 1.8; color: rgba(239,231,218,0.65);">Racontez-moi votre marque. Je vous réponds avec des idées de formats.</p>
+      <div data-reveal="" data-reveal-delay="220" style="display: flex; justify-content: center; align-items: center; gap: 22px; margin-top: 34px; flex-wrap: wrap;">
+        <a href="mailto:christdias.ugc@gmail.com?subject=Collaboration%20avec%20Chris%20%E2%80%94%20UGC" style="font-size: 11.5px; letter-spacing: 0.26em; text-transform: uppercase; color: #0C0B09; background: #C6A15B; padding: 20px 44px; border-radius: 999px; transition: background 0.35s, transform 0.35s;" style-hover="background: #EFE7DA; color: #0C0B09; transform: translateY(-2px);" data-en="Start a project">Démarrer un projet</a>
+        <a href="https://instagram.com/ugcby.chris" target="_blank" rel="noopener" style="font-size: 11.5px; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(239,231,218,0.7); border: 1px solid rgba(239,231,218,0.25); padding: 19px 34px; border-radius: 999px; transition: border-color 0.35s, color 0.35s;" style-hover="color: #EFE7DA; border-color: #C6A15B;">Instagram</a>
+        <a href="https://tiktok.com/@oecchris" target="_blank" rel="noopener" style="font-size: 11.5px; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(239,231,218,0.7); border: 1px solid rgba(239,231,218,0.25); padding: 19px 34px; border-radius: 999px; transition: border-color 0.35s, color 0.35s;" style-hover="color: #EFE7DA; border-color: #C6A15B;">TikTok</a>
+      </div>
+      <div data-reveal="" data-reveal-delay="320" style="margin-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 18px;">
+        <p data-en="&laquo; Calling on experts is how you secure your longevity. &raquo;" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(20px, 2.2vw, 30px); color: rgba(239,231,218,0.55);">« Faire appel à des experts, c'est garantir sa pérennité. »</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer data-screen-label="Footer" style="display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; padding: 30px 4vw 36px; border-top: 1px solid rgba(239,231,218,0.08); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(239,231,218,0.4);">
+    <span style="font-family: var(--display); font-size: 15px; letter-spacing: 0.38em; color: rgba(239,231,218,0.75);">CHRIS<span style="color: #C6A15B;">.</span></span>
+    <span data-en="UGC Creator — Montpellier, France">Créateur UGC — Montpellier, France</span>
+    <span>© 2026 — Meta &amp; TikTok Ads</span>
+  </footer>
+
+  <!-- Lecteur vidéo plein écran -->
+  <div id="video-lightbox" role="dialog" aria-modal="true" aria-label="Lecture de la vidéo" style="position: fixed; inset: 0; z-index: 9995; display: none; align-items: center; justify-content: center; padding: 4vh 4vw; background: rgba(8,7,5,0.86); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); opacity: 0; transition: opacity 0.4s ease;">
+    <button id="video-close" aria-label="Fermer" style="position: absolute; top: 26px; right: 4vw; width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(239,231,218,0.3); background: transparent; color: #EFE7DA; font-size: 20px; cursor: pointer; transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: #C6A15B; transform: rotate(90deg);">✕</button>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; max-height: 92vh;">
+      <div id="video-frame" style="position: relative; aspect-ratio: 9 / 16; height: min(82vh, 720px); max-width: 92vw; overflow: hidden; background: #14120E; border: 1px solid rgba(198,161,91,0.35); box-shadow: 0 40px 120px rgba(0,0,0,0.7);">
+        <!-- Le lecteur est injecté ici -->
+      </div>
+      <div id="video-caption" style="font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(239,231,218,0.6); text-align: center;"></div>
+    </div>
+  </div>
+
+  <!-- Grain -->
+  <div id="fx-grain" aria-hidden="true" style="position: fixed; inset: 0; z-index: 950; pointer-events: none; opacity: 0.055; mix-blend-mode: overlay; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E&quot;);"></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;police&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Bodoni&quot;, &quot;Italiana&quot;, &quot;Cormorant&quot;], &quot;default&quot;: &quot;Bodoni&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Typographie&quot; },
+  &quot;tailleTitres&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 1, &quot;min&quot;: 0.75, &quot;max&quot;: 1.25, &quot;step&quot;: 0.05, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Typographie&quot; },
+  &quot;logos&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Monochrome&quot;, &quot;Couleur&quot;], &quot;default&quot;: &quot;Couleur&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Logos&quot; },
+  &quot;vitesseDeck&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 2, &quot;min&quot;: 1, &quot;max&quot;: 8, &quot;step&quot;: 0.5, &quot;unit&quot;: &quot;s&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Réalisations&quot; },
+  &quot;halo&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Effets&quot; },
+  &quot;grain&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Effets&quot; },
+  &quot;vitesseMarquee&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 26, &quot;min&quot;: 12, &quot;max&quot;: 60, &quot;step&quot;: 2, &quot;unit&quot;: &quot;s&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Effets&quot; }
+}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const ease = 'cubic-bezier(.19,1,.22,1)';
+
+    // --- Réveils au scroll ---
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    const vh = window.innerHeight;
+    els.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      // On masque tout ce qui n'est pas déjà bien visible au chargement
+      if (r.top > vh * 0.82) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(52px)';
+        el.style.filter = 'blur(7px)';
+        el.setAttribute('data-reveal-armed', '1');
+      }
+      el.style.transition = 'opacity 1.2s ' + ease + ', transform 1.2s ' + ease + ', filter 1.2s ' + ease;
+      el.style.transitionDelay = (el.getAttribute('data-reveal-delay') || '0') + 'ms';
+      el.style.willChange = 'opacity, transform, filter';
+    });
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0px)';
+          e.target.style.filter = 'blur(0px)';
+          this._io.unobserve(e.target);
+          setTimeout(() => { e.target.style.willChange = 'auto'; }, 1500);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+    els.forEach((el) => this._io.observe(el));
+
+    // --- Parallax (débord symétrique + offset borné au débord réel) ---
+    this._px = Array.from(document.querySelectorAll('[data-parallax]'));
+    this._px.forEach((el) => {
+      el.style.height = '116%';
+      el.style.marginTop = '-8%';
+    });
+    let ticking = false;
+    this._onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        ticking = false;
+        const mid = window.innerHeight / 2;
+        this._px.forEach((el) => {
+          const sp = parseFloat(el.getAttribute('data-parallax')) || 0;
+          const host = el.parentElement.getBoundingClientRect();
+          if (host.bottom < -100 || host.top > window.innerHeight + 100) return;
+          let off = (host.top + host.height / 2 - mid) * sp;
+          const bleed = Math.max(0, (el.offsetHeight - host.height) / 2 - 1);
+          if (off > bleed) off = bleed;
+          if (off < -bleed) off = -bleed;
+          el.style.transform = 'translate3d(0,' + off.toFixed(1) + 'px,0)';
+        });
+      });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+
+    // --- Compteur 136K ---
+    const cEl = document.querySelector('[data-counter]');
+    if (cEl) {
+      const target = parseInt(cEl.getAttribute('data-counter'), 10) || 136;
+      const io2 = new IntersectionObserver((es) => {
+        es.forEach((e) => {
+          if (!e.isIntersecting) return;
+          io2.disconnect();
+          const t0 = performance.now();
+          const step = (t) => {
+            const p = Math.min(1, (t - t0) / 1700);
+            const eased = 1 - Math.pow(1 - p, 3);
+            cEl.textContent = Math.round(target * eased) + 'K';
+            if (p < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        });
+      }, { threshold: 0.4 });
+      io2.observe(cEl);
+    }
+
+    // Décalage des zooms Ken Burns pour éviter l'effet mécanique
+    document.querySelectorAll('[data-kb]').forEach((el, i) => {
+      el.style.animationDelay = (-(i % 4) * 3.4 - Math.floor(i / 4) * 1.1).toFixed(1) + 's';
+    });
+
+    this.initDeck();
+    this.initLang();
+    this.syncFx();
+  }
+
+  initLang() {
+    this._deckI18n = {
+      'I — Restaurants & lieux': 'I — Restaurants & venues',
+      'II — Applications': 'II — Apps',
+      'III — Produits': 'III — Products',
+      'Buffet à volonté': 'All-you-can-eat buffet',
+      'Restaurant': 'Restaurant',
+      'Parfum de niche': 'Niche fragrance',
+      'Fast food': 'Fast food',
+      'App musique · été': 'Music app · summer',
+      'App de rencontre': 'Dating app',
+      'App réduction food': 'Food deals app',
+      'En boutique': 'In store',
+      'Sur la route': 'On the road',
+      'Intercom motard': 'Rider intercom',
+      'IV — Trend': 'IV — Trend',
+      'V — Service': 'V — Service',
+      'Trend': 'Trend',
+      'Service': 'Service'
+    };
+    let saved = 'fr';
+    try { saved = localStorage.getItem('chris-lang') || 'fr'; } catch (e) {}
+    this._lang = saved;
+    const btn = document.getElementById('lang-toggle');
+    if (btn) {
+      btn.addEventListener('click', () => this.setLang(this._lang === 'fr' ? 'en' : 'fr'));
+    }
+    this.applyLang(this._lang);
+  }
+
+  setLang(lang) {
+    this._lang = lang;
+    try { localStorage.setItem('chris-lang', lang); } catch (e) {}
+    this.applyLang(lang);
+  }
+
+  applyLang(lang) {
+    const en = lang === 'en';
+    // Textes simples
+    document.querySelectorAll('[data-en]').forEach((el) => {
+      if (el.getAttribute('data-fr') === null) el.setAttribute('data-fr', el.textContent);
+      el.textContent = en ? el.getAttribute('data-en') : el.getAttribute('data-fr');
+    });
+    // Textes avec balises internes
+    document.querySelectorAll('[data-en-html]').forEach((el) => {
+      if (el.getAttribute('data-fr-html') === null) el.setAttribute('data-fr-html', el.innerHTML);
+      el.innerHTML = en ? el.getAttribute('data-en-html') : el.getAttribute('data-fr-html');
+    });
+    // Bascule visuelle FR / EN dans la nav
+    const frEl = document.getElementById('lang-fr');
+    const enEl = document.getElementById('lang-en');
+    if (frEl) frEl.style.color = en ? 'rgba(239,231,218,0.45)' : '#C6A15B';
+    if (enEl) enEl.style.color = en ? '#C6A15B' : 'rgba(239,231,218,0.45)';
+    // Attribut lang du document
+    try { document.documentElement.lang = lang; } catch (e) {}
+    // Rafraîchit les libellés dynamiques du deck
+    if (this._updateInfo) this._updateInfo();
+  }
+
+  syncFx() {
+    if (this._deckInit) this.startDeckTimer();
+
+    // Thème réglable (typographie, échelle, logos)
+    const root = document.querySelector('[data-screen-label="Site Chris UGC"]') || document.documentElement;
+    const fonts = {
+      'Bodoni': "'Bodoni Moda', serif",
+      'Italiana': "'Italiana', serif",
+      'Cormorant': "'Cormorant Garamond', serif"
+    };
+    root.style.setProperty('--display', fonts[this.props.police] || fonts.Bodoni);
+    root.style.setProperty('--ds', String(this.props.tailleTitres ?? 1));
+    root.style.setProperty('--logo-filter', (this.props.logos ?? 'Couleur') === 'Couleur' ? 'none' : 'grayscale(1) contrast(1.03)');
+
+    // Grain
+    const grain = document.getElementById('fx-grain');
+    if (grain) grain.style.display = (this.props.grain ?? true) ? 'block' : 'none';
+
+    // Vitesse des marquees (base en secondes, proportionnelle par piste)
+    const base = this.props.vitesseMarquee ?? 26;
+    document.querySelectorAll('[data-mq]').forEach((el) => {
+      const k = parseFloat(el.getAttribute('data-mq')) || 26;
+      el.style.animationDuration = (base * (k / 26)).toFixed(1) + 's';
+    });
+
+    // Curseur halo doré
+    const wantHalo = (this.props.halo ?? true) && window.matchMedia('(pointer: fine)').matches;
+    if (wantHalo && !this._halo) {
+      const halo = document.createElement('div');
+      halo.style.cssText = 'position:fixed;left:-17px;top:-17px;width:34px;height:34px;border:1px solid rgba(198,161,91,0.9);border-radius:50%;pointer-events:none;z-index:9990;transition:width .25s,height .25s;will-change:transform;';
+      document.body.appendChild(halo);
+      this._halo = halo;
+      this._hx = -100; this._hy = -100; this._tx = -100; this._ty = -100; this._big = false;
+      this._mm = (e) => {
+        this._tx = e.clientX; this._ty = e.clientY;
+        this._big = !!(e.target.closest && e.target.closest('a, button, figure'));
+      };
+      window.addEventListener('mousemove', this._mm, { passive: true });
+      const loop = () => {
+        this._hx += (this._tx - this._hx) * 0.14;
+        this._hy += (this._ty - this._hy) * 0.14;
+        const s = this._big ? 1.9 : 1;
+        this._halo.style.transform = 'translate3d(' + this._hx.toFixed(1) + 'px,' + this._hy.toFixed(1) + 'px,0) scale(' + s + ')';
+        this._halo.style.background = this._big ? 'rgba(198,161,91,0.10)' : 'transparent';
+        this._raf = requestAnimationFrame(loop);
+      };
+      loop();
+    } else if (!wantHalo && this._halo) {
+      cancelAnimationFrame(this._raf);
+      window.removeEventListener('mousemove', this._mm);
+      this._halo.remove();
+      this._halo = null;
+    }
+  }
+
+  initDeck() {
+    const deck = document.getElementById('deck');
+    if (!deck || this._deckInit) return;
+    this._deckInit = true;
+    this._cards = Array.from(deck.querySelectorAll('[data-card]'));
+    this._active = this._cards.slice();
+    this._order = this._active.slice();
+    this._filter = 'all';
+    this._animating = false;
+    this._paused = false;
+    this._deckVisible = true;
+    this._dir = 1;
+    const stackEase = 'cubic-bezier(.22,.9,.3,1)';
+    const posFor = (i) => {
+      if (i === 0) return { t: 'translate3d(0, 0, 0) rotateY(0deg) scale(1)', o: '1' };
+      if (i === 1) return { t: 'translate3d(8%, 0, -70px) rotateY(-8deg) scale(0.94)', o: '1' };
+      if (i === 2) return { t: 'translate3d(14%, 0, -140px) rotateY(-12deg) scale(0.88)', o: '0.5' };
+      return { t: 'translate3d(17%, 0, -180px) rotateY(-14deg) scale(0.84)', o: '0' };
+    };
+    this._layout = () => {
+      this._order.forEach((el, i) => {
+        const p = posFor(i);
+        el.style.zIndex = String(40 - i);
+        el.style.transform = p.t;
+        el.style.opacity = p.o;
+      });
+    };
+    // Bouton lecture sur chaque carte (visible seulement sur celle du dessus)
+    this._cards.forEach((card) => {
+      const btn = document.createElement('button');
+      btn.setAttribute('aria-label', 'Lire la vidéo');
+      btn.style.cssText = 'position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;border:1px solid rgba(239,231,218,0.7);background:rgba(12,11,9,0.28);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);color:#EFE7DA;cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;transition:background .3s,border-color .3s,transform .3s,opacity .5s;opacity:0;';
+      btn.innerHTML = '<span style="display:block;width:0;height:0;border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #EFE7DA;margin-left:4px;"></span>';
+      btn.addEventListener('mouseenter', () => { btn.style.background = '#C6A15B'; btn.style.borderColor = '#C6A15B'; btn.style.transform = 'scale(1.08)'; btn.querySelector('span').style.borderLeftColor = '#0C0B09'; });
+      btn.addEventListener('mouseleave', () => { btn.style.background = 'rgba(12,11,9,0.28)'; btn.style.borderColor = 'rgba(239,231,218,0.7)'; btn.style.transform = 'scale(1)'; btn.querySelector('span').style.borderLeftColor = '#EFE7DA'; });
+      btn.addEventListener('click', (e) => { e.stopPropagation(); this.openVideo(card); });
+      card.appendChild(btn);
+      card._play = btn;
+    });
+    const showPlay = () => this._order.forEach((el, i) => { if (el._play) el._play.style.opacity = i === 0 ? '1' : '0'; });
+    this._showPlay = showPlay;
+
+    this._order.forEach((el) => { el.style.transition = 'none'; });
+    this._layout();
+    showPlay();
+    requestAnimationFrame(() => {
+      this._order.forEach((el) => { el.style.transition = 'transform 0.8s ' + stackEase + ', opacity 0.8s ' + stackEase; });
+    });
+    this._updateInfo = () => {
+      const top = this._order[0];
+      const map = { 'deck-group': 'data-group', 'deck-brand': 'data-brand', 'deck-cat': 'data-cat' };
+      Object.keys(map).forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) { el.style.opacity = '0'; el.style.transform = 'translateY(12px)'; }
+      });
+      setTimeout(() => {
+        Object.keys(map).forEach((id) => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          let val = top.getAttribute(map[id]);
+          if (this._lang === 'en' && id !== 'deck-brand' && this._deckI18n && this._deckI18n[val]) val = this._deckI18n[val];
+          el.textContent = val; el.style.opacity = '1'; el.style.transform = 'translateY(0px)';
+        });
+        const n = this._active.indexOf(top) + 1;
+        const total = this._active.length;
+        const count = document.getElementById('deck-count');
+        if (count) count.textContent = String(n).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+        const bar = document.getElementById('deck-bar');
+        if (bar) bar.style.width = ((n / total) * 100).toFixed(1) + '%';
+      }, 280);
+    };
+    this._advance = () => {
+      if (this._animating) return;
+      this._animating = true;
+      const top = this._order.shift();
+      this._order.push(top);
+      top.style.transition = 'transform 0.9s cubic-bezier(.55,.02,.3,1), opacity 0.9s ease';
+      top.style.transform = 'translate3d(-124%, 0, 60px) rotateY(30deg) scale(0.92)';
+      top.style.opacity = '0';
+      this._order.forEach((el, i) => {
+        if (el === top) return;
+        const p = posFor(i);
+        el.style.zIndex = String(40 - i);
+        el.style.transform = p.t;
+        el.style.opacity = p.o;
+      });
+      this._updateInfo();
+      if (this._showPlay) this._showPlay();
+      setTimeout(() => {
+        top.style.transition = 'none';
+        top.style.zIndex = '1';
+        const p = posFor(this._order.length - 1);
+        top.style.transform = p.t;
+        top.style.opacity = p.o;
+        requestAnimationFrame(() => {
+          top.style.transition = 'transform 0.8s ' + stackEase + ', opacity 0.8s ' + stackEase;
+          this._animating = false;
+        });
+      }, 900);
+    };
+    deck.addEventListener('click', () => { this._advance(); this.startDeckTimer(); });
+    deck.addEventListener('mouseenter', () => { this._paused = true; });
+    deck.addEventListener('mouseleave', () => { this._paused = false; });
+    this._deckIo = new IntersectionObserver((es) => {
+      es.forEach((e) => { this._deckVisible = e.isIntersecting; });
+    }, { threshold: 0.2 });
+    this._deckIo.observe(deck);
+
+    // Filtre par catégorie
+    this._filterBtns = Array.from(document.querySelectorAll('#deck-filters [data-filter]'));
+    this._filterBtns.forEach((b) => {
+      b.addEventListener('click', () => this.applyFilter(b.getAttribute('data-filter')));
+    });
+
+    // Lecteur plein écran
+    const close = document.getElementById('video-close');
+    const box = document.getElementById('video-lightbox');
+    if (close) close.addEventListener('click', () => this.closeVideo());
+    if (box) box.addEventListener('click', (e) => { if (e.target === box) this.closeVideo(); });
+    this._escHandler = (e) => { if (e.key === 'Escape') this.closeVideo(); };
+    window.addEventListener('keydown', this._escHandler);
+  }
+
+  applyFilter(key) {
+    if (this._animating) return;
+    this._filter = key;
+    // États visuels des boutons
+    (this._filterBtns || []).forEach((b) => {
+      const on = b.getAttribute('data-filter') === key;
+      b.style.background = on ? '#C6A15B' : 'transparent';
+      b.style.color = on ? '#0C0B09' : 'rgba(239,231,218,0.7)';
+      b.style.borderColor = on ? '#C6A15B' : 'rgba(239,231,218,0.25)';
+    });
+    // Cartes visibles selon le filtre
+    this._active = this._cards.filter((c) => key === 'all' || c.getAttribute('data-group') === key);
+    this._cards.forEach((c) => { c.style.display = this._active.indexOf(c) === -1 ? 'none' : 'block'; });
+    this._order = this._active.slice();
+    const stackEase = 'cubic-bezier(.22,.9,.3,1)';
+    this._order.forEach((el) => { el.style.transition = 'none'; });
+    this._layout();
+    if (this._showPlay) this._showPlay();
+    this._updateInfo();
+    requestAnimationFrame(() => {
+      this._order.forEach((el) => { el.style.transition = 'transform 0.8s ' + stackEase + ', opacity 0.8s ' + stackEase; });
+    });
+    this.startDeckTimer();
+  }
+
+  openVideo(card) {
+    const box = document.getElementById('video-lightbox');
+    const frame = document.getElementById('video-frame');
+    const cap = document.getElementById('video-caption');
+    if (!box || !frame) return;
+    this._lightboxOpen = true;
+    this._paused = true;
+    const src = card.getAttribute('data-video');
+    const brand = card.getAttribute('data-brand') || '';
+    const catg = card.getAttribute('data-cat') || '';
+    const poster = card.querySelector('img') ? card.querySelector('img').getAttribute('src') : '';
+    const en = this._lang === 'en';
+    const showFallback = () => {
+      frame.innerHTML =
+        '<img src="' + poster + '" alt="" style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.5) grayscale(20%);">' +
+        '<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:0 28px;">' +
+        '<span style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:30px;color:#EFE7DA;line-height:1.2;">' + brand + '</span>' +
+        '<span style="width:38px;height:1px;background:#C6A15B;"></span>' +
+        '<span style="font-size:10.5px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(239,231,218,0.7);line-height:1.9;">' + (en ? 'Video coming soon<br>TikTok · Instagram · MP4' : 'Vidéo à connecter<br>TikTok · Instagram · MP4') + '</span>' +
+        '</div>';
+      if (cap) cap.textContent = en ? 'Preview — full clip coming soon' : 'Aperçu — clip complet à venir';
+    };
+    if (src) {
+      frame.innerHTML = '';
+      const v = document.createElement('video');
+      v.src = src; v.controls = true; v.autoplay = true; v.playsInline = true; v.setAttribute('playsinline', '');
+      if (poster) v.poster = poster;
+      v.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;background:#000;';
+      // Si le fichier n'est pas encore en ligne, on retombe sur l'aperçu
+      v.addEventListener('error', showFallback);
+      frame.appendChild(v);
+      if (cap) cap.textContent = brand + ' — ' + catg;
+    } else {
+      showFallback();
+    }
+    box.style.display = 'flex';
+    requestAnimationFrame(() => { box.style.opacity = '1'; });
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeVideo() {
+    const box = document.getElementById('video-lightbox');
+    const frame = document.getElementById('video-frame');
+    if (!box) return;
+    this._lightboxOpen = false;
+    this._paused = false;
+    box.style.opacity = '0';
+    document.body.style.overflow = '';
+    setTimeout(() => { box.style.display = 'none'; if (frame) frame.innerHTML = ''; }, 400);
+  }
+
+  startDeckTimer() {
+    if (this._timer) clearInterval(this._timer);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const delay = Math.max(1, this.props.vitesseDeck ?? 2) * 1000;
+    this._timer = setInterval(() => {
+      if (this._paused || this._lightboxOpen || !this._deckVisible || document.hidden || !this._advance) return;
+      this._advance();
+    }, delay);
+  }
+
+  componentDidUpdate() { this.syncFx(); }
+
+  componentWillUnmount() {
+    if (this._timer) clearInterval(this._timer);
+    if (this._escHandler) window.removeEventListener('keydown', this._escHandler);
+    if (this._deckIo) this._deckIo.disconnect();
+    if (this._io) this._io.disconnect();
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+    if (this._halo) {
+      cancelAnimationFrame(this._raf);
+      window.removeEventListener('mousemove', this._mm);
+      this._halo.remove();
+      this._halo = null;
+    }
+  }
+
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
