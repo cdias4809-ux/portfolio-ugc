@@ -12,17 +12,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Italiana&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&amp;family=Archivo:wght@200;300;400;500&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Italiana&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&amp;family=Archivo:wght@200;300;400;500&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;display=swap">
   <style>
     :root { --display: 'Bodoni Moda', serif; --display-italic: 'Cormorant Garamond', serif; --ds: 1; --logo-filter: none; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; background: #0C0B09; color: #EFE7DA; font-family: 'Archivo', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    .brand-logo:hover { filter: none !important; }
+    body { margin: 0; background: #0D1B2A; color: #F4EFE6; font-family: 'Archivo', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
     a { color: #C6A15B; text-decoration: none; }
-    a:hover { color: #EFE7DA; }
-    ::selection { background: #C6A15B; color: #0C0B09; }
+    a:hover { color: #F4EFE6; }
+    ::selection { background: #C6A15B; color: #0D1B2A; }
     @keyframes heroUp { from { opacity: 0; transform: translateY(70px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes frameIn { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0% 0); } }
     @keyframes mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes mqReverse { from { transform: translateX(-50%); } to { transform: translateX(0); } }
     @keyframes pulseDot { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
     @keyframes kenburns { 0%, 100% { transform: scale(1.07) translate(0, 0); } 50% { transform: scale(1.16) translate(1.6%, -1.8%); } }
     @keyframes kbPanA { 0%, 100% { transform: scale(1.09) translate(0, 0); } 50% { transform: scale(1.17) translate(-1.8%, -1.4%); } }
@@ -31,64 +33,73 @@
     @keyframes glowDrift2 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(8vw, -5vh) scale(1.12); } }
     @keyframes neonPulse { 0%, 100% { box-shadow: 0 0 5px rgba(198,161,91,0.55), 0 0 16px rgba(198,161,91,0.32), inset 0 0 7px rgba(198,161,91,0.22); border-color: rgba(198,161,91,0.75); } 50% { box-shadow: 0 0 12px rgba(198,161,91,0.9), 0 0 34px rgba(198,161,91,0.5), inset 0 0 13px rgba(198,161,91,0.38); border-color: rgba(224,196,132,1); } }
     @keyframes neonText { 0%, 100% { text-shadow: 0 0 4px rgba(198,161,91,0.45), 0 0 11px rgba(198,161,91,0.28); } 50% { text-shadow: 0 0 8px rgba(224,196,132,0.85), 0 0 22px rgba(198,161,91,0.5); } }
+    @keyframes scrollBounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 10px); } }
   </style>
 </helmet>
 
-<div data-screen-label="Site Chris UGC" style="background: radial-gradient(1100px 750px at 88% -8%, rgba(198,161,91,0.11), transparent 62%), radial-gradient(900px 700px at -12% 42%, rgba(198,161,91,0.07), transparent 60%), radial-gradient(1000px 800px at 55% 108%, rgba(198,161,91,0.08), transparent 65%), #0C0B09; color: #EFE7DA; font-family: 'Archivo', sans-serif; font-weight: 300; overflow-x: hidden; position: relative; --display: 'Bodoni Moda', serif; --display-italic: 'Cormorant Garamond', serif; --ds: 1; --logo-filter: none;">
+<div data-screen-label="Site Chris UGC" style="background: radial-gradient(1100px 750px at 88% -8%, rgba(198,161,91,0.11), transparent 62%), radial-gradient(900px 700px at -12% 42%, rgba(198,161,91,0.07), transparent 60%), radial-gradient(1000px 800px at 55% 108%, rgba(198,161,91,0.08), transparent 65%), #0D1B2A; color: #F4EFE6; font-family: 'Archivo', sans-serif; font-weight: 300; overflow-x: hidden; position: relative; --display: 'Bodoni Moda', serif; --display-italic: 'Cormorant Garamond', serif; --ds: 1; --logo-filter: none;">
 
   <!-- Lueurs ambiantes -->
   <div aria-hidden="true" style="position: fixed; top: -22vh; right: -14vw; width: 55vw; height: 55vw; border-radius: 50%; background: radial-gradient(circle, rgba(198,161,91,0.16), transparent 62%); filter: blur(60px); mix-blend-mode: screen; pointer-events: none; z-index: 0; animation: glowDrift 22s ease-in-out infinite;"></div>
   <div aria-hidden="true" style="position: fixed; bottom: -25vh; left: -16vw; width: 50vw; height: 50vw; border-radius: 50%; background: radial-gradient(circle, rgba(198,161,91,0.10), transparent 62%); filter: blur(70px); mix-blend-mode: screen; pointer-events: none; z-index: 0; animation: glowDrift2 28s ease-in-out infinite;"></div>
 
   <!-- ===== NAV ===== -->
-  <nav data-screen-label="Navigation" style="position: fixed; top: 0; left: 0; right: 0; z-index: 900; display: flex; align-items: center; justify-content: space-between; padding: 20px 4vw; background: rgba(12,11,9,0.55); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(239,231,218,0.08); animation: heroUp 1s cubic-bezier(.19,1,.22,1) 0.15s both;">
-    <a href="#haut" style="font-family: var(--display); font-size: 22px; letter-spacing: 0.38em; color: #EFE7DA;" style-hover="color: #C6A15B;">CHRIS<span style="color: #C6A15B;">.</span></a>
+  <nav id="site-nav" data-screen-label="Navigation" style="position: fixed; top: 0; left: 0; right: 0; z-index: 900; display: flex; align-items: center; justify-content: space-between; padding: 20px 4vw; background: rgba(13,27,42,0.55); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(244,239,230,0.08); transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease; animation: heroUp 1s cubic-bezier(.19,1,.22,1) 0.15s both;">
+    <a href="#haut" style="font-family: var(--display); font-size: 22px; letter-spacing: 0.38em; color: #F4EFE6;" style-hover="color: #C6A15B;">CHRIS<span style="color: #C6A15B;">.</span></a>
     <div style="display: flex; align-items: center; gap: 34px;">
-      <a href="#realisations" data-en="Work" style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(239,231,218,0.6);" style-hover="color: #EFE7DA;">Réalisations</a>
-      <a href="#apropos" data-en="About" style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(239,231,218,0.6);" style-hover="color: #EFE7DA;">À propos</a>
-      <a href="#photographie" data-en="Photography" style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(239,231,218,0.6);" style-hover="color: #EFE7DA;">Photographie</a>
-      <button id="lang-toggle" type="button" aria-label="Switch language" style="font-family: inherit; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(239,231,218,0.6); background: transparent; border: 0; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 5px; transition: color 0.3s;" style-hover="color: #EFE7DA;"><span id="lang-fr" style="color: #C6A15B;">FR</span><span style="opacity: 0.4;">/</span><span id="lang-en" style="color: rgba(239,231,218,0.45);">EN</span></button>
-      <a href="#contact" data-en="Collaborate" style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #C6A15B; border: 1px solid rgba(198,161,91,0.55); border-radius: 999px; padding: 12px 26px; transition: background 0.35s, color 0.35s;" style-hover="background: #C6A15B; color: #0C0B09;">Collaborer</a>
+      <a href="#realisations" data-en="Work" style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(232,213,176,0.6);" style-hover="color: #F4EFE6;">Réalisations</a>
+      <a href="#apropos" data-en="About" style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(232,213,176,0.6);" style-hover="color: #F4EFE6;">À propos</a>
+      <a href="#photographie" data-en="Photography" style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(232,213,176,0.6);" style-hover="color: #F4EFE6;">Photographie</a>
+      <button id="lang-toggle" type="button" aria-label="Switch language" style="font-family: inherit; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(232,213,176,0.6); background: transparent; border: 0; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 5px; transition: color 0.3s;" style-hover="color: #F4EFE6;"><span id="lang-fr" style="color: #C6A15B;">FR</span><span style="opacity: 0.4;">/</span><span id="lang-en" style="color: rgba(232,213,176,0.45);">EN</span></button>
+      <a href="#contact" data-en="Collaborate" style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #C6A15B; border: 1px solid rgba(198,161,91,0.55); border-radius: 999px; padding: 12px 26px; transition: background 0.35s, color 0.35s;" style-hover="background: #C6A15B; color: #0D1B2A;">Collaborer</a>
     </div>
   </nav>
 
   <!-- ===== HERO ===== -->
   <header id="haut" data-screen-label="Hero" style="position: relative; min-height: 60vh; display: flex; flex-direction: column; justify-content: center; padding: 84px 4vw 24px; box-sizing: border-box;">
+    <canvas id="hero-particles" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;"></canvas>
 
     <!-- Titre + portrait -->
     <div style="position: relative; z-index: 2; display: grid; grid-template-columns: 1fr clamp(250px, 30vw, 460px); gap: clamp(28px, 4vw, 64px); align-items: stretch;">
       <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 2vh; align-items: center; text-align: center;">
         <div style="display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 0; animation: heroUp 1s cubic-bezier(.19,1,.22,1) 0.3s both;">
           <span style="width: 8px; height: 8px; border-radius: 50%; background: #C6A15B; animation: pulseDot 2.6s ease-in-out infinite;"></span>
-          <span data-en-html="Chris — UGC Content Creator · &lt;span style=&quot;color: #C6A15B; font-weight: 500;&quot;&gt;Meta Ads&lt;/span&gt; · &lt;span style=&quot;color: #C6A15B; font-weight: 500;&quot;&gt;TikTok Ads&lt;/span&gt;" style="font-size: 11px; letter-spacing: 0.34em; text-transform: uppercase; color: rgba(239,231,218,0.65);">Chris — Créateur de contenu UGC · <span style="color: #C6A15B; font-weight: 500;">Meta Ads</span> · <span style="color: #C6A15B; font-weight: 500;">TikTok Ads</span></span>
+          <span data-en-html="Chris — UGC Content Creator · &lt;span style=&quot;color: #C6A15B; font-weight: 500;&quot;&gt;Meta Ads&lt;/span&gt; · &lt;span style=&quot;color: #C6A15B; font-weight: 500;&quot;&gt;TikTok Ads&lt;/span&gt;" style="font-size: 11px; letter-spacing: 0.34em; text-transform: uppercase; color: rgba(232,213,176,0.65);">Chris — Créateur de contenu UGC · <span style="color: #C6A15B; font-weight: 500;">Meta Ads</span> · <span style="color: #C6A15B; font-weight: 500;">TikTok Ads</span></span>
         </div>
         <div>
           <h1 style="margin: 0; font-weight: 400; line-height: 0.96; letter-spacing: 0.01em;">
             <span data-en="CREATOR" style="display: block; font-family: var(--display); font-size: calc(var(--ds) * clamp(32px, 4.6vw, 78px)); animation: heroUp 1.1s cubic-bezier(.19,1,.22,1) 0.42s both;">CRÉATEUR</span>
             <span data-en="of content" style="display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: calc(var(--ds) * clamp(28px, 4vw, 64px)); color: #C6A15B; padding-left: 0; margin: 0.5vh 0; animation: heroUp 1.1s cubic-bezier(.19,1,.22,1) 0.58s both;">de contenu</span>
           </h1>
+          <div style="overflow: hidden; white-space: nowrap; margin: 12px -4vw 0; animation: heroUp 1s cubic-bezier(.19,1,.22,1) 0.7s both;">
+            <div style="display: inline-flex; animation: mqReverse 30s linear infinite; will-change: transform;">
+              <span style="font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #C6A15B; flex-shrink: 0; padding: 0 24px;">UGC Ads · Whitelisting · Meta Ads · TikTok Ads · Montpellier · Contenu Vertical</span>
+              <span style="font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #C6A15B; flex-shrink: 0; padding: 0 24px;">UGC Ads · Whitelisting · Meta Ads · TikTok Ads · Montpellier · Contenu Vertical</span>
+            </div>
+          </div>
           <div style="margin-top: 14px; animation: heroUp 1s cubic-bezier(.19,1,.22,1) 0.85s both;">
-            <p data-en-html="Natural vertical videos, designed to blend into the feed — and edited to convert on &lt;span style=&quot;color: #C6A15B; font-weight: 500;&quot;&gt;Meta Ads&lt;/span&gt; &amp;amp; &lt;span style=&quot;color: #C6A15B; font-weight: 500;&quot;&gt;TikTok Ads&lt;/span&gt;. Smiling, professional, impactful, expressive." style="margin: 0 auto; max-width: 760px; font-size: 16px; line-height: 1.7; font-weight: 300; color: rgba(239,231,218,0.75); text-wrap: balance;">Des vidéos verticales naturelles, pensées pour s'intégrer au feed — et montées pour convertir en <span style="color: #C6A15B; font-weight: 500;">Meta Ads</span> &amp; <span style="color: #C6A15B; font-weight: 500;">TikTok Ads</span>. Souriant, professionnel, impactant, expressif.</p>
+            <p data-en-html="Natural vertical videos, designed to blend into the feed — and edited to convert on &lt;span style=&quot;color: #C6A15B; font-weight: 500;&quot;&gt;Meta Ads&lt;/span&gt; &amp;amp; &lt;span style=&quot;color: #C6A15B; font-weight: 500;&quot;&gt;TikTok Ads&lt;/span&gt;. Smiling, professional, impactful, expressive." style="margin: 0 auto; max-width: 760px; font-size: 16px; line-height: 1.7; font-weight: 300; color: rgba(232,213,176,0.75); text-wrap: balance;">Des vidéos verticales naturelles, pensées pour s'intégrer au feed — et montées pour convertir en <span style="color: #C6A15B; font-weight: 500;">Meta Ads</span> &amp; <span style="color: #C6A15B; font-weight: 500;">TikTok Ads</span>. Souriant, professionnel, impactant, expressif.</p>
           </div>
         </div>
         <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 0; flex-wrap: wrap; animation: heroUp 1s cubic-bezier(.19,1,.22,1) 1s both;">
-          <a href="mailto:christdias.ugc@gmail.com?subject=Collaboration%20avec%20Chris%20%E2%80%94%20UGC" style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(239,231,218,0.78); border: 1px solid rgba(239,231,218,0.25); padding: 12px 22px; border-radius: 999px; transition: border-color 0.35s, color 0.35s;" style-hover="color: #EFE7DA; border-color: #C6A15B;">Email</a>
-          <a href="https://instagram.com/ugcby.chris" target="_blank" rel="noopener" style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(239,231,218,0.78); border: 1px solid rgba(239,231,218,0.25); padding: 12px 22px; border-radius: 999px; transition: border-color 0.35s, color 0.35s;" style-hover="color: #EFE7DA; border-color: #C6A15B;">Instagram</a>
-          <a href="https://tiktok.com/@oecchris" target="_blank" rel="noopener" style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(239,231,218,0.78); border: 1px solid rgba(239,231,218,0.25); padding: 12px 22px; border-radius: 999px; transition: border-color 0.35s, color 0.35s;" style-hover="color: #EFE7DA; border-color: #C6A15B;">TikTok</a>
+          <a href="mailto:christdias.ugc@gmail.com?subject=Collaboration%20avec%20Chris%20%E2%80%94%20UGC" style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(232,213,176,0.78); border: 1px solid rgba(244,239,230,0.25); padding: 12px 22px; border-radius: 999px; transition: border-color 0.35s, color 0.35s;" style-hover="color: #F4EFE6; border-color: #C6A15B;">Email</a>
+          <a href="https://instagram.com/ugcby.chris" target="_blank" rel="noopener" style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(232,213,176,0.78); border: 1px solid rgba(244,239,230,0.25); padding: 12px 22px; border-radius: 999px; transition: border-color 0.35s, color 0.35s;" style-hover="color: #F4EFE6; border-color: #C6A15B;">Instagram</a>
+          <a href="https://tiktok.com/@oecchris" target="_blank" rel="noopener" style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(232,213,176,0.78); border: 1px solid rgba(244,239,230,0.25); padding: 12px 22px; border-radius: 999px; transition: border-color 0.35s, color 0.35s;" style-hover="color: #F4EFE6; border-color: #C6A15B;">TikTok</a>
         </div>
-        <div style="width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 20px; border-top: 1px solid rgba(239,231,218,0.14); padding-top: 20px; animation: heroUp 1s cubic-bezier(.19,1,.22,1) 1.1s both;">
-          <div><div data-counter="136" style="font-family: var(--display); font-size: clamp(28px, 3vw, 42px); color: #C6A15B;">136K</div><div style="font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #C6A15B; margin-top: 6px;" data-en="Views · 1 video">Vues · 1 vidéo</div></div>
-          <div><div style="font-family: var(--display); font-size: clamp(28px, 3vw, 42px); color: #EFE7DA;">50<span style="color: #C6A15B;">+</span></div><div style="font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #C6A15B; margin-top: 6px;" data-en="Brands">Marques</div></div>
-          <div><div style="font-family: var(--display); font-size: clamp(28px, 3vw, 42px); color: #EFE7DA;">9<span style="color: #C6A15B;">:</span>16</div><div style="font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #C6A15B; margin-top: 6px;">Meta &amp; TikTok</div></div>
+        <div style="width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 20px; border-top: 1px solid rgba(244,239,230,0.14); padding-top: 20px; animation: heroUp 1s cubic-bezier(.19,1,.22,1) 1.1s both;">
+          <div><div style="font-family: var(--display); font-size: clamp(28px, 3vw, 42px); color: #C6A15B;"><span data-counter="136" data-suffix="K">136K</span></div><div style="font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #C6A15B; margin-top: 6px;" data-en="Views · 1 video">Vues · 1 vidéo</div></div>
+          <div><div style="font-family: var(--display); font-size: clamp(28px, 3vw, 42px); color: #F4EFE6;"><span data-counter="50">50</span><span style="color: #C6A15B;">+</span></div><div style="font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #C6A15B; margin-top: 6px;" data-en="Brands">Marques</div></div>
+          <div><div style="font-family: var(--display); font-size: clamp(28px, 3vw, 42px); color: #F4EFE6;">9<span style="color: #C6A15B;">:</span>16</div><div style="font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #C6A15B; margin-top: 6px;">Meta &amp; TikTok</div></div>
         </div>
       </div>
 
       <!-- Portrait -->
       <div style="position: relative; min-height: 300px; animation: frameIn 1.4s cubic-bezier(.19,1,.22,1) 0.55s both;">
-        <div style="position: relative; height: 100%; overflow: hidden; border: 1px solid rgba(198,161,91,0.75); animation: neonPulse 3.2s ease-in-out infinite;">
+        <div style="position: relative; height: 100%; overflow: hidden; border: 1px solid rgba(198,161,91,0.75); animation: neonPulse 3.2s ease-in-out infinite;" onmouseenter="var v=this.querySelector('video'); if(v){v.currentTime=0; v.play(); v.style.opacity='1';}" onmouseleave="var v=this.querySelector('video'); if(v){v.style.opacity='0'; v.pause();}">
           <img src="assets/portrait-hero.png" alt="Chris, créateur de contenu UGC" style="width: 100%; height: 132%; margin-top: -27%; object-fit: cover; object-position: center top; display: block; filter: brightness(0.94) contrast(1.03) saturate(0.92);">
-          <div style="position: absolute; inset: 0; background: linear-gradient(200deg, rgba(12,11,9,0) 52%, rgba(12,11,9,0.58) 100%);"></div>
-          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; padding: 42px 14px 14px; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(239,231,218,0.75);">
+          <video muted loop playsinline preload="metadata" src="https://drive.google.com/uc?export=download&amp;id=1MLTwAyjHfiJkJYqSMhHpuYmhwwEQ2xIT" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; filter: brightness(0.94) contrast(1.03) saturate(0.92); opacity: 0; transition: opacity 0.3s ease; pointer-events: none;"></video>
+          <div style="position: absolute; inset: 0; background: linear-gradient(200deg, rgba(13,27,42,0) 52%, rgba(13,27,42,0.58) 100%);"></div>
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; padding: 42px 14px 14px; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(232,213,176,0.75);">
             <span>Chris</span><span style="color: #C6A15B;">Montpellier, FR</span>
           </div>
         </div>
@@ -96,196 +107,200 @@
     </div>
 
     <!-- Marquee outline -->
-    <div style="overflow: hidden; white-space: nowrap; border-top: 1px solid rgba(239,231,218,0.1); margin: 20px -4vw 0; padding: 2vh 0 2.5vh;">
+    <div style="overflow: hidden; white-space: nowrap; border-top: 1px solid rgba(244,239,230,0.1); margin: 20px -4vw 0; padding: 2vh 0 2.5vh;">
       <div data-mq="26" style="display: inline-flex; gap: 0; animation: mq 42s linear infinite; will-change: transform;">
-        <span style="font-family: var(--display); font-size: calc(var(--ds) * clamp(21px, 2.7vw, 44px)); color: transparent; -webkit-text-stroke: 1px rgba(239,231,218,0.28); flex-shrink: 0;">UGC — <span style="color: #E0C484; -webkit-text-stroke: 0; text-shadow: 0 0 8px rgba(224,196,132,0.7), 0 0 20px rgba(198,161,91,0.45); animation: neonText 2.6s ease-in-out infinite;">META ADS</span> — TIKTOK — MONTPELLIER — <span style="color: #E0C484; -webkit-text-stroke: 0; text-shadow: 0 0 8px rgba(224,196,132,0.7), 0 0 20px rgba(198,161,91,0.45); animation: neonText 2.6s ease-in-out infinite;">CONTENU VERTICAL</span> —&nbsp;</span>
-        <span style="font-family: var(--display); font-size: calc(var(--ds) * clamp(21px, 2.7vw, 44px)); color: transparent; -webkit-text-stroke: 1px rgba(239,231,218,0.28); flex-shrink: 0;">UGC — <span style="color: #E0C484; -webkit-text-stroke: 0; text-shadow: 0 0 8px rgba(224,196,132,0.7), 0 0 20px rgba(198,161,91,0.45); animation: neonText 2.6s ease-in-out infinite;">META ADS</span> — TIKTOK — MONTPELLIER — <span style="color: #E0C484; -webkit-text-stroke: 0; text-shadow: 0 0 8px rgba(224,196,132,0.7), 0 0 20px rgba(198,161,91,0.45); animation: neonText 2.6s ease-in-out infinite;">CONTENU VERTICAL</span> —&nbsp;</span>
+        <span style="font-family: var(--display); font-size: calc(var(--ds) * clamp(21px, 2.7vw, 44px)); color: transparent; -webkit-text-stroke: 1px rgba(244,239,230,0.28); flex-shrink: 0;">UGC — <span style="color: #E0C484; -webkit-text-stroke: 0; text-shadow: 0 0 8px rgba(224,196,132,0.7), 0 0 20px rgba(198,161,91,0.45); animation: neonText 2.6s ease-in-out infinite;">META ADS</span> — TIKTOK — MONTPELLIER — <span style="color: #E0C484; -webkit-text-stroke: 0; text-shadow: 0 0 8px rgba(224,196,132,0.7), 0 0 20px rgba(198,161,91,0.45); animation: neonText 2.6s ease-in-out infinite;">CONTENU VERTICAL</span> —&nbsp;</span>
+        <span style="font-family: var(--display); font-size: calc(var(--ds) * clamp(21px, 2.7vw, 44px)); color: transparent; -webkit-text-stroke: 1px rgba(244,239,230,0.28); flex-shrink: 0;">UGC — <span style="color: #E0C484; -webkit-text-stroke: 0; text-shadow: 0 0 8px rgba(224,196,132,0.7), 0 0 20px rgba(198,161,91,0.45); animation: neonText 2.6s ease-in-out infinite;">META ADS</span> — TIKTOK — MONTPELLIER — <span style="color: #E0C484; -webkit-text-stroke: 0; text-shadow: 0 0 8px rgba(224,196,132,0.7), 0 0 20px rgba(198,161,91,0.45); animation: neonText 2.6s ease-in-out infinite;">CONTENU VERTICAL</span> —&nbsp;</span>
       </div>
     </div>
+
+    <button id="scroll-arrow" type="button" aria-label="Défiler vers les réalisations" onclick="document.getElementById('realisations').scrollIntoView({behavior:'smooth'});" style="position: absolute; left: 50%; bottom: 10px; transform: translate(-50%, 0); background: transparent; border: none; padding: 8px; cursor: pointer; z-index: 5; animation: scrollBounce 1.8s ease-in-out infinite; transition: opacity 0.4s ease; opacity: 1;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C6A15B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+    </button>
   </header>
 
   <!-- ===== MARQUES ===== -->
-  <section data-screen-label="Marques" style="padding: 40px 0 44px; border-top: 1px solid rgba(239,231,218,0.08);">
+  <section data-screen-label="Marques" style="padding: 40px 0 44px; border-top: 1px solid rgba(244,239,230,0.08);">
     <div data-reveal="" style="display: flex; align-items: center; gap: 18px; padding: 0 4vw; margin-bottom: 30px;">
       <span data-en="They trusted me" style="font-size: clamp(17px, 2vw, 28px); letter-spacing: 0.1em; text-transform: uppercase; color: #C6A15B;">Ils m'ont fait confiance</span>
-      <span style="flex: 1; height: 1px; background: rgba(239,231,218,0.12);"></span>
+      <span style="flex: 1; height: 1px; background: rgba(244,239,230,0.12);"></span>
     </div>
     <div data-reveal="" style="overflow: hidden; white-space: nowrap; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);">
       <div data-mq="30" style="display: inline-flex; align-items: center; animation: mq 40s linear infinite; will-change: transform;" style-hover="animation-play-state: paused;">
-        <img src="assets/brands/deezer.png" alt="Deezer" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 14px 20px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/pizzacosy.png" alt="Pizza Cosy" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 14px 20px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/midland.png" alt="Midland France" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 14px 20px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/maisonsiar-c.png" alt="Maison Siar" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 14px 20px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/reminiscence.png" alt="Réminiscence" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 14px 20px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/requipizza-c.png" alt="Requi Pizza" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 14px 20px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/deezer.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 14px 20px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/pizzacosy.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 14px 20px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/midland.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 14px 20px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/maisonsiar-c.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 14px 20px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/reminiscence.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 14px 20px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/requipizza-c.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 14px 20px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/deezer.png" alt="Deezer" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 14px 20px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/pizzacosy.png" alt="Pizza Cosy" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 14px 20px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/midland.png" alt="Midland France" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 14px 20px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/maisonsiar-c.png" alt="Maison Siar" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 14px 20px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/reminiscence.png" alt="Réminiscence" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 14px 20px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/requipizza-c.png" alt="Requi Pizza" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 14px 20px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/deezer.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 14px 20px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/pizzacosy.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 14px 20px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/midland.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 14px 20px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/maisonsiar-c.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 14px 20px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/reminiscence.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 14px 20px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/requipizza-c.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 118px; width: 248px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 14px 20px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
       </div>
     </div>
     <div data-reveal="" data-reveal-delay="120" style="overflow: hidden; white-space: nowrap; margin-top: 14px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);">
       <div data-mq="38" style="display: inline-flex; align-items: center; animation: mq 46s linear infinite reverse; will-change: transform;" style-hover="animation-play-state: paused;">
-        <img src="assets/brands/homesushi-c.png" alt="Home Sushi" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 12px 18px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/indus-c.png" alt="Indus" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 12px 18px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/relife-c.png" alt="Relife" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 12px 18px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/cupidonic-c.png" alt="Cupidonic" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 12px 18px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/synertech.png" alt="SynerTech" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 12px 18px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/homesushi-c.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 12px 18px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/indus-c.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 12px 18px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/relife-c.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 12px 18px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/cupidonic-c.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 12px 18px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
-        <img src="assets/brands/synertech.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.5s ease; border: 1px solid rgba(239,231,218,0.06); padding: 12px 18px; box-sizing: border-box; background: #EFE7DA; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/homesushi-c.png" alt="Home Sushi" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 12px 18px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/indus-c.png" alt="Indus" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 12px 18px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/relife-c.png" alt="Relife" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 12px 18px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/cupidonic-c.png" alt="Cupidonic" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 12px 18px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/synertech.png" alt="SynerTech" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 12px 18px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/homesushi-c.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 12px 18px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/indus-c.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 12px 18px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/relife-c.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 12px 18px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/cupidonic-c.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 12px 18px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
+        <img class="brand-logo" src="assets/brands/synertech.png" alt="" aria-hidden="true" style="flex-shrink: 0; height: 106px; width: 224px; margin: 0 13px; object-fit: contain; filter: var(--logo-filter); transition: filter 0.3s ease; border: 1px solid rgba(244,239,230,0.06); padding: 12px 18px; box-sizing: border-box; background: #F4EFE6; border-radius: 6px;">
       </div>
     </div>
   </section>
 
   <!-- ===== RÉALISATIONS ===== -->
-  <section id="realisations" data-screen-label="Réalisations" style="padding: 40px 4vw 24px; border-top: 1px solid rgba(239,231,218,0.08);">
+  <section id="realisations" data-screen-label="Réalisations" style="padding: 40px 4vw 24px; border-top: 1px solid rgba(244,239,230,0.08);">
     <div data-reveal="" style="display: flex; align-items: center; gap: 22px; margin: 0 0 30px;">
-      <h2 data-en="Work." style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: calc(var(--ds) * clamp(27px, 3.6vw, 60px)); line-height: 1; color: #C6A15B; white-space: nowrap;">Réalisations.</h2>
-      <span style="flex: 1; height: 1px; background: rgba(239,231,218,0.14);"></span>
+      <h2 data-en="Work." style="margin: 0; font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; font-size: calc(var(--ds) * clamp(27px, 3.6vw, 60px)); line-height: 1; color: #C6A15B; white-space: nowrap;">Réalisations.</h2>
+      <span style="flex: 1; height: 1px; background: rgba(244,239,230,0.14);"></span>
     </div>
 
     <!-- Filtre par catégorie -->
     <div id="deck-filters" data-reveal="" style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px;">
-      <button data-filter="all" data-en-html="All &lt;span style=&quot;opacity: 0.6;&quot;&gt;16&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #0C0B09; background: #C6A15B; border: 1px solid #C6A15B; border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Tout <span style="opacity: 0.6;">16</span></button>
-      <button data-filter="I — Service" data-en-html="Service &lt;span style=&quot;opacity: 0.5;&quot;&gt;5&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(239,231,218,0.7); background: transparent; border: 1px solid rgba(239,231,218,0.25); border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Service <span style="opacity: 0.5;">5</span></button>
-      <button data-filter="II — Applications" data-en-html="Apps &lt;span style=&quot;opacity: 0.5;&quot;&gt;4&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(239,231,218,0.7); background: transparent; border: 1px solid rgba(239,231,218,0.25); border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Applications <span style="opacity: 0.5;">4</span></button>
-      <button data-filter="III — Produits" data-en-html="Products &lt;span style=&quot;opacity: 0.5;&quot;&gt;4&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(239,231,218,0.7); background: transparent; border: 1px solid rgba(239,231,218,0.25); border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Produits <span style="opacity: 0.5;">4</span></button>
-      <button data-filter="IV — Trend" data-en-html="Trend &lt;span style=&quot;opacity: 0.5;&quot;&gt;3&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(239,231,218,0.7); background: transparent; border: 1px solid rgba(239,231,218,0.25); border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Trend <span style="opacity: 0.5;">3</span></button>
+      <button data-filter="all" data-en-html="All &lt;span style=&quot;opacity: 0.6;&quot;&gt;16&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #519A66; background: #2D5A3D; border: 1px solid #519A66; border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Tout <span style="opacity: 0.6;">16</span></button>
+      <button data-filter="I — Service" data-en-html="Service &lt;span style=&quot;opacity: 0.5;&quot;&gt;5&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #0D1B2A; background: #C6A15B; border: 1px solid #C6A15B; border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Service <span style="opacity: 0.5;">5</span></button>
+      <button data-filter="II — Applications" data-en-html="Apps &lt;span style=&quot;opacity: 0.5;&quot;&gt;4&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #519A66; background: #2D5A3D; border: 1px solid #519A66; border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Applications <span style="opacity: 0.5;">4</span></button>
+      <button data-filter="III — Produits" data-en-html="Products &lt;span style=&quot;opacity: 0.5;&quot;&gt;4&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #519A66; background: #2D5A3D; border: 1px solid #519A66; border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Produits <span style="opacity: 0.5;">4</span></button>
+      <button data-filter="IV — Trend" data-en-html="Trend &lt;span style=&quot;opacity: 0.5;&quot;&gt;3&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #519A66; background: #2D5A3D; border: 1px solid #519A66; border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Trend <span style="opacity: 0.5;">3</span></button>
     </div>
 
     <!-- Deck auto-slide façon Tinder -->
     <div data-reveal="" style="display: grid; grid-template-columns: 1fr auto 1fr; gap: clamp(22px, 4vw, 72px); align-items: center; justify-content: center; padding: 6px 0 6px;">
       <div style="text-align: right;">
         <div id="deck-group" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(19px, 2vw, 30px); color: #C6A15B; transition: opacity 0.4s, transform 0.4s;">I — Service</div>
-        <div id="deck-brand" style="margin: 14px 0 12px; font-family: var(--display); font-size: calc(var(--ds) * clamp(34px, 4vw, 66px)); line-height: 1.02; color: #EFE7DA; transition: opacity 0.4s, transform 0.4s;">L'Himalaya</div>
+        <div id="deck-brand" style="margin: 14px 0 12px; font-family: var(--display); font-size: calc(var(--ds) * clamp(34px, 4vw, 66px)); line-height: 1.02; color: #F4EFE6; transition: opacity 0.4s, transform 0.4s;">L'Himalaya</div>
         <div id="deck-count" style="font-size: 14px; letter-spacing: 0.24em; color: #C6A15B;">01 / 16</div>
       </div>
       <div id="deck" style="position: relative; width: min(72vw, 42vh, 320px); aspect-ratio: 9 / 15; margin: 0 auto; cursor: pointer; perspective: 1600px;">
-        <div data-card="" data-video="videos/01-himalaya.mp4" data-brand="L'Himalaya" data-cat="Buffet à volonté" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/01-himalaya.mp4" data-brand="L'Himalaya" data-cat="Buffet à volonté" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-himalaya.png" alt="Campagne L'Himalaya" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°01</span>
-            <span style="color: rgba(239,231,218,0.9);">L'Himalaya</span>
+            <span style="color: rgba(232,213,176,0.9);">L'Himalaya</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/02-pizzacosy.mp4" data-brand="Pizza Cosy" data-cat="Restaurant" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/02-pizzacosy.mp4" data-brand="Pizza Cosy" data-cat="Restaurant" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-pizzacosy.png" alt="Campagne Pizza Cosy" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°02</span>
-            <span style="color: rgba(239,231,218,0.9);">Pizza Cosy</span>
+            <span style="color: rgba(232,213,176,0.9);">Pizza Cosy</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/03-reminiscence.mp4" data-brand="Réminiscence" data-cat="Parfum de niche" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/03-reminiscence.mp4" data-brand="Réminiscence" data-cat="Parfum de niche" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-reminiscence.png" alt="Campagne Réminiscence" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <span style="position: absolute; top: 14px; left: 14px; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #0C0B09; background: #C6A15B; padding: 7px 12px;">136K vues</span>
-          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+          <span style="position: absolute; top: 14px; left: 14px; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #0D1B2A; background: #C6A15B; padding: 7px 12px;">136K vues</span>
+          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°03</span>
-            <span style="color: rgba(239,231,218,0.9);">Réminiscence</span>
+            <span style="color: rgba(232,213,176,0.9);">Réminiscence</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/04-unitedsmash.mp4" data-brand="United Smash" data-cat="Fast food" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/04-unitedsmash.mp4" data-brand="United Smash" data-cat="Fast food" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-unitedsmash.png" alt="Campagne United Smash" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°04</span>
-            <span style="color: rgba(239,231,218,0.9);">United Smash</span>
+            <span style="color: rgba(232,213,176,0.9);">United Smash</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/05-deezer.mp4" data-brand="Deezer" data-cat="App musique · été" data-group="II — Applications" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/05-deezer.mp4" data-brand="Deezer" data-cat="App musique · été" data-group="II — Applications" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-deezer.png" alt="Campagne Deezer" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°05</span>
-            <span style="color: rgba(239,231,218,0.9);">Deezer</span>
+            <span style="color: rgba(232,213,176,0.9);">Deezer</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/06-burcoeur.mp4" data-brand="Burcoeur" data-cat="App de rencontre" data-group="II — Applications" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/06-burcoeur.mp4" data-brand="Burcoeur" data-cat="App de rencontre" data-group="II — Applications" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-burcoeur.png" alt="Campagne Burcoeur" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°06</span>
-            <span style="color: rgba(239,231,218,0.9);">Burcoeur</span>
+            <span style="color: rgba(232,213,176,0.9);">Burcoeur</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/07-croustypoulet.mp4" data-brand="Crousty Poulet" data-cat="App réduction food" data-group="II — Applications" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/07-croustypoulet.mp4" data-brand="Crousty Poulet" data-cat="App réduction food" data-group="II — Applications" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-croustypoulet.png" alt="Campagne Crousty Poulet" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°07</span>
-            <span style="color: rgba(239,231,218,0.9);">Crousty Poulet</span>
+            <span style="color: rgba(232,213,176,0.9);">Crousty Poulet</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/08-froove.mp4" data-brand="Froove" data-cat="App réduction food" data-group="II — Applications" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/08-froove.mp4" data-brand="Froove" data-cat="App réduction food" data-group="II — Applications" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-froove.png" alt="Campagne Froove" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°08</span>
-            <span style="color: rgba(239,231,218,0.9);">Froove</span>
+            <span style="color: rgba(232,213,176,0.9);">Froove</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/09-maisonsiar.mp4" data-brand="Maison Siar" data-cat="Parfum de niche" data-group="III — Produits" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/09-maisonsiar.mp4" data-brand="Maison Siar" data-cat="Parfum de niche" data-group="III — Produits" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-siar-1.png" alt="Campagne Maison Siar" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°09</span>
-            <span style="color: rgba(239,231,218,0.9);">Maison Siar</span>
+            <span style="color: rgba(232,213,176,0.9);">Maison Siar</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/10-maisonsiar-boutique.mp4" data-brand="Maison Siar" data-cat="En boutique" data-group="III — Produits" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/10-maisonsiar-boutique.mp4" data-brand="Maison Siar" data-cat="En boutique" data-group="III — Produits" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-siar-2.png" alt="Campagne Maison Siar boutique" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°10</span>
-            <span style="color: rgba(239,231,218,0.9);">Maison Siar</span>
+            <span style="color: rgba(232,213,176,0.9);">Maison Siar</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/11-midland.mp4" data-brand="Midland" data-cat="Intercom motard" data-group="III — Produits" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/11-midland.mp4" data-brand="Midland" data-cat="Intercom motard" data-group="III — Produits" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-midland-1.png" alt="Campagne Midland" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°11</span>
-            <span style="color: rgba(239,231,218,0.9);">Midland</span>
+            <span style="color: rgba(232,213,176,0.9);">Midland</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/12-midland-route.mp4" data-brand="Midland" data-cat="Sur la route" data-group="III — Produits" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/12-midland-route.mp4" data-brand="Midland" data-cat="Sur la route" data-group="III — Produits" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-midland-2.png" alt="Campagne Midland moto" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°12</span>
-            <span style="color: rgba(239,231,218,0.9);">Midland</span>
+            <span style="color: rgba(232,213,176,0.9);">Midland</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/13-relife.mp4" data-brand="Relife" data-cat="Trend" data-group="IV — Trend" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/13-relife.mp4" data-brand="Relife" data-cat="Trend" data-group="IV — Trend" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-relife.png" alt="Campagne Relife" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°13</span>
-            <span style="color: rgba(239,231,218,0.9);">Relife</span>
+            <span style="color: rgba(232,213,176,0.9);">Relife</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/14-deezer.mp4" data-brand="Deezer" data-cat="Trend" data-group="IV — Trend" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/14-deezer.mp4" data-brand="Deezer" data-cat="Trend" data-group="IV — Trend" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-deezer-trend.png" alt="Campagne Deezer" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°14</span>
-            <span style="color: rgba(239,231,218,0.9);">Deezer</span>
+            <span style="color: rgba(232,213,176,0.9);">Deezer</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/15-bernimois.mp4" data-brand="Bernimois" data-cat="Trend" data-group="IV — Trend" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/15-bernimois.mp4" data-brand="Bernimois" data-cat="Trend" data-group="IV — Trend" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-bernimois.png" alt="Campagne Bernimois" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°15</span>
-            <span style="color: rgba(239,231,218,0.9);">Bernimois</span>
+            <span style="color: rgba(232,213,176,0.9);">Bernimois</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/16-pitaya.mp4" data-brand="Pitaya" data-cat="Service" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid rgba(239,231,218,0.16); background: #14120E; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/16-pitaya.mp4" data-brand="Pitaya" data-cat="Service" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-pitaya.png" alt="Campagne Pitaya" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(12,11,9,0) 0%, rgba(12,11,9,0.75) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°16</span>
-            <span style="color: rgba(239,231,218,0.9);">Pitaya</span>
+            <span style="color: rgba(232,213,176,0.9);">Pitaya</span>
           </div>
         </div>
       </div>
       <div style="text-align: left;">
         <div id="deck-cat" style="font-size: 14px; letter-spacing: 0.26em; text-transform: uppercase; color: #C6A15B; transition: opacity 0.4s, transform 0.4s;">Buffet à volonté</div>
         <div style="display: flex; align-items: center; margin-top: 22px; max-width: 260px;">
-          <span style="position: relative; flex: 1; height: 1px; background: rgba(239,231,218,0.14);"><span id="deck-bar" style="position: absolute; left: 0; top: -0.5px; height: 2px; width: 6.3%; background: #C6A15B; transition: width 0.6s cubic-bezier(.19,1,.22,1);"></span></span>
+          <span style="position: relative; flex: 1; height: 1px; background: rgba(244,239,230,0.14);"><span id="deck-bar" style="position: absolute; left: 0; top: -0.5px; height: 2px; width: 6.3%; background: #C6A15B; transition: width 0.6s cubic-bezier(.19,1,.22,1);"></span></span>
         </div>
-        <p data-en="Tap the card for the next one — the play button opens the video." style="margin: 24px 0 0; font-size: 14px; line-height: 1.8; color: rgba(239,231,218,0.5); max-width: 250px;">Touchez la carte pour la suivante — le bouton lecture ouvre la vidéo.</p>
+        <p data-en="Tap the card for the next one — the play button opens the video." style="margin: 24px 0 0; font-size: 14px; line-height: 1.8; color: rgba(232,213,176,0.5); max-width: 250px;">Touchez la carte pour la suivante — le bouton lecture ouvre la vidéo.</p>
       </div>
     </div>
 
@@ -295,65 +310,65 @@
   </section>
 
   <!-- ===== ÉTAT D'ESPRIT ===== -->
-  <section id="apropos" data-screen-label="À propos" style="position: relative; padding: 78px 4vw; border-top: 1px solid rgba(239,231,218,0.08); overflow: hidden;">
+  <section id="apropos" data-screen-label="À propos" style="position: relative; padding: 78px 4vw; border-top: 1px solid rgba(244,239,230,0.08); overflow: hidden;">
     <div data-reveal="" style="display: flex; align-items: center; justify-content: center; gap: 18px; max-width: 540px; margin: 0 auto 36px;">
-      <span style="flex: 1; height: 1px; background: rgba(239,231,218,0.16);"></span>
+      <span style="flex: 1; height: 1px; background: rgba(244,239,230,0.16);"></span>
       <span data-en="The mindset" style="font-size: clamp(16px, 1.9vw, 28px); letter-spacing: 0.24em; text-transform: uppercase; color: #C6A15B; white-space: nowrap;">L'état d'esprit</span>
-      <span style="flex: 1; height: 1px; background: rgba(239,231,218,0.16);"></span>
+      <span style="flex: 1; height: 1px; background: rgba(244,239,230,0.16);"></span>
     </div>
     <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; flex-wrap: nowrap; gap: clamp(9px, 1.3vw, 22px); line-height: 1.05; margin-top: 4.5vh;">
-      <span data-reveal="" data-en-html="Smiling&lt;span style=&quot;color: #C6A15B;&quot;&gt;.&lt;/span&gt;" style="font-family: var(--display); font-size: clamp(17px, 3vw, 52px); color: #EFE7DA; white-space: nowrap; transition: color 0.4s;" style-hover="color: #C6A15B;">Souriant<span style="color: #C6A15B;">.</span></span>
+      <span data-reveal="" data-en-html="Smiling&lt;span style=&quot;color: #C6A15B;&quot;&gt;.&lt;/span&gt;" style="font-family: var(--display); font-size: clamp(17px, 3vw, 52px); color: #F4EFE6; white-space: nowrap; transition: color 0.4s;" style-hover="color: #C6A15B;">Souriant<span style="color: #C6A15B;">.</span></span>
       <span aria-hidden="true" style="align-self: center; color: rgba(198,161,91,0.8); font-size: clamp(6px, 0.8vw, 12px);">◆</span>
-      <span data-reveal="" data-reveal-delay="120" data-en-html="Professional&lt;span style=&quot;color: #C6A15B;&quot;&gt;.&lt;/span&gt;" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(19px, 3.3vw, 56px); color: #EFE7DA; white-space: nowrap; transition: color 0.4s;" style-hover="color: #C6A15B;">Professionnel<span style="color: #C6A15B;">.</span></span>
+      <span data-reveal="" data-reveal-delay="120" data-en-html="Professional&lt;span style=&quot;color: #C6A15B;&quot;&gt;.&lt;/span&gt;" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(19px, 3.3vw, 56px); color: #F4EFE6; white-space: nowrap; transition: color 0.4s;" style-hover="color: #C6A15B;">Professionnel<span style="color: #C6A15B;">.</span></span>
       <span aria-hidden="true" style="align-self: center; color: rgba(198,161,91,0.8); font-size: clamp(6px, 0.8vw, 12px);">◆</span>
-      <span data-reveal="" data-reveal-delay="240" data-en-html="Impactful&lt;span style=&quot;color: #C6A15B;&quot;&gt;.&lt;/span&gt;" style="font-family: var(--display); font-size: clamp(17px, 3vw, 52px); color: #EFE7DA; white-space: nowrap; transition: color 0.4s;" style-hover="color: #C6A15B;">Impactant<span style="color: #C6A15B;">.</span></span>
+      <span data-reveal="" data-reveal-delay="240" data-en-html="Impactful&lt;span style=&quot;color: #C6A15B;&quot;&gt;.&lt;/span&gt;" style="font-family: var(--display); font-size: clamp(17px, 3vw, 52px); color: #F4EFE6; white-space: nowrap; transition: color 0.4s;" style-hover="color: #C6A15B;">Impactant<span style="color: #C6A15B;">.</span></span>
       <span aria-hidden="true" style="align-self: center; color: rgba(198,161,91,0.8); font-size: clamp(6px, 0.8vw, 12px);">◆</span>
-      <span data-reveal="" data-reveal-delay="360" data-en-html="Expressive&lt;span style=&quot;color: #C6A15B;&quot;&gt;.&lt;/span&gt;" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(19px, 3.3vw, 56px); color: #EFE7DA; white-space: nowrap; transition: color 0.4s;" style-hover="color: #C6A15B;">Expressif<span style="color: #C6A15B;">.</span></span>
+      <span data-reveal="" data-reveal-delay="360" data-en-html="Expressive&lt;span style=&quot;color: #C6A15B;&quot;&gt;.&lt;/span&gt;" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(19px, 3.3vw, 56px); color: #F4EFE6; white-space: nowrap; transition: color 0.4s;" style-hover="color: #C6A15B;">Expressif<span style="color: #C6A15B;">.</span></span>
     </div>
     <div data-reveal="" data-reveal-delay="300" style="display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 40px;">
       <span style="width: 1px; height: 44px; background: rgba(198,161,91,0.6);"></span>
-      <span style="font-family: var(--display); font-size: 22px; letter-spacing: 0.34em; color: rgba(239,231,218,0.8);">CHRIS</span>
+      <span style="font-family: var(--display); font-size: 22px; letter-spacing: 0.34em; color: rgba(232,213,176,0.8);">CHRIS</span>
     </div>
   </section>
 
   <!-- ===== PHOTOGRAPHIE ===== -->
   <section id="photographie" data-screen-label="Photographie" style="padding: 40px 4vw;">
     <div data-reveal="" style="display: flex; align-items: center; gap: 22px; margin: 0 0 30px;">
-      <h2 data-en="Photography." style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: calc(var(--ds) * clamp(27px, 3.6vw, 60px)); line-height: 1; color: #C6A15B; white-space: nowrap;">Photographie.</h2>
-      <span style="flex: 1; height: 1px; background: rgba(239,231,218,0.14);"></span>
+      <h2 data-en="Photography." style="margin: 0; font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; font-size: calc(var(--ds) * clamp(27px, 3.6vw, 60px)); line-height: 1; color: #C6A15B; white-space: nowrap;">Photographie.</h2>
+      <span style="flex: 1; height: 1px; background: rgba(244,239,230,0.14);"></span>
     </div>
     <!-- Galerie défilante -->
     <div data-reveal="" style="overflow: hidden; white-space: nowrap; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);">
       <div data-mq="30" style="display: inline-flex; align-items: center; animation: mq 48s linear infinite; will-change: transform;" style-hover="animation-play-state: paused;">
-        <div style="flex-shrink: 0; height: 300px; width: 200px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-sandwich.png" alt="Portrait food" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanA 16s ease-in-out infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
-        <div style="flex-shrink: 0; height: 300px; width: 440px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-food.png" alt="Assiettes dressées" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanB 15s ease-in-out -6s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
-        <div style="flex-shrink: 0; height: 300px; width: 200px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-peace.png" alt="Mode streetwear" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanA 18s ease-in-out -9s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
-        <div style="flex-shrink: 0; height: 300px; width: 440px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-watch.png" alt="Détail montre et maille" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanB 17s ease-in-out -3s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
-        <div aria-hidden="true" style="flex-shrink: 0; height: 300px; width: 200px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-sandwich.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanA 16s ease-in-out infinite; will-change: transform;"></div>
-        <div aria-hidden="true" style="flex-shrink: 0; height: 300px; width: 440px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-food.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanB 15s ease-in-out -6s infinite; will-change: transform;"></div>
-        <div aria-hidden="true" style="flex-shrink: 0; height: 300px; width: 200px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-peace.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanA 18s ease-in-out -9s infinite; will-change: transform;"></div>
-        <div aria-hidden="true" style="flex-shrink: 0; height: 300px; width: 440px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-watch.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanB 17s ease-in-out -3s infinite; will-change: transform;"></div>
+        <div style="flex-shrink: 0; height: 300px; width: 200px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(244,239,230,0.1);"><img src="assets/photo-sandwich.png" alt="Portrait food" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanA 16s ease-in-out infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
+        <div style="flex-shrink: 0; height: 300px; width: 440px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(244,239,230,0.1);"><img src="assets/photo-food.png" alt="Assiettes dressées" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanB 15s ease-in-out -6s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
+        <div style="flex-shrink: 0; height: 300px; width: 200px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(244,239,230,0.1);"><img src="assets/photo-peace.png" alt="Mode streetwear" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanA 18s ease-in-out -9s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
+        <div style="flex-shrink: 0; height: 300px; width: 440px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(244,239,230,0.1);"><img src="assets/photo-watch.png" alt="Détail montre et maille" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanB 17s ease-in-out -3s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
+        <div aria-hidden="true" style="flex-shrink: 0; height: 300px; width: 200px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(244,239,230,0.1);"><img src="assets/photo-sandwich.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanA 16s ease-in-out infinite; will-change: transform;"></div>
+        <div aria-hidden="true" style="flex-shrink: 0; height: 300px; width: 440px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(244,239,230,0.1);"><img src="assets/photo-food.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanB 15s ease-in-out -6s infinite; will-change: transform;"></div>
+        <div aria-hidden="true" style="flex-shrink: 0; height: 300px; width: 200px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(244,239,230,0.1);"><img src="assets/photo-peace.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanA 18s ease-in-out -9s infinite; will-change: transform;"></div>
+        <div aria-hidden="true" style="flex-shrink: 0; height: 300px; width: 440px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(244,239,230,0.1);"><img src="assets/photo-watch.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanB 17s ease-in-out -3s infinite; will-change: transform;"></div>
       </div>
     </div>
     <div data-reveal="" data-reveal-delay="120" style="overflow: hidden; white-space: nowrap; margin-top: 14px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);">
       <div data-mq="36" style="display: inline-flex; align-items: center; animation: mq 54s linear infinite reverse; will-change: transform;" style-hover="animation-play-state: paused;">
-        <div style="flex-shrink: 0; height: 258px; width: 176px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-dj.png" alt="DJ en lumière rouge" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanB 18s ease-in-out -4s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
-        <div style="flex-shrink: 0; height: 258px; width: 300px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-cocktails.png" alt="Cocktails" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanA 17s ease-in-out -2s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
-        <div style="flex-shrink: 0; height: 258px; width: 250px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-sushi.png" alt="Gastronomie japonaise" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanB 15s ease-in-out -5s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
-        <div style="flex-shrink: 0; height: 258px; width: 176px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-iphones.png" alt="Présentation produit — iPhone" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanA 16s ease-in-out -7s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
-        <div aria-hidden="true" style="flex-shrink: 0; height: 258px; width: 176px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-dj.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanB 18s ease-in-out -4s infinite; will-change: transform;"></div>
-        <div aria-hidden="true" style="flex-shrink: 0; height: 258px; width: 300px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-cocktails.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanA 17s ease-in-out -2s infinite; will-change: transform;"></div>
-        <div aria-hidden="true" style="flex-shrink: 0; height: 258px; width: 250px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-sushi.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanB 15s ease-in-out -5s infinite; will-change: transform;"></div>
-        <div aria-hidden="true" style="flex-shrink: 0; height: 258px; width: 176px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(239,231,218,0.1);"><img src="assets/photo-iphones.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanA 16s ease-in-out -7s infinite; will-change: transform;"></div>
+        <div style="flex-shrink: 0; height: 258px; width: 176px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(244,239,230,0.1);"><img src="assets/photo-dj.png" alt="DJ en lumière rouge" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanB 18s ease-in-out -4s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
+        <div style="flex-shrink: 0; height: 258px; width: 300px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(244,239,230,0.1);"><img src="assets/photo-cocktails.png" alt="Cocktails" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanA 17s ease-in-out -2s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
+        <div style="flex-shrink: 0; height: 258px; width: 250px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(244,239,230,0.1);"><img src="assets/photo-sushi.png" alt="Gastronomie japonaise" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanB 15s ease-in-out -5s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
+        <div style="flex-shrink: 0; height: 258px; width: 176px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(244,239,230,0.1);"><img src="assets/photo-iphones.png" alt="Présentation produit — iPhone" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); transition: filter 0.8s; animation: kbPanA 16s ease-in-out -7s infinite; will-change: transform;" style-hover="filter: saturate(1.08) brightness(1.05);"></div>
+        <div aria-hidden="true" style="flex-shrink: 0; height: 258px; width: 176px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(244,239,230,0.1);"><img src="assets/photo-dj.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanB 18s ease-in-out -4s infinite; will-change: transform;"></div>
+        <div aria-hidden="true" style="flex-shrink: 0; height: 258px; width: 300px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(244,239,230,0.1);"><img src="assets/photo-cocktails.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanA 17s ease-in-out -2s infinite; will-change: transform;"></div>
+        <div aria-hidden="true" style="flex-shrink: 0; height: 258px; width: 250px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(244,239,230,0.1);"><img src="assets/photo-sushi.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanB 15s ease-in-out -5s infinite; will-change: transform;"></div>
+        <div aria-hidden="true" style="flex-shrink: 0; height: 258px; width: 176px; margin: 0 7px; overflow: hidden; border: 1px solid rgba(244,239,230,0.1);"><img src="assets/photo-iphones.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); animation: kbPanA 16s ease-in-out -7s infinite; will-change: transform;"></div>
       </div>
     </div>
   </section>
 
   <!-- ===== MATÉRIEL ===== -->
-  <section data-screen-label="Matériel" style="padding: 40px 4vw 64px; border-top: 1px solid rgba(239,231,218,0.08);">
+  <section data-screen-label="Matériel" style="padding: 40px 4vw 64px; border-top: 1px solid rgba(244,239,230,0.08);">
     <div data-reveal="" style="display: flex; align-items: center; gap: 22px; margin: 0 0 30px;">
-      <h2 data-en="Gear." style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: calc(var(--ds) * clamp(27px, 3.6vw, 60px)); line-height: 1; color: #C6A15B; white-space: nowrap;">Matériel.</h2>
-      <span style="flex: 1; height: 1px; background: rgba(239,231,218,0.14);"></span>
+      <h2 data-en="Gear." style="margin: 0; font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; font-size: calc(var(--ds) * clamp(27px, 3.6vw, 60px)); line-height: 1; color: #C6A15B; white-space: nowrap;">Matériel.</h2>
+      <span style="flex: 1; height: 1px; background: rgba(244,239,230,0.14);"></span>
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(158px, 1fr)); gap: 14px;">
       <figure data-reveal="" style="margin: 0;">
@@ -364,7 +379,7 @@
           </div>
         </div>
         <figcaption style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px; padding: 0 2px;">
-          <span style="font-family: var(--display); font-size: 17px; color: #EFE7DA;">iPhone 16 Pro</span>
+          <span style="font-family: var(--display); font-size: 17px; color: #F4EFE6;">iPhone 16 Pro</span>
           <span style="font-size: 9.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #C6A15B;">Image</span>
         </figcaption>
       </figure>
@@ -376,7 +391,7 @@
           </div>
         </div>
         <figcaption style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px; padding: 0 2px;">
-          <span style="font-family: var(--display); font-size: 17px; color: #EFE7DA;">Micro DJI</span>
+          <span style="font-family: var(--display); font-size: 17px; color: #F4EFE6;">Micro DJI</span>
           <span style="font-size: 9.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #C6A15B;" data-en="Sound">Son</span>
         </figcaption>
       </figure>
@@ -388,7 +403,7 @@
           </div>
         </div>
         <figcaption style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px; padding: 0 2px;">
-          <span style="font-family: var(--display); font-size: 17px; color: #EFE7DA;">Ring Light</span>
+          <span style="font-family: var(--display); font-size: 17px; color: #F4EFE6;">Ring Light</span>
           <span style="font-size: 9.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #C6A15B;" data-en="Light">Lumière</span>
         </figcaption>
       </figure>
@@ -400,7 +415,7 @@
           </div>
         </div>
         <figcaption style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px; padding: 0 2px;">
-          <span style="font-family: var(--display); font-size: 17px; color: #EFE7DA;">Trépied</span>
+          <span style="font-family: var(--display); font-size: 17px; color: #F4EFE6;">Trépied</span>
           <span style="font-size: 9.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #C6A15B;" data-en="Stability">Stabilité</span>
         </figcaption>
       </figure>
@@ -408,37 +423,38 @@
   </section>
 
   <!-- ===== CONTACT ===== -->
-  <section id="contact" data-screen-label="Contact" style="position: relative; padding: 90px 4vw 64px; border-top: 1px solid rgba(239,231,218,0.08); overflow: hidden; text-align: center;">
-    <div aria-hidden="true" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-family: var(--display); font-size: 15vw; color: transparent; -webkit-text-stroke: 1px rgba(239,231,218,0.06); pointer-events: none; white-space: nowrap;">CHRIS</div>
+  <section id="contact" data-screen-label="Contact" style="position: relative; padding: 90px 4vw 64px; border-top: 1px solid rgba(244,239,230,0.08); overflow: hidden; text-align: center;">
+    <div aria-hidden="true" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-family: var(--display); font-size: 15vw; color: transparent; -webkit-text-stroke: 1px rgba(244,239,230,0.06); pointer-events: none; white-space: nowrap;">CHRIS</div>
     <div style="position: relative;">
-      <h2 data-reveal="" data-en-html="So, shall we &lt;span style=&quot;font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; color: #C6A15B;&quot;&gt;collaborate&lt;/span&gt;?" style="margin: 0; font-family: var(--display); font-weight: 400; font-size: calc(var(--ds) * clamp(30px, 4vw, 62px)); line-height: 1.04;">Alors, on <span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; color: #C6A15B;">collabore</span>&nbsp;?</h2>
-      <p data-reveal="" data-reveal-delay="120" data-en="Tell me about your brand. I'll reply with format ideas." style="margin: 24px auto 0; max-width: 480px; font-size: 15px; line-height: 1.8; color: rgba(239,231,218,0.65);">Racontez-moi votre marque. Je vous réponds avec des idées de formats.</p>
+      <span id="contact-divider" aria-hidden="true" style="display: inline-block; width: 0; height: 2px; background: #C6A15B; margin-bottom: 24px; transition: width 1s cubic-bezier(.22,.9,.3,1);"></span>
+      <h2 data-reveal="" data-en-html="So, shall we &lt;span style=&quot;font-family: 'Playfair Display', serif; font-style: italic; font-weight: 300; color: #C6A15B;&quot;&gt;collaborate&lt;/span&gt;?" style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: calc(var(--ds) * clamp(30px, 4vw, 62px)); line-height: 1.04;">Alors, on <span style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 300; color: #C6A15B;">collabore</span>&nbsp;?</h2>
+      <p data-reveal="" data-reveal-delay="120" data-en="Tell me about your brand. I'll reply with format ideas." style="margin: 24px auto 0; max-width: 480px; font-size: 15px; line-height: 1.8; color: rgba(232,213,176,0.65);">Racontez-moi votre marque. Je vous réponds avec des idées de formats.</p>
       <div data-reveal="" data-reveal-delay="220" style="display: flex; justify-content: center; align-items: center; gap: 22px; margin-top: 34px; flex-wrap: wrap;">
-        <a href="mailto:christdias.ugc@gmail.com?subject=Collaboration%20avec%20Chris%20%E2%80%94%20UGC" style="font-size: 11.5px; letter-spacing: 0.26em; text-transform: uppercase; color: #0C0B09; background: #C6A15B; padding: 20px 44px; border-radius: 999px; transition: background 0.35s, transform 0.35s;" style-hover="background: #EFE7DA; color: #0C0B09; transform: translateY(-2px);" data-en="Start a project">Démarrer un projet</a>
-        <a href="https://instagram.com/ugcby.chris" target="_blank" rel="noopener" style="font-size: 11.5px; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(239,231,218,0.7); border: 1px solid rgba(239,231,218,0.25); padding: 19px 34px; border-radius: 999px; transition: border-color 0.35s, color 0.35s;" style-hover="color: #EFE7DA; border-color: #C6A15B;">Instagram</a>
-        <a href="https://tiktok.com/@oecchris" target="_blank" rel="noopener" style="font-size: 11.5px; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(239,231,218,0.7); border: 1px solid rgba(239,231,218,0.25); padding: 19px 34px; border-radius: 999px; transition: border-color 0.35s, color 0.35s;" style-hover="color: #EFE7DA; border-color: #C6A15B;">TikTok</a>
+        <a href="mailto:christdias.ugc@gmail.com?subject=Collaboration%20avec%20Chris%20%E2%80%94%20UGC" style="font-size: 11.5px; letter-spacing: 0.26em; text-transform: uppercase; color: #0D1B2A; background: #C6A15B; padding: 20px 44px; border-radius: 999px; transition: background 0.35s, transform 0.35s;" style-hover="background: #F4EFE6; color: #0D1B2A; transform: translateY(-2px);" data-en="Start a project">Démarrer un projet</a>
+        <a href="https://instagram.com/ugcby.chris" target="_blank" rel="noopener" style="font-size: 11.5px; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(232,213,176,0.7); border: 1px solid rgba(244,239,230,0.25); padding: 19px 34px; border-radius: 999px; transition: border-color 0.35s, color 0.35s;" style-hover="color: #F4EFE6; border-color: #C6A15B;">Instagram</a>
+        <a href="https://tiktok.com/@oecchris" target="_blank" rel="noopener" style="font-size: 11.5px; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(232,213,176,0.7); border: 1px solid rgba(244,239,230,0.25); padding: 19px 34px; border-radius: 999px; transition: border-color 0.35s, color 0.35s;" style-hover="color: #F4EFE6; border-color: #C6A15B;">TikTok</a>
       </div>
       <div data-reveal="" data-reveal-delay="320" style="margin-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 18px;">
-        <p data-en="&laquo; Calling on experts is how you secure your longevity. &raquo;" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(20px, 2.2vw, 30px); color: rgba(239,231,218,0.55);">« Faire appel à des experts, c'est garantir sa pérennité. »</p>
+        <p data-en="&laquo; Calling on experts is how you secure your longevity. &raquo;" style="margin: 0; font-family: 'Playfair Display', serif; font-style: italic; font-weight: 300; font-size: clamp(20px, 2.2vw, 30px); color: rgba(232,213,176,0.55);">« Faire appel à des experts, c'est garantir sa pérennité. »</p>
       </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer data-screen-label="Footer" style="display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; padding: 30px 4vw 36px; border-top: 1px solid rgba(239,231,218,0.08); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(239,231,218,0.4);">
-    <span style="font-family: var(--display); font-size: 15px; letter-spacing: 0.38em; color: rgba(239,231,218,0.75);">CHRIS<span style="color: #C6A15B;">.</span></span>
+  <footer data-screen-label="Footer" style="display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; padding: 30px 4vw 36px; border-top: 1px solid rgba(244,239,230,0.08); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(232,213,176,0.4);">
+    <span style="font-family: var(--display); font-size: 15px; letter-spacing: 0.38em; color: rgba(232,213,176,0.75);">CHRIS<span style="color: #C6A15B;">.</span></span>
     <span data-en="UGC Creator — Montpellier, France">Créateur UGC — Montpellier, France</span>
     <span>© 2026 — Meta &amp; TikTok Ads</span>
   </footer>
 
   <!-- Lecteur vidéo plein écran -->
   <div id="video-lightbox" role="dialog" aria-modal="true" aria-label="Lecture de la vidéo" style="position: fixed; inset: 0; z-index: 9995; display: none; align-items: center; justify-content: center; padding: 4vh 4vw; background: rgba(8,7,5,0.86); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); opacity: 0; transition: opacity 0.4s ease;">
-    <button id="video-close" aria-label="Fermer" style="position: absolute; top: 26px; right: 4vw; width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(239,231,218,0.3); background: transparent; color: #EFE7DA; font-size: 20px; cursor: pointer; transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: #C6A15B; transform: rotate(90deg);">✕</button>
+    <button id="video-close" aria-label="Fermer" style="position: absolute; top: 26px; right: 4vw; width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(244,239,230,0.3); background: transparent; color: #F4EFE6; font-size: 20px; cursor: pointer; transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: #C6A15B; transform: rotate(90deg);">✕</button>
     <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; max-height: 92vh;">
-      <div id="video-frame" style="position: relative; aspect-ratio: 9 / 16; height: min(82vh, 720px); max-width: 92vw; overflow: hidden; background: #14120E; border: 1px solid rgba(198,161,91,0.35); box-shadow: 0 40px 120px rgba(0,0,0,0.7);">
+      <div id="video-frame" style="position: relative; aspect-ratio: 9 / 16; height: min(82vh, 720px); max-width: 92vw; overflow: hidden; background: #0D1B2A; border: 1px solid rgba(198,161,91,0.35); box-shadow: 0 40px 120px rgba(0,0,0,0.7);">
         <!-- Le lecteur est injecté ici -->
       </div>
-      <div id="video-caption" style="font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(239,231,218,0.6); text-align: center;"></div>
+      <div id="video-caption" style="font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(232,213,176,0.6); text-align: center;"></div>
     </div>
   </div>
 
@@ -495,11 +511,30 @@ class Component extends DCLogic {
       el.style.marginTop = '-8%';
     });
     let ticking = false;
+    const navEl = document.getElementById('site-nav');
+    let navScrolled = false;
     this._onScroll = () => {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
         ticking = false;
+        if (navEl) {
+          const shouldBeScrolled = window.scrollY > 20;
+          if (shouldBeScrolled !== navScrolled) {
+            navScrolled = shouldBeScrolled;
+            if (navScrolled) {
+              navEl.style.background = 'rgba(13,27,42,0.85)';
+              navEl.style.backdropFilter = 'blur(12px)';
+              navEl.style.webkitBackdropFilter = 'blur(12px)';
+              navEl.style.borderBottomColor = 'rgba(198,161,91,0.2)';
+            } else {
+              navEl.style.background = 'rgba(13,27,42,0.55)';
+              navEl.style.backdropFilter = 'blur(14px)';
+              navEl.style.webkitBackdropFilter = 'blur(14px)';
+              navEl.style.borderBottomColor = 'rgba(244,239,230,0.08)';
+            }
+          }
+        }
         const mid = window.innerHeight / 2;
         this._px.forEach((el) => {
           const sp = parseFloat(el.getAttribute('data-parallax')) || 0;
@@ -516,25 +551,27 @@ class Component extends DCLogic {
     window.addEventListener('scroll', this._onScroll, { passive: true });
     this._onScroll();
 
-    // --- Compteur 136K ---
-    const cEl = document.querySelector('[data-counter]');
-    if (cEl) {
-      const target = parseInt(cEl.getAttribute('data-counter'), 10) || 136;
+    // --- Compteurs stats hero ---
+    const counterEls = document.querySelectorAll('[data-counter]');
+    if (counterEls.length) {
       const io2 = new IntersectionObserver((es) => {
         es.forEach((e) => {
           if (!e.isIntersecting) return;
-          io2.disconnect();
+          io2.unobserve(e.target);
+          const el = e.target;
+          const target = parseInt(el.getAttribute('data-counter'), 10) || 0;
+          const suffix = el.getAttribute('data-suffix') || '';
           const t0 = performance.now();
           const step = (t) => {
-            const p = Math.min(1, (t - t0) / 1700);
+            const p = Math.min(1, (t - t0) / 2000);
             const eased = 1 - Math.pow(1 - p, 3);
-            cEl.textContent = Math.round(target * eased) + 'K';
+            el.textContent = Math.round(target * eased) + suffix;
             if (p < 1) requestAnimationFrame(step);
           };
           requestAnimationFrame(step);
         });
       }, { threshold: 0.4 });
-      io2.observe(cEl);
+      counterEls.forEach((el) => io2.observe(el));
     }
 
     // Décalage des zooms Ken Burns pour éviter l'effet mécanique
@@ -597,8 +634,8 @@ class Component extends DCLogic {
     // Bascule visuelle FR / EN dans la nav
     const frEl = document.getElementById('lang-fr');
     const enEl = document.getElementById('lang-en');
-    if (frEl) frEl.style.color = en ? 'rgba(239,231,218,0.45)' : '#C6A15B';
-    if (enEl) enEl.style.color = en ? '#C6A15B' : 'rgba(239,231,218,0.45)';
+    if (frEl) frEl.style.color = en ? 'rgba(232,213,176,0.45)' : '#C6A15B';
+    if (enEl) enEl.style.color = en ? '#C6A15B' : 'rgba(232,213,176,0.45)';
     // Attribut lang du document
     try { document.documentElement.lang = lang; } catch (e) {}
     // Rafraîchit les libellés dynamiques du deck
@@ -667,7 +704,7 @@ class Component extends DCLogic {
     this._cards = Array.from(deck.querySelectorAll('[data-card]'));
     this._active = this._cards.slice();
     this._order = this._active.slice();
-    this._filter = 'all';
+    this._filter = 'I — Service';
     this._animating = false;
     this._paused = false;
     this._deckVisible = true;
@@ -691,13 +728,27 @@ class Component extends DCLogic {
     this._cards.forEach((card) => {
       const btn = document.createElement('button');
       btn.setAttribute('aria-label', 'Lire la vidéo');
-      btn.style.cssText = 'position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;border:1px solid rgba(239,231,218,0.7);background:rgba(12,11,9,0.28);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);color:#EFE7DA;cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;transition:background .3s,border-color .3s,transform .3s,opacity .5s;opacity:0;';
-      btn.innerHTML = '<span style="display:block;width:0;height:0;border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #EFE7DA;margin-left:4px;"></span>';
-      btn.addEventListener('mouseenter', () => { btn.style.background = '#C6A15B'; btn.style.borderColor = '#C6A15B'; btn.style.transform = 'scale(1.08)'; btn.querySelector('span').style.borderLeftColor = '#0C0B09'; });
-      btn.addEventListener('mouseleave', () => { btn.style.background = 'rgba(12,11,9,0.28)'; btn.style.borderColor = 'rgba(239,231,218,0.7)'; btn.style.transform = 'scale(1)'; btn.querySelector('span').style.borderLeftColor = '#EFE7DA'; });
+      btn.style.cssText = 'position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;border:1px solid rgba(244,239,230,0.7);background:rgba(13,27,42,0.28);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);color:#F4EFE6;cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;transition:background .3s,border-color .3s,transform .3s,opacity .5s;opacity:0;';
+      btn.innerHTML = '<span style="display:block;width:0;height:0;border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #F4EFE6;margin-left:4px;"></span>';
+      btn.addEventListener('mouseenter', () => { btn.style.background = '#C6A15B'; btn.style.borderColor = '#C6A15B'; btn.style.transform = 'scale(1.08)'; btn.querySelector('span').style.borderLeftColor = '#0D1B2A'; });
+      btn.addEventListener('mouseleave', () => { btn.style.background = 'rgba(13,27,42,0.28)'; btn.style.borderColor = 'rgba(244,239,230,0.7)'; btn.style.transform = 'scale(1)'; btn.querySelector('span').style.borderLeftColor = '#F4EFE6'; });
       btn.addEventListener('click', (e) => { e.stopPropagation(); this.openVideo(card); });
       card.appendChild(btn);
       card._play = btn;
+      const caption = card.querySelector('[data-caption]');
+      const baseShadow = '0 30px 70px rgba(0,0,0,0.5)';
+      const hoverShadow = '0 30px 70px rgba(0,0,0,0.5), 0 0 34px rgba(198,161,91,0.22)';
+      card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = card.style.transform.replace(' translateY(-4px)', '') + ' translateY(-4px)';
+        card.style.boxShadow = hoverShadow;
+        if (caption) caption.style.opacity = '1';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = card.style.transform.replace(' translateY(-4px)', '');
+        card.style.boxShadow = baseShadow;
+        if (caption) caption.style.opacity = '0';
+      });
     });
     const showPlay = () => this._order.forEach((el, i) => { if (el._play) el._play.style.opacity = i === 0 ? '1' : '0'; });
     this._showPlay = showPlay;
@@ -773,6 +824,7 @@ class Component extends DCLogic {
     this._filterBtns.forEach((b) => {
       b.addEventListener('click', () => this.applyFilter(b.getAttribute('data-filter')));
     });
+    this.applyFilter(this._filter);
 
     // Lecteur plein écran
     const close = document.getElementById('video-close');
@@ -789,9 +841,9 @@ class Component extends DCLogic {
     // États visuels des boutons
     (this._filterBtns || []).forEach((b) => {
       const on = b.getAttribute('data-filter') === key;
-      b.style.background = on ? '#C6A15B' : 'transparent';
-      b.style.color = on ? '#0C0B09' : 'rgba(239,231,218,0.7)';
-      b.style.borderColor = on ? '#C6A15B' : 'rgba(239,231,218,0.25)';
+      b.style.background = on ? '#C6A15B' : '#2D5A3D';
+      b.style.color = on ? '#0D1B2A' : '#519A66';
+      b.style.borderColor = on ? '#C6A15B' : '#519A66';
     });
     // Cartes visibles selon le filtre
     this._active = this._cards.filter((c) => key === 'all' || c.getAttribute('data-group') === key);
@@ -824,9 +876,9 @@ class Component extends DCLogic {
       frame.innerHTML =
         '<img src="' + poster + '" alt="" style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.5) grayscale(20%);">' +
         '<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:0 28px;">' +
-        '<span style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:30px;color:#EFE7DA;line-height:1.2;">' + brand + '</span>' +
+        '<span style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:30px;color:#F4EFE6;line-height:1.2;">' + brand + '</span>' +
         '<span style="width:38px;height:1px;background:#C6A15B;"></span>' +
-        '<span style="font-size:10.5px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(239,231,218,0.7);line-height:1.9;">' + (en ? 'Video coming soon<br>TikTok · Instagram · MP4' : 'Vidéo à connecter<br>TikTok · Instagram · MP4') + '</span>' +
+        '<span style="font-size:10.5px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(244,239,230,0.7);line-height:1.9;">' + (en ? 'Video coming soon<br>TikTok · Instagram · MP4' : 'Vidéo à connecter<br>TikTok · Instagram · MP4') + '</span>' +
         '</div>';
       if (cap) cap.textContent = en ? 'Preview — full clip coming soon' : 'Aperçu — clip complet à venir';
     };
@@ -889,6 +941,83 @@ class Component extends DCLogic {
     return {};
   }
 }
+</script>
+<script>
+  (function () {
+    var arrow = document.getElementById('scroll-arrow');
+    if (arrow) {
+      window.addEventListener('scroll', function () {
+        arrow.style.opacity = '0';
+        arrow.style.pointerEvents = 'none';
+      }, { once: true, passive: true });
+    }
+
+    var divider = document.getElementById('contact-divider');
+    if (divider && 'IntersectionObserver' in window) {
+      var dividerIo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          divider.style.width = '60px';
+          dividerIo.unobserve(entry.target);
+        });
+      }, { threshold: 0.4 });
+      dividerIo.observe(divider);
+    }
+
+    var canvas = document.getElementById('hero-particles');
+    if (canvas && canvas.getContext) {
+      var ctx = canvas.getContext('2d');
+      var header = canvas.parentElement;
+      var particles = [];
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      var resize = function () {
+        var rect = header.getBoundingClientRect();
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+        canvas.style.width = rect.width + 'px';
+        canvas.style.height = rect.height + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        return rect;
+      };
+
+      var makeParticles = function (rect) {
+        particles = [];
+        for (var i = 0; i < 30; i++) {
+          particles.push({
+            x: Math.random() * rect.width,
+            y: Math.random() * rect.height,
+            r: 1 + Math.random() * 1.4,
+            vx: (Math.random() - 0.5) * 0.08,
+            vy: -0.03 - Math.random() * 0.06
+          });
+        }
+      };
+
+      var draw = function () {
+        var rect = header.getBoundingClientRect();
+        ctx.clearRect(0, 0, rect.width, rect.height);
+        ctx.fillStyle = 'rgba(198,161,91,0.15)';
+        particles.forEach(function (p) {
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.y < -4) { p.y = rect.height + 4; p.x = Math.random() * rect.width; }
+          if (p.x < -4) p.x = rect.width + 4;
+          if (p.x > rect.width + 4) p.x = -4;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+        });
+        if (!reduceMotion) requestAnimationFrame(draw);
+      };
+
+      var initRect = resize();
+      makeParticles(initRect);
+      draw();
+      window.addEventListener('resize', function () { resize(); }, { passive: true });
+    }
+  })();
 </script>
 </body>
 </html>
