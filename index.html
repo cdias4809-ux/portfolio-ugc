@@ -92,6 +92,9 @@
         <div id="hero-portrait" style="position: relative; height: 100%; width: clamp(250px, 30vw, 460px); margin: 0 auto; overflow: hidden; border: 1px solid rgba(198,161,91,0.75); animation: neonPulse 3.2s ease-in-out infinite;">
           <img src="assets/portrait-hero.png" alt="Chris, créateur de contenu UGC" style="width: 100%; height: 132%; margin-top: -27%; object-fit: cover; object-position: center top; display: block; filter: brightness(0.94) contrast(1.03) saturate(0.92);">
           <video id="hero-video" autoplay muted loop playsinline preload="auto" src="https://res.cloudinary.com/iatcnmlz/video/upload/f_mp4,vc_h264/presentation" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 20% top; display: block; filter: brightness(0.94) contrast(1.03) saturate(0.92); opacity: 1; pointer-events: none;"></video>
+          <button id="hero-sound-toggle" type="button" aria-label="Activer le son" aria-pressed="false" style="position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(244,239,230,0.4); background: rgba(13,27,42,0.45); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); color: #F4EFE6; cursor: pointer; z-index: 6; display: flex; align-items: center; justify-content: center; transition: border-color 0.3s, background 0.3s;">
+            <svg id="hero-sound-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F4EFE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 9 3 15 8 15 13 20 13 4 8 9 3 9"></polygon><line x1="16" y1="9" x2="22" y2="15"></line><line x1="22" y1="9" x2="16" y2="15"></line></svg>
+          </button>
           <div style="position: absolute; inset: 0; background: linear-gradient(200deg, rgba(13,27,42,0) 52%, rgba(13,27,42,0.58) 100%);"></div>
           <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; padding: 42px 14px 14px; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(232,213,176,0.75);">
             <span>Chris</span><span style="color: #C6A15B;">Montpellier, FR</span>
@@ -939,13 +942,14 @@ class Component extends DCLogic {
 <script>
   (function () {
     var heroVideoTries = 0;
+    var heroSoundUserSet = false;
     var enforceHeroVideo = function () {
       var v = document.getElementById('hero-video');
       heroVideoTries++;
       if (v) {
-        if (!v.muted) v.muted = true;
+        if (!heroSoundUserSet && !v.muted) v.muted = true;
         if (!v.loop) v.loop = true;
-        if (!v.hasAttribute('muted')) v.setAttribute('muted', '');
+        if (!heroSoundUserSet && !v.hasAttribute('muted')) v.setAttribute('muted', '');
         if (!v.hasAttribute('loop')) v.setAttribute('loop', '');
         if (v.paused) {
           var p = v.play();
@@ -954,6 +958,25 @@ class Component extends DCLogic {
       }
       if (heroVideoTries < 30) setTimeout(enforceHeroVideo, 150);
     };
+
+    var heroSoundIcons = {
+      muted: '<polygon points="3 9 3 15 8 15 13 20 13 4 8 9 3 9"></polygon><line x1="16" y1="9" x2="22" y2="15"></line><line x1="22" y1="9" x2="16" y2="15"></line>',
+      on: '<polygon points="3 9 3 15 8 15 13 20 13 4 8 9 3 9"></polygon><path d="M16 8a5 5 0 0 1 0 8"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path>'
+    };
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest && e.target.closest('#hero-sound-toggle');
+      if (!btn) return;
+      var v = document.getElementById('hero-video');
+      var icon = document.getElementById('hero-sound-icon');
+      if (!v) return;
+      heroSoundUserSet = true;
+      v.muted = !v.muted;
+      if (!v.muted) { var p = v.play(); if (p && typeof p.catch === 'function') p.catch(function () {}); }
+      if (icon) icon.innerHTML = v.muted ? heroSoundIcons.muted : heroSoundIcons.on;
+      btn.setAttribute('aria-pressed', String(!v.muted));
+      btn.setAttribute('aria-label', v.muted ? 'Activer le son' : 'Couper le son');
+      btn.style.borderColor = v.muted ? 'rgba(244,239,230,0.4)' : '#C6A15B';
+    });
     enforceHeroVideo();
 
     var arrow = document.getElementById('scroll-arrow');
