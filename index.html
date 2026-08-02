@@ -163,11 +163,11 @@
 
     <!-- Filtre par catégorie -->
     <div id="deck-filters" data-reveal="" style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px;">
-      <button data-filter="all" data-en-html="All &lt;span style=&quot;opacity: 0.6;&quot;&gt;16&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #519A66; background: #2D5A3D; border: 1px solid #519A66; border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Tout <span style="opacity: 0.6;">16</span></button>
+      <button data-filter="all" data-en-html="All &lt;span style=&quot;opacity: 0.6;&quot;&gt;16&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #F4EFE6; background: transparent; border: 1px solid rgba(244,239,230,0.4); border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Tout <span style="opacity: 0.6;">16</span></button>
       <button data-filter="I — Service" data-en-html="Service &lt;span style=&quot;opacity: 0.5;&quot;&gt;5&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #0D1B2A; background: #C6A15B; border: 1px solid #C6A15B; border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Service <span style="opacity: 0.5;">5</span></button>
-      <button data-filter="II — Applications" data-en-html="Apps &lt;span style=&quot;opacity: 0.5;&quot;&gt;4&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #519A66; background: #2D5A3D; border: 1px solid #519A66; border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Applications <span style="opacity: 0.5;">4</span></button>
-      <button data-filter="III — Produits" data-en-html="Products &lt;span style=&quot;opacity: 0.5;&quot;&gt;4&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #519A66; background: #2D5A3D; border: 1px solid #519A66; border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Produits <span style="opacity: 0.5;">4</span></button>
-      <button data-filter="IV — Trend" data-en-html="Trend &lt;span style=&quot;opacity: 0.5;&quot;&gt;3&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #519A66; background: #2D5A3D; border: 1px solid #519A66; border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Trend <span style="opacity: 0.5;">3</span></button>
+      <button data-filter="II — Applications" data-en-html="Apps &lt;span style=&quot;opacity: 0.5;&quot;&gt;4&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #F4EFE6; background: transparent; border: 1px solid rgba(244,239,230,0.4); border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Applications <span style="opacity: 0.5;">4</span></button>
+      <button data-filter="III — Produits" data-en-html="Products &lt;span style=&quot;opacity: 0.5;&quot;&gt;4&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #F4EFE6; background: transparent; border: 1px solid rgba(244,239,230,0.4); border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Produits <span style="opacity: 0.5;">4</span></button>
+      <button data-filter="IV — Trend" data-en-html="Trend &lt;span style=&quot;opacity: 0.5;&quot;&gt;3&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #F4EFE6; background: transparent; border: 1px solid rgba(244,239,230,0.4); border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Trend <span style="opacity: 0.5;">3</span></button>
     </div>
 
     <!-- Deck auto-slide façon Tinder -->
@@ -838,9 +838,9 @@ class Component extends DCLogic {
     // États visuels des boutons
     (this._filterBtns || []).forEach((b) => {
       const on = b.getAttribute('data-filter') === key;
-      b.style.background = on ? '#C6A15B' : '#2D5A3D';
-      b.style.color = on ? '#0D1B2A' : '#519A66';
-      b.style.borderColor = on ? '#C6A15B' : '#519A66';
+      b.style.background = on ? '#C6A15B' : 'transparent';
+      b.style.color = on ? '#0D1B2A' : '#F4EFE6';
+      b.style.borderColor = on ? '#C6A15B' : 'rgba(244,239,230,0.4)';
     });
     // Cartes visibles selon le filtre
     this._active = this._cards.filter((c) => key === 'all' || c.getAttribute('data-group') === key);
