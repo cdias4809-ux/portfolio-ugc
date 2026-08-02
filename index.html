@@ -938,6 +938,24 @@ class Component extends DCLogic {
 </script>
 <script>
   (function () {
+    var heroVideoTries = 0;
+    var enforceHeroVideo = function () {
+      var v = document.getElementById('hero-video');
+      heroVideoTries++;
+      if (v) {
+        if (!v.muted) v.muted = true;
+        if (!v.loop) v.loop = true;
+        if (!v.hasAttribute('muted')) v.setAttribute('muted', '');
+        if (!v.hasAttribute('loop')) v.setAttribute('loop', '');
+        if (v.paused) {
+          var p = v.play();
+          if (p && typeof p.catch === 'function') p.catch(function () {});
+        }
+      }
+      if (heroVideoTries < 30) setTimeout(enforceHeroVideo, 150);
+    };
+    enforceHeroVideo();
+
     var arrow = document.getElementById('scroll-arrow');
     if (arrow) {
       window.addEventListener('scroll', function () {
