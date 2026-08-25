@@ -792,6 +792,8 @@ class Component extends DCLogic {
       const show = key === 'all' || c.getAttribute('data-group') === key;
       c.style.display = show ? 'block' : 'none';
     });
+    const deck = document.getElementById('deck');
+    if (deck) deck.scrollLeft = 0;
   }
 
   openVideo(card) {
