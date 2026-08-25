@@ -194,119 +194,151 @@
 
     <!-- Grille de réalisations en défilement horizontal -->
     <div id="deck" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(158px, 1fr)); gap: 16px; padding: 6px 0 18px;">
-        <div data-card="" data-reveal="" data-reveal-delay="0" data-video="videos/01-himalaya.mp4" data-brand="L'Himalaya" data-cat="Buffet à volonté" data-group="I — Service" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+      <div style="display: flex; flex-direction: column;">
+        <div data-card="" data-reveal="" data-reveal-delay="0" data-video="videos/01-himalaya.mp4" data-brand="L'Himalaya" data-cat="Buffet à volonté" data-group="I — Service" style="position: relative; aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-himalaya.png" alt="Campagne L'Himalaya" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-            <span style="color: #C6A15B;">N°01</span>
-            <span style="color: rgba(232,213,176,0.9);">L'Himalaya</span>
-          </div>
         </div>
-        <div data-card="" data-reveal="" data-reveal-delay="45" data-video="videos/02-pizzacosy.mp4" data-brand="Pizza Cosy" data-cat="Restaurant" data-group="I — Service" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 15px; color: #F4EFE6; line-height: 1.2;">L'Himalaya</span>
+          <span style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #C6A15B; text-align: right; white-space: nowrap;">Buffet à volonté</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div data-card="" data-reveal="" data-reveal-delay="45" data-video="videos/02-pizzacosy.mp4" data-brand="Pizza Cosy" data-cat="Restaurant" data-group="I — Service" style="position: relative; aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-pizzacosy.png" alt="Campagne Pizza Cosy" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-            <span style="color: #C6A15B;">N°02</span>
-            <span style="color: rgba(232,213,176,0.9);">Pizza Cosy</span>
-          </div>
         </div>
-        <div data-card="" data-reveal="" data-reveal-delay="90" data-video="videos/03-reminiscence.mp4" data-brand="Réminiscence" data-cat="Parfum de niche" data-group="I — Service" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 15px; color: #F4EFE6; line-height: 1.2;">Pizza Cosy</span>
+          <span style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #C6A15B; text-align: right; white-space: nowrap;">Restaurant</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div data-card="" data-reveal="" data-reveal-delay="90" data-video="videos/03-reminiscence.mp4" data-brand="Réminiscence" data-cat="Parfum de niche" data-group="I — Service" style="position: relative; aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-reminiscence.png" alt="Campagne Réminiscence" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
           <span style="position: absolute; top: 14px; left: 14px; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #0D1B2A; background: #C6A15B; padding: 7px 12px;">136K vues</span>
-          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-            <span style="color: #C6A15B;">N°03</span>
-            <span style="color: rgba(232,213,176,0.9);">Réminiscence</span>
-          </div>
         </div>
-        <div data-card="" data-reveal="" data-reveal-delay="135" data-video="videos/04-unitedsmash.mp4" data-brand="United Smash" data-cat="Fast food" data-group="I — Service" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 15px; color: #F4EFE6; line-height: 1.2;">Réminiscence</span>
+          <span style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #C6A15B; text-align: right; white-space: nowrap;">Parfum de niche</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div data-card="" data-reveal="" data-reveal-delay="135" data-video="videos/04-unitedsmash.mp4" data-brand="United Smash" data-cat="Fast food" data-group="I — Service" style="position: relative; aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-unitedsmash.png" alt="Campagne United Smash" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-            <span style="color: #C6A15B;">N°04</span>
-            <span style="color: rgba(232,213,176,0.9);">United Smash</span>
-          </div>
         </div>
-        <div data-card="" data-reveal="" data-reveal-delay="180" data-video="videos/05-deezer.mp4" data-brand="Deezer" data-cat="App musique · été" data-group="I — Service" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 15px; color: #F4EFE6; line-height: 1.2;">United Smash</span>
+          <span style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #C6A15B; text-align: right; white-space: nowrap;">Fast food</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div data-card="" data-reveal="" data-reveal-delay="180" data-video="videos/05-deezer.mp4" data-brand="Deezer" data-cat="App musique · été" data-group="I — Service" style="position: relative; aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-deezer.png" alt="Campagne Deezer" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-            <span style="color: #C6A15B;">N°05</span>
-            <span style="color: rgba(232,213,176,0.9);">Deezer</span>
-          </div>
         </div>
-        <div data-card="" data-reveal="" data-reveal-delay="225" data-video="videos/06-burcoeur.mp4" data-brand="Burcoeur" data-cat="App de rencontre" data-group="I — Service" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 15px; color: #F4EFE6; line-height: 1.2;">Deezer</span>
+          <span style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #C6A15B; text-align: right; white-space: nowrap;">App musique · été</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div data-card="" data-reveal="" data-reveal-delay="225" data-video="videos/06-burcoeur.mp4" data-brand="Burcoeur" data-cat="App de rencontre" data-group="I — Service" style="position: relative; aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-burcoeur.png" alt="Campagne Burcoeur" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-            <span style="color: #C6A15B;">N°06</span>
-            <span style="color: rgba(232,213,176,0.9);">Burcoeur</span>
-          </div>
         </div>
-        <div data-card="" data-reveal="" data-reveal-delay="270" data-video="videos/07-croustypoulet.mp4" data-brand="Crousty Poulet" data-cat="App réduction food" data-group="I — Service" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 15px; color: #F4EFE6; line-height: 1.2;">Burcoeur</span>
+          <span style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #C6A15B; text-align: right; white-space: nowrap;">App de rencontre</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div data-card="" data-reveal="" data-reveal-delay="270" data-video="videos/07-croustypoulet.mp4" data-brand="Crousty Poulet" data-cat="App réduction food" data-group="I — Service" style="position: relative; aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-croustypoulet.png" alt="Campagne Crousty Poulet" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-            <span style="color: #C6A15B;">N°07</span>
-            <span style="color: rgba(232,213,176,0.9);">Crousty Poulet</span>
-          </div>
         </div>
-        <div data-card="" data-reveal="" data-reveal-delay="315" data-video="videos/08-froove.mp4" data-brand="Froove" data-cat="App réduction food" data-group="I — Service" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 15px; color: #F4EFE6; line-height: 1.2;">Crousty Poulet</span>
+          <span style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #C6A15B; text-align: right; white-space: nowrap;">App réduction food</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div data-card="" data-reveal="" data-reveal-delay="315" data-video="videos/08-froove.mp4" data-brand="Froove" data-cat="App réduction food" data-group="I — Service" style="position: relative; aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-froove.png" alt="Campagne Froove" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-            <span style="color: #C6A15B;">N°08</span>
-            <span style="color: rgba(232,213,176,0.9);">Froove</span>
-          </div>
         </div>
-        <div data-card="" data-reveal="" data-reveal-delay="360" data-video="videos/09-maisonsiar.mp4" data-brand="Maison Siar" data-cat="Parfum de niche" data-group="II — Produits" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 15px; color: #F4EFE6; line-height: 1.2;">Froove</span>
+          <span style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #C6A15B; text-align: right; white-space: nowrap;">App réduction food</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div data-card="" data-reveal="" data-reveal-delay="360" data-video="videos/09-maisonsiar.mp4" data-brand="Maison Siar" data-cat="Parfum de niche" data-group="II — Produits" style="position: relative; aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-siar-1.png" alt="Campagne Maison Siar" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-            <span style="color: #C6A15B;">N°09</span>
-            <span style="color: rgba(232,213,176,0.9);">Maison Siar</span>
-          </div>
         </div>
-        <div data-card="" data-reveal="" data-reveal-delay="400" data-video="videos/10-maisonsiar-boutique.mp4" data-brand="Maison Siar" data-cat="En boutique" data-group="II — Produits" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 15px; color: #F4EFE6; line-height: 1.2;">Maison Siar</span>
+          <span style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #C6A15B; text-align: right; white-space: nowrap;">Parfum de niche</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div data-card="" data-reveal="" data-reveal-delay="400" data-video="videos/10-maisonsiar-boutique.mp4" data-brand="Maison Siar" data-cat="En boutique" data-group="II — Produits" style="position: relative; aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-siar-2.png" alt="Campagne Maison Siar boutique" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-            <span style="color: #C6A15B;">N°10</span>
-            <span style="color: rgba(232,213,176,0.9);">Maison Siar</span>
-          </div>
         </div>
-        <div data-card="" data-reveal="" data-reveal-delay="400" data-video="videos/11-midland.mp4" data-brand="Midland" data-cat="Intercom motard" data-group="II — Produits" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 15px; color: #F4EFE6; line-height: 1.2;">Maison Siar</span>
+          <span style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #C6A15B; text-align: right; white-space: nowrap;">En boutique</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div data-card="" data-reveal="" data-reveal-delay="400" data-video="videos/11-midland.mp4" data-brand="Midland" data-cat="Intercom motard" data-group="II — Produits" style="position: relative; aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-midland-1.png" alt="Campagne Midland" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-            <span style="color: #C6A15B;">N°11</span>
-            <span style="color: rgba(232,213,176,0.9);">Midland</span>
-          </div>
         </div>
-        <div data-card="" data-reveal="" data-reveal-delay="400" data-video="videos/12-midland-route.mp4" data-brand="Midland" data-cat="Sur la route" data-group="II — Produits" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 15px; color: #F4EFE6; line-height: 1.2;">Midland</span>
+          <span style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #C6A15B; text-align: right; white-space: nowrap;">Intercom motard</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div data-card="" data-reveal="" data-reveal-delay="400" data-video="videos/12-midland-route.mp4" data-brand="Midland" data-cat="Sur la route" data-group="II — Produits" style="position: relative; aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-midland-2.png" alt="Campagne Midland moto" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-            <span style="color: #C6A15B;">N°12</span>
-            <span style="color: rgba(232,213,176,0.9);">Midland</span>
-          </div>
         </div>
-        <div data-card="" data-reveal="" data-reveal-delay="400" data-video="videos/13-relife.mp4" data-brand="Relife" data-cat="Trend" data-group="III — Trend" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 15px; color: #F4EFE6; line-height: 1.2;">Midland</span>
+          <span style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #C6A15B; text-align: right; white-space: nowrap;">Sur la route</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div data-card="" data-reveal="" data-reveal-delay="400" data-video="videos/13-relife.mp4" data-brand="Relife" data-cat="Trend" data-group="III — Trend" style="position: relative; aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-relife.png" alt="Campagne Relife" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-            <span style="color: #C6A15B;">N°13</span>
-            <span style="color: rgba(232,213,176,0.9);">Relife</span>
-          </div>
         </div>
-        <div data-card="" data-reveal="" data-reveal-delay="400" data-video="videos/14-deezer.mp4" data-brand="Deezer" data-cat="Trend" data-group="III — Trend" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 15px; color: #F4EFE6; line-height: 1.2;">Relife</span>
+          <span style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #C6A15B; text-align: right; white-space: nowrap;">Trend</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div data-card="" data-reveal="" data-reveal-delay="400" data-video="videos/14-deezer.mp4" data-brand="Deezer" data-cat="Trend" data-group="III — Trend" style="position: relative; aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-deezer-trend.png" alt="Campagne Deezer" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-            <span style="color: #C6A15B;">N°14</span>
-            <span style="color: rgba(232,213,176,0.9);">Deezer</span>
-          </div>
         </div>
-        <div data-card="" data-reveal="" data-reveal-delay="400" data-video="videos/15-bernimois.mp4" data-brand="Bernimois" data-cat="Trend" data-group="III — Trend" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 15px; color: #F4EFE6; line-height: 1.2;">Deezer</span>
+          <span style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #C6A15B; text-align: right; white-space: nowrap;">Trend</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div data-card="" data-reveal="" data-reveal-delay="400" data-video="videos/15-bernimois.mp4" data-brand="Bernimois" data-cat="Trend" data-group="III — Trend" style="position: relative; aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-bernimois.png" alt="Campagne Bernimois" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-            <span style="color: #C6A15B;">N°15</span>
-            <span style="color: rgba(232,213,176,0.9);">Bernimois</span>
-          </div>
         </div>
-        <div data-card="" data-reveal="" data-reveal-delay="400" data-video="videos/16-pitaya.mp4" data-brand="Pitaya" data-cat="Service" data-group="I — Service" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 15px; color: #F4EFE6; line-height: 1.2;">Bernimois</span>
+          <span style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #C6A15B; text-align: right; white-space: nowrap;">Trend</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div data-card="" data-reveal="" data-reveal-delay="400" data-video="videos/16-pitaya.mp4" data-brand="Pitaya" data-cat="Service" data-group="I — Service" style="position: relative; aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-pitaya.png" alt="Campagne Pitaya" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
-          <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
-            <span style="color: #C6A15B;">N°16</span>
-            <span style="color: rgba(232,213,176,0.9);">Pitaya</span>
-          </div>
         </div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; padding: 0 2px;">
+          <span style="font-family: var(--display); font-size: 15px; color: #F4EFE6; line-height: 1.2;">Pitaya</span>
+          <span style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #C6A15B; text-align: right; white-space: nowrap;">Service</span>
+        </div>
+      </div>
     </div>
 
 
@@ -750,7 +782,6 @@ class Component extends DCLogic {
       btn.addEventListener('click', (e) => { e.stopPropagation(); this.openVideo(card); });
       card.appendChild(btn);
       card._play = btn;
-      const caption = card.querySelector('[data-caption]');
       const baseShadow = '0 30px 70px rgba(0,0,0,0.5)';
       const hoverShadow = '0 30px 70px rgba(0,0,0,0.5), 0 0 34px rgba(198,161,91,0.22)';
       card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
@@ -758,13 +789,11 @@ class Component extends DCLogic {
         card.style.transform = 'translateY(-4px)';
         card.style.boxShadow = hoverShadow;
         btn.style.opacity = '1';
-        if (caption) caption.style.opacity = '1';
       });
       card.addEventListener('mouseleave', () => {
         card.style.transform = 'translateY(0)';
         card.style.boxShadow = baseShadow;
         btn.style.opacity = '0';
-        if (caption) caption.style.opacity = '0';
       });
       card.addEventListener('click', () => this.openVideo(card));
     });
@@ -795,7 +824,8 @@ class Component extends DCLogic {
     });
     this._cards.forEach((c) => {
       const show = key === 'all' || c.getAttribute('data-group') === key;
-      c.style.display = show ? 'block' : 'none';
+      const wrapper = c.parentElement;
+      (wrapper || c).style.display = show ? 'flex' : 'none';
     });
     const deck = document.getElementById('deck');
     if (deck) deck.scrollLeft = 0;
