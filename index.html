@@ -187,29 +187,23 @@
       <button data-filter="IV — Duo" data-en-html="Duo &lt;span style=&quot;opacity: 0.5;&quot;&gt;0&lt;/span&gt;" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #F4EFE6; background: transparent; border: 1px solid rgba(244,239,230,0.4); border-radius: 999px; padding: 12px 24px; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s;">Duo <span style="opacity: 0.5;">0</span></button>
     </div>
 
-    <!-- Deck auto-slide façon Tinder -->
-    <div data-reveal="" style="display: grid; grid-template-columns: 1fr auto 1fr; gap: clamp(22px, 4vw, 72px); align-items: center; justify-content: center; padding: 6px 0 6px;">
-      <div style="text-align: right;">
-        <div id="deck-group" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(19px, 2vw, 30px); color: #C6A15B; transition: opacity 0.4s, transform 0.4s;">I — Service</div>
-        <div id="deck-brand" style="margin: 14px 0 12px; font-family: var(--display); font-size: calc(var(--ds) * clamp(34px, 4vw, 66px)); line-height: 1.02; color: #F4EFE6; transition: opacity 0.4s, transform 0.4s;">L'Himalaya</div>
-        <div id="deck-count" style="font-size: 14px; letter-spacing: 0.24em; color: #C6A15B;">01 / 16</div>
-      </div>
-      <div id="deck" style="position: relative; width: min(72vw, 42vh, 320px); aspect-ratio: 9 / 15; margin: 0 auto; cursor: pointer; perspective: 1600px;">
-        <div data-card="" data-video="videos/01-himalaya.mp4" data-brand="L'Himalaya" data-cat="Buffet à volonté" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+    <!-- Grille de réalisations en défilement horizontal -->
+    <div id="deck" style="display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x proximity; padding: 6px 6px 18px;">
+        <div data-card="" data-video="videos/01-himalaya.mp4" data-brand="L'Himalaya" data-cat="Buffet à volonté" data-group="I — Service" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-himalaya.png" alt="Campagne L'Himalaya" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
           <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°01</span>
             <span style="color: rgba(232,213,176,0.9);">L'Himalaya</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/02-pizzacosy.mp4" data-brand="Pizza Cosy" data-cat="Restaurant" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/02-pizzacosy.mp4" data-brand="Pizza Cosy" data-cat="Restaurant" data-group="I — Service" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-pizzacosy.png" alt="Campagne Pizza Cosy" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
           <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°02</span>
             <span style="color: rgba(232,213,176,0.9);">Pizza Cosy</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/03-reminiscence.mp4" data-brand="Réminiscence" data-cat="Parfum de niche" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/03-reminiscence.mp4" data-brand="Réminiscence" data-cat="Parfum de niche" data-group="I — Service" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-reminiscence.png" alt="Campagne Réminiscence" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
           <span style="position: absolute; top: 14px; left: 14px; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #0D1B2A; background: #C6A15B; padding: 7px 12px;">136K vues</span>
           <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
@@ -217,105 +211,97 @@
             <span style="color: rgba(232,213,176,0.9);">Réminiscence</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/04-unitedsmash.mp4" data-brand="United Smash" data-cat="Fast food" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/04-unitedsmash.mp4" data-brand="United Smash" data-cat="Fast food" data-group="I — Service" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-unitedsmash.png" alt="Campagne United Smash" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
           <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°04</span>
             <span style="color: rgba(232,213,176,0.9);">United Smash</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/05-deezer.mp4" data-brand="Deezer" data-cat="App musique · été" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/05-deezer.mp4" data-brand="Deezer" data-cat="App musique · été" data-group="I — Service" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-deezer.png" alt="Campagne Deezer" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
           <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°05</span>
             <span style="color: rgba(232,213,176,0.9);">Deezer</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/06-burcoeur.mp4" data-brand="Burcoeur" data-cat="App de rencontre" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/06-burcoeur.mp4" data-brand="Burcoeur" data-cat="App de rencontre" data-group="I — Service" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-burcoeur.png" alt="Campagne Burcoeur" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
           <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°06</span>
             <span style="color: rgba(232,213,176,0.9);">Burcoeur</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/07-croustypoulet.mp4" data-brand="Crousty Poulet" data-cat="App réduction food" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/07-croustypoulet.mp4" data-brand="Crousty Poulet" data-cat="App réduction food" data-group="I — Service" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-croustypoulet.png" alt="Campagne Crousty Poulet" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
           <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°07</span>
             <span style="color: rgba(232,213,176,0.9);">Crousty Poulet</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/08-froove.mp4" data-brand="Froove" data-cat="App réduction food" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/08-froove.mp4" data-brand="Froove" data-cat="App réduction food" data-group="I — Service" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-froove.png" alt="Campagne Froove" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
           <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°08</span>
             <span style="color: rgba(232,213,176,0.9);">Froove</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/09-maisonsiar.mp4" data-brand="Maison Siar" data-cat="Parfum de niche" data-group="II — Produits" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/09-maisonsiar.mp4" data-brand="Maison Siar" data-cat="Parfum de niche" data-group="II — Produits" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-siar-1.png" alt="Campagne Maison Siar" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
           <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°09</span>
             <span style="color: rgba(232,213,176,0.9);">Maison Siar</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/10-maisonsiar-boutique.mp4" data-brand="Maison Siar" data-cat="En boutique" data-group="II — Produits" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/10-maisonsiar-boutique.mp4" data-brand="Maison Siar" data-cat="En boutique" data-group="II — Produits" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-siar-2.png" alt="Campagne Maison Siar boutique" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
           <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°10</span>
             <span style="color: rgba(232,213,176,0.9);">Maison Siar</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/11-midland.mp4" data-brand="Midland" data-cat="Intercom motard" data-group="II — Produits" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/11-midland.mp4" data-brand="Midland" data-cat="Intercom motard" data-group="II — Produits" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-midland-1.png" alt="Campagne Midland" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
           <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°11</span>
             <span style="color: rgba(232,213,176,0.9);">Midland</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/12-midland-route.mp4" data-brand="Midland" data-cat="Sur la route" data-group="II — Produits" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/12-midland-route.mp4" data-brand="Midland" data-cat="Sur la route" data-group="II — Produits" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-midland-2.png" alt="Campagne Midland moto" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
           <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°12</span>
             <span style="color: rgba(232,213,176,0.9);">Midland</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/13-relife.mp4" data-brand="Relife" data-cat="Trend" data-group="III — Trend" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/13-relife.mp4" data-brand="Relife" data-cat="Trend" data-group="III — Trend" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-relife.png" alt="Campagne Relife" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
           <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°13</span>
             <span style="color: rgba(232,213,176,0.9);">Relife</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/14-deezer.mp4" data-brand="Deezer" data-cat="Trend" data-group="III — Trend" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/14-deezer.mp4" data-brand="Deezer" data-cat="Trend" data-group="III — Trend" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-deezer-trend.png" alt="Campagne Deezer" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
           <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°14</span>
             <span style="color: rgba(232,213,176,0.9);">Deezer</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/15-bernimois.mp4" data-brand="Bernimois" data-cat="Trend" data-group="III — Trend" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/15-bernimois.mp4" data-brand="Bernimois" data-cat="Trend" data-group="III — Trend" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-bernimois.png" alt="Campagne Bernimois" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
           <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°15</span>
             <span style="color: rgba(232,213,176,0.9);">Bernimois</span>
           </div>
         </div>
-        <div data-card="" data-video="videos/16-pitaya.mp4" data-brand="Pitaya" data-cat="Service" data-group="I — Service" style="position: absolute; inset: 0; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
+        <div data-card="" data-video="videos/16-pitaya.mp4" data-brand="Pitaya" data-cat="Service" data-group="I — Service" style="position: relative; flex: 0 0 clamp(150px, 20vw, 210px); aspect-ratio: 9 / 15; overflow: hidden; border: 1px solid #1A2F4A; background: #0D1B2A; box-shadow: 0 30px 70px rgba(0,0,0,0.5); will-change: transform;">
           <img src="assets/work-pitaya.png" alt="Campagne Pitaya" data-kb="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); animation: kenburns 13s ease-in-out infinite; will-change: transform;">
           <div data-caption="" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 50px 16px 16px; background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,0.85) 100%); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
             <span style="color: #C6A15B;">N°16</span>
             <span style="color: rgba(232,213,176,0.9);">Pitaya</span>
           </div>
         </div>
-      </div>
-      <div style="text-align: left;">
-        <div id="deck-cat" style="font-size: 14px; letter-spacing: 0.26em; text-transform: uppercase; color: #C6A15B; transition: opacity 0.4s, transform 0.4s;">Buffet à volonté</div>
-        <div style="display: flex; align-items: center; margin-top: 22px; max-width: 260px;">
-          <span style="position: relative; flex: 1; height: 1px; background: rgba(244,239,230,0.14);"><span id="deck-bar" style="position: absolute; left: 0; top: -0.5px; height: 2px; width: 6.3%; background: #C6A15B; transition: width 0.6s cubic-bezier(.19,1,.22,1);"></span></span>
-        </div>
-        <p data-en="Tap the card for the next one — the play button opens the video." style="margin: 24px 0 0; font-size: 14px; line-height: 1.8; color: rgba(232,213,176,0.5); max-width: 250px;">Touchez la carte pour la suivante — le bouton lecture ouvre la vidéo.</p>
-      </div>
     </div>
 
 
@@ -686,13 +672,9 @@ class Component extends DCLogic {
     if (enEl) enEl.style.color = en ? '#C6A15B' : 'rgba(232,213,176,0.45)';
     // Attribut lang du document
     try { document.documentElement.lang = lang; } catch (e) {}
-    // Rafraîchit les libellés dynamiques du deck
-    if (this._updateInfo) this._updateInfo();
   }
 
   syncFx() {
-    if (this._deckInit) this.startDeckTimer();
-
     // Thème réglable (typographie, échelle, logos)
     const root = document.querySelector('[data-screen-label="Site Chris UGC"]') || document.documentElement;
     const fonts = {
@@ -750,34 +732,14 @@ class Component extends DCLogic {
     if (!deck || this._deckInit) return;
     this._deckInit = true;
     this._cards = Array.from(deck.querySelectorAll('[data-card]'));
-    this._active = this._cards.slice();
-    this._order = this._active.slice();
     this._filter = 'I — Service';
-    this._animating = false;
-    this._paused = false;
-    this._deckVisible = true;
-    this._dir = 1;
-    const stackEase = 'cubic-bezier(.22,.9,.3,1)';
-    const posFor = (i) => {
-      if (i === 0) return { t: 'translate3d(0, 0, 0) rotateY(0deg) scale(1)', o: '1' };
-      if (i === 1) return { t: 'translate3d(8%, 0, -70px) rotateY(-8deg) scale(0.94)', o: '1' };
-      if (i === 2) return { t: 'translate3d(14%, 0, -140px) rotateY(-12deg) scale(0.88)', o: '0.5' };
-      return { t: 'translate3d(17%, 0, -180px) rotateY(-14deg) scale(0.84)', o: '0' };
-    };
-    this._layout = () => {
-      this._order.forEach((el, i) => {
-        const p = posFor(i);
-        el.style.zIndex = String(40 - i);
-        el.style.transform = p.t;
-        el.style.opacity = p.o;
-      });
-    };
-    // Bouton lecture sur chaque carte (visible seulement sur celle du dessus)
+
+    // Bouton lecture + effets hover sur chaque carte
     this._cards.forEach((card) => {
       const btn = document.createElement('button');
       btn.setAttribute('aria-label', 'Lire la vidéo');
-      btn.style.cssText = 'position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;border:1px solid rgba(244,239,230,0.7);background:rgba(13,27,42,0.28);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);color:#F4EFE6;cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;transition:background .3s,border-color .3s,transform .3s,opacity .5s;opacity:0;';
-      btn.innerHTML = '<span style="display:block;width:0;height:0;border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #F4EFE6;margin-left:4px;"></span>';
+      btn.style.cssText = 'position:absolute;left:50%;top:50%;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;border:1px solid rgba(244,239,230,0.7);background:rgba(13,27,42,0.28);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);color:#F4EFE6;cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;transition:background .3s,border-color .3s,transform .3s,opacity .3s;opacity:0;';
+      btn.innerHTML = '<span style="display:block;width:0;height:0;border-style:solid;border-width:9px 0 9px 14px;border-color:transparent transparent transparent #F4EFE6;margin-left:3px;"></span>';
       btn.addEventListener('mouseenter', () => { btn.style.background = '#C6A15B'; btn.style.borderColor = '#C6A15B'; btn.style.transform = 'scale(1.08)'; btn.querySelector('span').style.borderLeftColor = '#0D1B2A'; });
       btn.addEventListener('mouseleave', () => { btn.style.background = 'rgba(13,27,42,0.28)'; btn.style.borderColor = 'rgba(244,239,230,0.7)'; btn.style.transform = 'scale(1)'; btn.querySelector('span').style.borderLeftColor = '#F4EFE6'; });
       btn.addEventListener('click', (e) => { e.stopPropagation(); this.openVideo(card); });
@@ -788,84 +750,19 @@ class Component extends DCLogic {
       const hoverShadow = '0 30px 70px rgba(0,0,0,0.5), 0 0 34px rgba(198,161,91,0.22)';
       card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
       card.addEventListener('mouseenter', () => {
-        card.style.transform = card.style.transform.replace(' translateY(-4px)', '') + ' translateY(-4px)';
+        card.style.transform = 'translateY(-4px)';
         card.style.boxShadow = hoverShadow;
+        btn.style.opacity = '1';
         if (caption) caption.style.opacity = '1';
       });
       card.addEventListener('mouseleave', () => {
-        card.style.transform = card.style.transform.replace(' translateY(-4px)', '');
+        card.style.transform = 'translateY(0)';
         card.style.boxShadow = baseShadow;
+        btn.style.opacity = '0';
         if (caption) caption.style.opacity = '0';
       });
+      card.addEventListener('click', () => this.openVideo(card));
     });
-    const showPlay = () => this._order.forEach((el, i) => { if (el._play) el._play.style.opacity = i === 0 ? '1' : '0'; });
-    this._showPlay = showPlay;
-
-    this._order.forEach((el) => { el.style.transition = 'none'; });
-    this._layout();
-    showPlay();
-    requestAnimationFrame(() => {
-      this._order.forEach((el) => { el.style.transition = 'transform 0.8s ' + stackEase + ', opacity 0.8s ' + stackEase; });
-    });
-    this._updateInfo = () => {
-      const top = this._order[0];
-      const map = { 'deck-group': 'data-group', 'deck-brand': 'data-brand', 'deck-cat': 'data-cat' };
-      Object.keys(map).forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) { el.style.opacity = '0'; el.style.transform = 'translateY(12px)'; }
-      });
-      setTimeout(() => {
-        Object.keys(map).forEach((id) => {
-          const el = document.getElementById(id);
-          if (!el) return;
-          let val = top.getAttribute(map[id]);
-          if (this._lang === 'en' && id !== 'deck-brand' && this._deckI18n && this._deckI18n[val]) val = this._deckI18n[val];
-          el.textContent = val; el.style.opacity = '1'; el.style.transform = 'translateY(0px)';
-        });
-        const n = this._active.indexOf(top) + 1;
-        const total = this._active.length;
-        const count = document.getElementById('deck-count');
-        if (count) count.textContent = String(n).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
-        const bar = document.getElementById('deck-bar');
-        if (bar) bar.style.width = ((n / total) * 100).toFixed(1) + '%';
-      }, 280);
-    };
-    this._advance = () => {
-      if (this._animating) return;
-      this._animating = true;
-      const top = this._order.shift();
-      this._order.push(top);
-      top.style.transition = 'transform 0.9s cubic-bezier(.55,.02,.3,1), opacity 0.9s ease';
-      top.style.transform = 'translate3d(-124%, 0, 60px) rotateY(30deg) scale(0.92)';
-      top.style.opacity = '0';
-      this._order.forEach((el, i) => {
-        if (el === top) return;
-        const p = posFor(i);
-        el.style.zIndex = String(40 - i);
-        el.style.transform = p.t;
-        el.style.opacity = p.o;
-      });
-      this._updateInfo();
-      if (this._showPlay) this._showPlay();
-      setTimeout(() => {
-        top.style.transition = 'none';
-        top.style.zIndex = '1';
-        const p = posFor(this._order.length - 1);
-        top.style.transform = p.t;
-        top.style.opacity = p.o;
-        requestAnimationFrame(() => {
-          top.style.transition = 'transform 0.8s ' + stackEase + ', opacity 0.8s ' + stackEase;
-          this._animating = false;
-        });
-      }, 900);
-    };
-    deck.addEventListener('click', () => { this._advance(); this.startDeckTimer(); });
-    deck.addEventListener('mouseenter', () => { this._paused = true; });
-    deck.addEventListener('mouseleave', () => { this._paused = false; });
-    this._deckIo = new IntersectionObserver((es) => {
-      es.forEach((e) => { this._deckVisible = e.isIntersecting; });
-    }, { threshold: 0.2 });
-    this._deckIo.observe(deck);
 
     // Filtre par catégorie
     this._filterBtns = Array.from(document.querySelectorAll('#deck-filters [data-filter]'));
@@ -884,28 +781,17 @@ class Component extends DCLogic {
   }
 
   applyFilter(key) {
-    if (this._animating) return;
     this._filter = key;
-    // États visuels des boutons
     (this._filterBtns || []).forEach((b) => {
       const on = b.getAttribute('data-filter') === key;
       b.style.background = on ? '#C6A15B' : 'transparent';
       b.style.color = on ? '#0D1B2A' : '#F4EFE6';
       b.style.borderColor = on ? '#C6A15B' : 'rgba(244,239,230,0.4)';
     });
-    // Cartes visibles selon le filtre
-    this._active = this._cards.filter((c) => key === 'all' || c.getAttribute('data-group') === key);
-    this._cards.forEach((c) => { c.style.display = this._active.indexOf(c) === -1 ? 'none' : 'block'; });
-    this._order = this._active.slice();
-    const stackEase = 'cubic-bezier(.22,.9,.3,1)';
-    this._order.forEach((el) => { el.style.transition = 'none'; });
-    this._layout();
-    if (this._showPlay) this._showPlay();
-    this._updateInfo();
-    requestAnimationFrame(() => {
-      this._order.forEach((el) => { el.style.transition = 'transform 0.8s ' + stackEase + ', opacity 0.8s ' + stackEase; });
+    this._cards.forEach((c) => {
+      const show = key === 'all' || c.getAttribute('data-group') === key;
+      c.style.display = show ? 'block' : 'none';
     });
-    this.startDeckTimer();
   }
 
   openVideo(card) {
@@ -959,22 +845,10 @@ class Component extends DCLogic {
     setTimeout(() => { box.style.display = 'none'; if (frame) frame.innerHTML = ''; }, 400);
   }
 
-  startDeckTimer() {
-    if (this._timer) clearInterval(this._timer);
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const delay = Math.max(1, this.props.vitesseDeck ?? 2) * 1000;
-    this._timer = setInterval(() => {
-      if (this._paused || this._lightboxOpen || !this._deckVisible || document.hidden || !this._advance) return;
-      this._advance();
-    }, delay);
-  }
-
   componentDidUpdate() { this.syncFx(); }
 
   componentWillUnmount() {
-    if (this._timer) clearInterval(this._timer);
     if (this._escHandler) window.removeEventListener('keydown', this._escHandler);
-    if (this._deckIo) this._deckIo.disconnect();
     if (this._io) this._io.disconnect();
     if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
     if (this._halo) {
