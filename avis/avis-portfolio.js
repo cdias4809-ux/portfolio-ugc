@@ -38,32 +38,56 @@
     + "#avis-ugc .au-cta{align-self:center;text-decoration:none;font-weight:600;color:var(--au-gold);border:1.5px solid var(--au-gold);border-radius:999px;padding:13px 22px}"
     + "#avis-ugc .au-cta:hover{background:var(--au-gold);color:#0d1b2a}";
 
-  fetch(ENDPOINT)
-    .then(function (r) { return r.json(); })
-    .then(function (j) {
-      if (!j || !j.ok || !j.avis || !j.avis.length) return;
+  var styled = false;
+  function draw(list) {
+    if (!list || !list.length) return;
+    if (!styled) {
       var style = document.createElement("style");
       style.textContent = css;
       document.head.appendChild(style);
+      styled = true;
+    }
+    var cards = list.slice(0, MAX).map(function (a) {
+      var nom = (a.prenom + " " + a.nom).trim();
+      var sub = [nom, a.poste].filter(Boolean).join(" · ");
+      return '<article class="au-card">' + stars(Number(a.note)) +
+        "<p>" + esc(a.texte) + "</p>" +
+        '<div class="au-who"><div class="au-av" aria-hidden="true">' + esc((a.marque || "?").charAt(0).toUpperCase()) + "</div>" +
+        "<div><strong>" + esc(a.marque) + "</strong><small>" + esc(sub) + "</small></div></div></article>";
+    }).join("");
 
-      var cards = j.avis.slice(0, MAX).map(function (a) {
-        var nom = (a.prenom + " " + a.nom).trim();
-        var sub = [nom, a.poste].filter(Boolean).join(" · ");
-        return '<article class="au-card">' + stars(Number(a.note)) +
-          "<p>" + esc(a.texte) + "</p>" +
-          '<div class="au-who"><div class="au-av" aria-hidden="true">' + esc((a.marque || "?").charAt(0).toUpperCase()) + "</div>" +
-          "<div><strong>" + esc(a.marque) + "</strong><small>" + esc(sub) + "</small></div></div></article>";
-      }).join("");
+    root.innerHTML = '<div class="au-wrap">' +
+      '<div class="au-grid">' + cards + "</div>" +
+      '<a class="au-cta" href="' + esc(LIEN_AVIS) + '">Laisser mon avis</a></div>';
+    // Affiche la section du portfolio (cachée tant qu'il n'y a aucun avis).
+    var sec = root.closest("section");
+    if (sec) sec.style.display = "";
+    // Affiche aussi le lien "Avis" du menu.
+    var nl = document.getElementById("nav-avis");
+    if (nl) nl.style.display = "";
+  }
 
-      root.innerHTML = '<div class="au-wrap">' +
-        '<div class="au-grid">' + cards + "</div>" +
-        '<a class="au-cta" href="' + esc(LIEN_AVIS) + '">Laisser mon avis</a></div>';
-      // Affiche la section du portfolio (cachée tant qu'il n'y a aucun avis).
-      var sec = root.closest("section");
-      if (sec) sec.style.display = "";
-      // Affiche aussi le lien "Avis" du menu.
-      var nl = document.getElementById("nav-avis");
-      if (nl) nl.style.display = "";
+  // Affiche tout de suite les derniers avis connus, puis met à jour.
+  try {
+    var cache = JSON.parse(localStorage.getItem("avis-cache") || "null");
+    if (cache && cache.length) draw(cache);
+  } catch (e) { /* pas de cache : tant pis */ }
+
+  fetch(ENDPOINT)
+    .then(function (r) { return r.json(); })
+    .then(function (j) {
+      if (!j || !j.ok || !j.avis) return;
+      try { localStorage.setItem("avis-cache", JSON.stringify(j.avis)); } catch (e) {}
+      if (j.avis.length) {
+        draw(j.avis);
+      } else {
+        // Plus aucun avis publié : on recache la section.
+        root.innerHTML = "";
+        var sec = root.closest("section");
+        if (sec) sec.style.display = "none";
+        var nl = document.getElementById("nav-avis");
+        if (nl) nl.style.display = "none";
+      }
     })
-    .catch(function () { /* rien ne s'affiche si le relais ne répond pas */ });
+    .catch(function () { /* on garde ce qui est affiché */ });
 })();

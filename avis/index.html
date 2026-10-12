@@ -30,6 +30,7 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
@@ -255,10 +256,18 @@ function showWall() {
 
 async function loadAvis() {
   if (ENDPOINT.indexOf("http") !== 0) return;
+  // Affiche tout de suite les derniers avis connus, puis met à jour.
+  try {
+    const cache = JSON.parse(localStorage.getItem("avis-cache") || "null");
+    if (Array.isArray(cache) && cache.length) { AVIS = cache; showWall(); }
+  } catch (err) { /* pas de cache : tant pis */ }
   try {
     const res = await fetch(ENDPOINT);
     const json = await res.json();
-    if (json && json.ok && Array.isArray(json.avis)) AVIS = json.avis;
+    if (json && json.ok && Array.isArray(json.avis)) {
+      AVIS = json.avis;
+      try { localStorage.setItem("avis-cache", JSON.stringify(AVIS)); } catch (err) {}
+    }
   } catch (err) { /* la page reste utilisable sans le mur */ }
   showWall();
 }
