@@ -33,8 +33,8 @@
     + "#avis-ugc .au-off{color:var(--au-line)}"
     + "#avis-ugc .au-who{display:flex;gap:12px;align-items:center;margin-top:auto;min-width:0}"
     + "#avis-ugc .au-av{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--au-gold);color:#0d1b2a;font-weight:700;font-size:18px}"
-    + "#avis-ugc .au-who strong{display:block;color:var(--au-gold-soft);overflow-wrap:anywhere}"
-    + "#avis-ugc .au-who small{display:block;opacity:.8;overflow-wrap:anywhere}"
+    + "#avis-ugc .au-who strong{display:block;color:var(--au-gold-soft);font-family:var(--display,'Bodoni Moda',serif);font-size:1.3rem;font-weight:700;line-height:1.15;margin-bottom:2px;overflow-wrap:anywhere}"
+    + "#avis-ugc .au-who small{display:block;font-size:14px;opacity:.8;overflow-wrap:anywhere}"
     + "#avis-ugc .au-cta{align-self:center;text-decoration:none;font-weight:600;color:var(--au-gold);border:1.5px solid var(--au-gold);border-radius:999px;padding:13px 22px}"
     + "#avis-ugc .au-cta:hover{background:var(--au-gold);color:#0d1b2a}";
 
@@ -48,11 +48,11 @@
 
       var cards = j.avis.slice(0, MAX).map(function (a) {
         var nom = (a.prenom + " " + a.nom).trim();
-        var sub = [a.poste, a.marque].filter(Boolean).join(" · ");
+        var sub = [nom, a.poste].filter(Boolean).join(" · ");
         return '<article class="au-card">' + stars(Number(a.note)) +
           "<p>" + esc(a.texte) + "</p>" +
           '<div class="au-who"><div class="au-av" aria-hidden="true">' + esc((a.marque || "?").charAt(0).toUpperCase()) + "</div>" +
-          "<div><strong>" + esc(nom) + "</strong><small>" + esc(sub) + "</small></div></div></article>";
+          "<div><strong>" + esc(a.marque) + "</strong><small>" + esc(sub) + "</small></div></div></article>";
       }).join("");
 
       root.innerHTML = '<div class="au-wrap">' +
