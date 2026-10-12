@@ -61,6 +61,9 @@
       // Affiche la section du portfolio (cachée tant qu'il n'y a aucun avis).
       var sec = root.closest("section");
       if (sec) sec.style.display = "";
+      // Affiche aussi le lien "Avis" du menu.
+      var nl = document.getElementById("nav-avis");
+      if (nl) nl.style.display = "";
     })
     .catch(function () { /* rien ne s'affiche si le relais ne répond pas */ });
 })();
