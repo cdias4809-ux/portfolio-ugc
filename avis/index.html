@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Avis des marques | UGC by Chris</title>
+<meta name="description" content="Les avis des marques qui ont collaboré avec Chris, créateur UGC. Laisse le tien en 1 minute.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&display=swap" rel="stylesheet">
+<style>
+/* Mise en page : colonne étroite, titre fort, mur d'avis en grille, formulaire en carte unique. DA du portfolio : bleu marine #0d1b2a, texte #f5f7fa, doré #c6a15b */
+:root {
+  --bg: #0d1b2a;
+  --surface: #112236;
+  --ink: #f8f5ee;
+  --gold-soft: #e0c484;
+  --text: #b4c1d0;
+  --muted: #9fb0c3;
+  --line: #1a2f4a;
+  --accent: #c6a15b;
+  --accent-ink: #0d1b2a;
+  --star: #c6a15b;
+  --ok: #8fd9ad;
+  --ok-bg: #12332a;
+  --err: #ff8a80;
+  --font-display: "Bodoni Moda", Georgia, "Times New Roman", serif;
+  --font-body: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background-color: var(--bg);
+  background-image: radial-gradient(1100px 750px at 88% -8%, rgba(198,161,91,.11), rgba(0,0,0,0) 62%), radial-gradient(900px 700px at -12% 42%, rgba(198,161,91,.07), rgba(0,0,0,0) 60%);
+  background-repeat: no-repeat;
+  color: var(--text);
+  font: 400 16px/1.55 var(--font-body);
+  padding-inline: 20px;
+  padding-block: 40px 64px;
+}
+.wrap { max-width: 1040px; margin-inline: auto; display: flex; flex-direction: column; gap: 24px; }
+h1, h2 { color: var(--accent); font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.05; letter-spacing: -0.02em; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+
+/* En-tête */
+.top { display: flex; flex-direction: column; gap: 20px; }
+.kicker { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+h1 { font-size: clamp(2.4rem, 8vw, 4.6rem); font-weight: 700; max-width: 14ch; letter-spacing: -0.02em; }
+h1 { color: var(--ink); }
+#titre-mur { color: var(--ink); }
+h1 span { color: var(--accent); }
+.lead { max-width: 56ch; color: var(--muted); font-size: 1.08rem; margin: 0; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn {
+  appearance: none; border: 0; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
+  font: 700 16px/1 var(--font-body); padding: 16px 24px; border-radius: 999px; background: var(--accent); color: var(--accent-ink);
+}
+.btn:hover { filter: brightness(1.08); }
+.btn[disabled] { opacity: 0.6; cursor: wait; }
+.btn.ghost { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 2px var(--accent); }
+.stats { display: flex; flex-wrap: wrap; gap: 8px 28px; font-variant-numeric: tabular-nums; }
+.stat b { color: var(--accent); font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; display: block; line-height: 1.1; }
+.stat span { color: var(--muted); font-size: 14px; }
+
+/* Mur d'avis */
+.wall { display: flex; flex-direction: column; gap: 20px; }
+.wall-head { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: end; justify-content: space-between; }
+h2 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); font-weight: 700; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  appearance: none; cursor: pointer; font: 600 14px/1 var(--font-body); color: var(--accent); background: transparent;
+  border: 1.5px solid var(--accent); border-radius: 999px; padding: 10px 14px;
+}
+.chip[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid rgba(198,161,91,.35); border-bottom: 3px solid var(--accent); border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.card p { margin: 0; overflow-wrap: anywhere; }
+.stars { color: var(--star); letter-spacing: 2px; font-size: 18px; line-height: 1; }
+.stars .off { color: var(--line); }
+.who { display: flex; gap: 12px; align-items: center; margin-top: auto; min-width: 0; }
+.avatar {
+  flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--accent); color: var(--accent-ink); font: 700 18px/1 var(--font-display);
+}
+.who-text { min-width: 0; }
+.who-text strong { color: var(--gold-soft); display: block; overflow-wrap: anywhere; }
+.who-text small { color: var(--muted); display: block; overflow-wrap: anywhere; }
+.badge { display: inline-flex; gap: 6px; align-items: center; font-size: 12.5px; font-weight: 700; color: var(--ok); background: var(--ok-bg); border-radius: 999px; padding: 5px 10px; width: fit-content; }
+
+/* Formulaire */
+.form-card { background: var(--surface); border: 1px solid rgba(198,161,91,.35); border-radius: 22px; padding: clamp(20px, 4vw, 36px); display: grid; gap: 28px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 860px) { .form-card { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 48px; } }
+.form-intro { display: flex; flex-direction: column; gap: 14px; }
+.form-intro p { margin: 0; color: var(--muted); }
+.form-intro ul { margin: 0; padding-left: 18px; color: var(--text); display: flex; flex-direction: column; gap: 6px; }
+form { display: grid; gap: 16px; min-width: 0; }
+.row { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 560px) { .row.two { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+label, legend { color: var(--gold-soft); font-weight: 700; font-size: 14px; display: block; margin-bottom: 6px; padding: 0; }
+.opt { font-weight: 400; color: var(--muted); }
+input[type="text"], input[type="url"], select, textarea {
+  width: 100%; font: 400 16px/1.4 var(--font-body); color: var(--text); background: var(--bg);
+  border: 1.5px solid rgba(198,161,91,.4); border-radius: 12px; padding: 13px 14px;
+}
+textarea { min-height: 130px; resize: vertical; }
+textarea[aria-invalid="true"] { border-color: var(--err); }
+input::placeholder, textarea::placeholder { color: var(--muted); opacity: 0.8; }
+fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.rating { display: inline-flex; flex-direction: row-reverse; gap: 4px; }
+.rating input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.rating label { font-size: 38px; line-height: 1; cursor: pointer; color: var(--line); margin: 0; padding: 2px; }
+.rating label:hover, .rating label:hover ~ label, .rating input:checked ~ label { color: var(--star); }
+.rating input:focus-visible + label { outline: 3px solid var(--accent); border-radius: 6px; }
+.check { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; }
+.check input { margin-top: 4px; width: 18px; height: 18px; flex: none; accent-color: var(--accent); }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.msg { padding: 14px 16px; border-radius: 12px; font-weight: 500; }
+.msg.ok { background: var(--ok-bg); color: var(--ok); }
+.msg.err { background: transparent; color: var(--err); box-shadow: inset 0 0 0 1.5px var(--err); }
+.fine { font-size: 13px; color: var(--muted); margin: 0; }
+footer { color: var(--accent); font-size: 14px; display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+@media (prefers-reduced-motion: no-preference) { .card { transition: transform .15s ease; } .card:hover { transform: translateY(-2px); } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="kicker">UGC by Chris · Créateur UGC</div>
+    <h1>Ce que les marques disent <span>de moi</span></h1>
+    <div class="cta-row">
+      <a class="btn" href="#laisser-un-avis">Laisser mon avis</a>
+    </div>
+    <div class="stats" id="stats" hidden>
+      <div class="stat"><b id="stat-count">0</b><span>avis de marques</span></div>
+      <div class="stat"><b id="stat-avg">0</b><span>note moyenne sur 5</span></div>
+    </div>
+  </header>
+
+  <section class="wall" id="wall" aria-labelledby="titre-mur" hidden>
+    <div class="wall-head">
+      <h2 id="titre-mur">Les avis</h2>
+      <div class="chips" id="filters" role="group" aria-label="Filtrer par note" hidden>
+        <button class="chip" type="button" data-f="all" aria-pressed="true">Tous</button>
+        <button class="chip" type="button" data-f="5" aria-pressed="false">5 étoiles</button>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="laisser-un-avis" class="form-card" aria-labelledby="titre-form">
+    <div class="form-intro">
+      <h2 id="titre-form">On a travaillé ensemble ?</h2>
+      <p>Ton avis prend une minute. Il aide les autres marques à savoir à quoi s'attendre avant de me contacter.</p>
+      <ul>
+        <li>Ton avis est publié tel quel.</li>
+        <li>Tu peux me demander de le retirer à tout moment.</li>
+      </ul>
+    </div>
+
+    <form id="avis-form" novalidate>
+      <!-- Anti-spam : ne pas remplir -->
+      <div class="hp" aria-hidden="true"><label for="botcheck">Ne pas remplir</label><input type="text" id="botcheck" name="botcheck" tabindex="-1" autocomplete="off"></div>
+
+      <div class="row two">
+        <div><label for="prenom">Prénom</label><input type="text" id="prenom" name="prenom" autocomplete="given-name" required></div>
+        <div><label for="nom">Nom</label><input type="text" id="nom" name="nom" autocomplete="family-name" required></div>
+      </div>
+      <div class="row two">
+        <div><label for="marque">Marque</label><input type="text" id="marque" name="marque" autocomplete="organization" required></div>
+        <div><label for="poste">Ton rôle <span class="opt">(facultatif)</span></label><input type="text" id="poste" name="poste" placeholder="Ex : Fondatrice, Responsable marketing" autocomplete="organization-title"></div>
+      </div>
+      <fieldset>
+        <legend>Ta note</legend>
+        <div class="rating" id="rating">
+          <input type="radio" name="note" id="n5" value="5"><label for="n5" title="5 sur 5"><span aria-hidden="true">★</span><span class="sr" style="position:absolute;left:-9999px">5 étoiles</span></label>
+          <input type="radio" name="note" id="n4" value="4"><label for="n4" title="4 sur 5"><span aria-hidden="true">★</span><span class="sr" style="position:absolute;left:-9999px">4 étoiles</span></label>
+          <input type="radio" name="note" id="n3" value="3"><label for="n3" title="3 sur 5"><span aria-hidden="true">★</span><span class="sr" style="position:absolute;left:-9999px">3 étoiles</span></label>
+          <input type="radio" name="note" id="n2" value="2"><label for="n2" title="2 sur 5"><span aria-hidden="true">★</span><span class="sr" style="position:absolute;left:-9999px">2 étoiles</span></label>
+          <input type="radio" name="note" id="n1" value="1"><label for="n1" title="1 sur 5"><span aria-hidden="true">★</span><span class="sr" style="position:absolute;left:-9999px">1 étoile</span></label>
+        </div>
+      </fieldset>
+      <div>
+        <label for="texte">Ton avis</label>
+        <textarea id="texte" name="avis" maxlength="700" placeholder="Comment s'est passée la collaboration ? Qu'est-ce qui t'a marqué ?" required></textarea>
+      </div>
+
+      <div id="feedback" role="status" aria-live="polite"></div>
+      <div><button class="btn" type="submit" id="send">Envoyer mon avis</button></div>
+    </form>
+  </section>
+
+  <footer>
+    <span>Chris · Créateur UGC &amp; CM</span>
+    <a href="../">Retour au portfolio</a>
+  </footer>
+</div>
+
+<script>
+/* ============ À MODIFIER ============ */
+// URL de ton application Google (voir le guide : Déployer > Application Web).
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbyOyDAZeFGSjh0CzhCXcHSB524W2DO-CY9vxh0EKY6koS2APwQKe5GgvIgfYyRP9BTF7w/exec";
+/* ================================== */
+
+const grid = document.getElementById("grid");
+const filters = document.getElementById("filters");
+const stats = document.getElementById("stats");
+const wall = document.getElementById("wall");
+let AVIS = [];
+let filter = "all";
+
+function esc(s) {
+  return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+function stars(n) {
+  let out = "";
+  for (let i = 1; i <= 5; i++) out += i <= n ? "★" : '<span class="off">★</span>';
+  return '<div class="stars" role="img" aria-label="' + n + ' sur 5">' + out + "</div>";
+}
+function fmtDate(d) {
+  const t = new Date(d);
+  return isNaN(t) ? "" : t.toLocaleDateString("fr-FR", { month: "long", year: "numeric" });
+}
+
+function render() {
+  const list = AVIS.filter(a => filter === "all" || Number(a.note) === Number(filter));
+  grid.innerHTML = list.map(a => {
+    const full = (a.prenom + " " + a.nom).trim();
+    const sub = [a.poste, a.marque].filter(Boolean).join(" · ");
+    const date = fmtDate(a.date);
+    return '<article class="card">' +
+      '<span class="badge">✓ Avis validé</span>' +
+      stars(Number(a.note)) +
+      "<p>" + esc(a.texte) + "</p>" +
+      '<div class="who"><div class="avatar" aria-hidden="true">' + esc((a.marque || "?").charAt(0).toUpperCase()) + "</div>" +
+      '<div class="who-text"><strong>' + esc(full) + "</strong><small>" + esc(sub) + (date ? " · " + esc(date) : "") + "</small></div></div>" +
+      "</article>";
+  }).join("");
+}
+
+function showWall() {
+  if (!AVIS.length) { wall.hidden = true; stats.hidden = true; filters.hidden = true; return; }
+  const avg = AVIS.reduce((s, a) => s + Number(a.note), 0) / AVIS.length;
+  document.getElementById("stat-count").textContent = AVIS.length;
+  document.getElementById("stat-avg").textContent = avg.toFixed(1).replace(".", ",");
+  stats.hidden = false;
+  filters.hidden = false;
+  wall.hidden = false;
+  render();
+}
+
+async function loadAvis() {
+  if (ENDPOINT.indexOf("http") !== 0) return;
+  try {
+    const res = await fetch(ENDPOINT);
+    const json = await res.json();
+    if (json && json.ok && Array.isArray(json.avis)) AVIS = json.avis;
+  } catch (err) { /* la page reste utilisable sans le mur */ }
+  showWall();
+}
+
+filters.addEventListener("click", e => {
+  const b = e.target.closest("button[data-f]");
+  if (!b) return;
+  filter = b.dataset.f;
+  filters.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  render();
+});
+loadAvis();
+
+/* Envoi du formulaire */
+const form = document.getElementById("avis-form");
+const feedback = document.getElementById("feedback");
+const sendBtn = document.getElementById("send");
+
+function say(kind, text) {
+  feedback.innerHTML = '<div class="msg ' + kind + '">' + esc(text) + "</div>";
+}
+
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  feedback.innerHTML = "";
+  const data = new FormData(form);
+  if (data.get("botcheck")) return;
+
+  const texte = document.getElementById("texte");
+  if (data.get("avis").trim().length < 10) {
+    say("err", "Tu dois laisser un avis écrit pour pouvoir l'envoyer.");
+    texte.setAttribute("aria-invalid", "true");
+    texte.focus();
+    return;
+  }
+  texte.removeAttribute("aria-invalid");
+  const missing = [];
+  if (!data.get("prenom").trim()) missing.push("ton prénom");
+  if (!data.get("nom").trim()) missing.push("ton nom");
+  if (!data.get("marque").trim()) missing.push("ta marque");
+  if (!data.get("note")) missing.push("ta note");
+  if (missing.length) { say("err", "Il manque : " + missing.join(", ") + "."); return; }
+  if (ENDPOINT.indexOf("http") !== 0) { say("err", "Le formulaire n'est pas encore activé. Réessaie un peu plus tard."); return; }
+
+  const payload = {
+    prenom: data.get("prenom").trim(),
+    nom: data.get("nom").trim(),
+    marque: data.get("marque").trim(),
+    poste: (data.get("poste") || "").trim(),
+    note: Number(data.get("note")),
+    texte: data.get("avis").trim(),
+    botcheck: ""
+  };
+
+  sendBtn.disabled = true;
+  sendBtn.textContent = "Envoi en cours";
+  try {
+    // Pas d'en-tête personnalisé : la requête reste simple et passe sans blocage.
+    const res = await fetch(ENDPOINT, { method: "POST", body: JSON.stringify(payload) });
+    const json = await res.json();
+    if (json && json.ok) {
+      form.reset();
+      say("ok", "Merci " + payload.prenom + ", ton avis est bien publié.");
+      loadAvis();
+    } else {
+      say("err", "L'envoi a échoué. Réessaie dans un instant.");
+    }
+  } catch (err) {
+    say("err", "Pas de connexion. Vérifie ton réseau et réessaie.");
+  } finally {
+    sendBtn.disabled = false;
+    sendBtn.textContent = "Envoyer mon avis";
+  }
+});
+</script>
+</body>
+</html>
