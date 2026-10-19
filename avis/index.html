@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&display=swap" rel="stylesheet">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
 <style>
 /* Mise en page : colonne étroite, titre fort, mur d'avis en grille, formulaire en carte unique. DA du portfolio : bleu marine #0d1b2a, texte #f5f7fa, doré #c6a15b */
 :root {
@@ -87,6 +88,7 @@ h2 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); font-weight: 700; }
   flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
   background: var(--accent); color: var(--accent-ink); font: 700 18px/1 var(--font-display);
 }
+.avatar-img { object-fit: cover; }
 .who-text { min-width: 0; }
 .who-text strong { color: var(--gold-soft); display: block; font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; line-height: 1.15; margin-bottom: 2px; overflow-wrap: anywhere; }
 .who-text small { color: var(--muted); display: block; font-size: 14px; overflow-wrap: anywhere; }
@@ -107,6 +109,12 @@ input[type="text"], input[type="url"], select, textarea {
   width: 100%; font: 400 16px/1.4 var(--font-body); color: var(--text); background: var(--bg);
   border: 1.5px solid rgba(198,161,91,.4); border-radius: 12px; padding: 13px 14px;
 }
+input[readonly] { opacity: .7; }
+.gconnect { display: flex; flex-direction: column; gap: 10px; }
+.gconnected { display: flex; align-items: center; gap: 12px; }
+.gconnected-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex: none; background: var(--line); }
+.gconnected span { flex: 1; min-width: 0; overflow-wrap: anywhere; color: var(--text); font-weight: 600; }
+.gconnected button { flex: none; }
 textarea { min-height: 130px; resize: vertical; }
 textarea[aria-invalid="true"] { border-color: var(--err); }
 input::placeholder, textarea::placeholder { color: var(--muted); opacity: 0.8; }
@@ -166,6 +174,17 @@ footer { color: var(--accent); font-size: 14px; display: flex; flex-wrap: wrap; 
     <form id="avis-form" novalidate>
       <!-- Anti-spam : ne pas remplir -->
       <div class="hp" aria-hidden="true"><label for="botcheck">Ne pas remplir</label><input type="text" id="botcheck" name="botcheck" tabindex="-1" autocomplete="off"></div>
+      <input type="hidden" id="photo" name="photo" value="">
+
+      <div class="gconnect" id="gconnect">
+        <div id="g_id_signin"></div>
+        <p class="fine">Connecte-toi avec Google pour remplir ton prénom, ton nom et ta photo automatiquement. Sinon, renseigne les champs ci-dessous à la main.</p>
+      </div>
+      <div class="gconnected" id="gconnected" hidden>
+        <img class="gconnected-avatar" id="gconnected-photo" src="" alt="" referrerpolicy="no-referrer">
+        <span id="gconnected-name"></span>
+        <button class="chip" type="button" id="gconnected-reset">Changer</button>
+      </div>
 
       <div class="row two">
         <div><label for="prenom">Prénom</label><input type="text" id="prenom" name="prenom" autocomplete="given-name" required></div>
@@ -237,7 +256,9 @@ function render() {
       '<span class="badge">✓ Avis validé</span>' +
       stars(Number(a.note)) +
       "<p>" + esc(a.texte) + "</p>" +
-      '<div class="who"><div class="avatar" aria-hidden="true">' + esc((a.marque || "?").charAt(0).toUpperCase()) + "</div>" +
+      '<div class="who">' + (a.photo
+        ? '<img class="avatar avatar-img" src="' + esc(a.photo) + '" alt="" referrerpolicy="no-referrer">'
+        : '<div class="avatar" aria-hidden="true">' + esc((a.marque || "?").charAt(0).toUpperCase()) + "</div>") +
       '<div class="who-text"><strong>' + esc(a.marque) + "</strong><small>" + esc(sub) + (date ? " · " + esc(date) : "") + "</small></div></div>" +
       "</article>";
   }).join("");
@@ -281,6 +302,59 @@ filters.addEventListener("click", e => {
 });
 loadAvis();
 
+/* Connexion avec Google (remplit prénom/nom/photo automatiquement) */
+const GOOGLE_CLIENT_ID = "997312342530-l4rdgir17cpi211ji5rol5vfg8dgo648.apps.googleusercontent.com";
+
+function decodeJwt(token) {
+  try {
+    const base64 = token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/");
+    const json = decodeURIComponent(
+      atob(base64).split("").map(c => "%" + c.charCodeAt(0).toString(16).padStart(2, "0")).join("")
+    );
+    return JSON.parse(json);
+  } catch (err) { return null; }
+}
+
+function resetGoogleConnect() {
+  const prenomEl = document.getElementById("prenom");
+  const nomEl = document.getElementById("nom");
+  prenomEl.value = "";
+  nomEl.value = "";
+  prenomEl.readOnly = false;
+  nomEl.readOnly = false;
+  document.getElementById("photo").value = "";
+  document.getElementById("gconnected").hidden = true;
+  document.getElementById("gconnect").hidden = false;
+}
+
+function handleGoogleCredential(response) {
+  const payload = decodeJwt(response.credential);
+  if (!payload) return;
+  const prenomEl = document.getElementById("prenom");
+  const nomEl = document.getElementById("nom");
+  prenomEl.value = payload.given_name || "";
+  nomEl.value = payload.family_name || "";
+  prenomEl.readOnly = true;
+  nomEl.readOnly = true;
+  document.getElementById("photo").value = payload.picture || "";
+  document.getElementById("gconnected-photo").src = payload.picture || "";
+  document.getElementById("gconnected-name").textContent =
+    "Connecté en tant que " + [payload.given_name, payload.family_name].filter(Boolean).join(" ");
+  document.getElementById("gconnect").hidden = true;
+  document.getElementById("gconnected").hidden = false;
+}
+
+document.getElementById("gconnected-reset").addEventListener("click", resetGoogleConnect);
+
+window.addEventListener("load", () => {
+  if (window.google && google.accounts && google.accounts.id) {
+    google.accounts.id.initialize({ client_id: GOOGLE_CLIENT_ID, callback: handleGoogleCredential });
+    google.accounts.id.renderButton(document.getElementById("g_id_signin"), {
+      theme: "outline", size: "large", text: "continue_with", locale: "fr"
+    });
+  }
+});
+
 /* Envoi du formulaire */
 const form = document.getElementById("avis-form");
 const feedback = document.getElementById("feedback");
@@ -319,6 +393,7 @@ form.addEventListener("submit", async e => {
     poste: (data.get("poste") || "").trim(),
     note: Number(data.get("note")),
     texte: data.get("avis").trim(),
+    photo: (data.get("photo") || "").trim(),
     botcheck: ""
   };
 
@@ -330,6 +405,7 @@ form.addEventListener("submit", async e => {
     const json = await res.json();
     if (json && json.ok) {
       form.reset();
+      resetGoogleConnect();
       say("ok", "Merci " + payload.prenom + ", ton avis est bien publié.");
       loadAvis();
     } else {
