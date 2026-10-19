@@ -178,7 +178,7 @@ footer { color: var(--accent); font-size: 14px; display: flex; flex-wrap: wrap; 
 
       <div class="gconnect" id="gconnect">
         <div id="g_id_signin"></div>
-        <p class="fine">Connecte-toi avec Google pour remplir ton prénom, ton nom et ta photo automatiquement. Sinon, renseigne les champs ci-dessous à la main.</p>
+        <p class="fine">La connexion avec Google est nécessaire pour laisser un avis : elle remplit ton prénom, ton nom et ta photo automatiquement.</p>
       </div>
       <div class="gconnected" id="gconnected" hidden>
         <img class="gconnected-avatar" id="gconnected-photo" src="" alt="" referrerpolicy="no-referrer">
@@ -187,8 +187,8 @@ footer { color: var(--accent); font-size: 14px; display: flex; flex-wrap: wrap; 
       </div>
 
       <div class="row two">
-        <div><label for="prenom">Prénom</label><input type="text" id="prenom" name="prenom" autocomplete="given-name" required></div>
-        <div><label for="nom">Nom</label><input type="text" id="nom" name="nom" autocomplete="family-name" required></div>
+        <div><label for="prenom">Prénom</label><input type="text" id="prenom" name="prenom" autocomplete="given-name" placeholder="Rempli après connexion Google" readonly required></div>
+        <div><label for="nom">Nom</label><input type="text" id="nom" name="nom" autocomplete="family-name" placeholder="Rempli après connexion Google" readonly required></div>
       </div>
       <div class="row two">
         <div><label for="marque">Marque</label><input type="text" id="marque" name="marque" autocomplete="organization" required></div>
@@ -315,16 +315,17 @@ function decodeJwt(token) {
   } catch (err) { return null; }
 }
 
+let googleConnected = false;
+
 function resetGoogleConnect() {
   const prenomEl = document.getElementById("prenom");
   const nomEl = document.getElementById("nom");
   prenomEl.value = "";
   nomEl.value = "";
-  prenomEl.readOnly = false;
-  nomEl.readOnly = false;
   document.getElementById("photo").value = "";
   document.getElementById("gconnected").hidden = true;
   document.getElementById("gconnect").hidden = false;
+  googleConnected = false;
 }
 
 function handleGoogleCredential(response) {
@@ -334,14 +335,13 @@ function handleGoogleCredential(response) {
   const nomEl = document.getElementById("nom");
   prenomEl.value = payload.given_name || "";
   nomEl.value = payload.family_name || "";
-  prenomEl.readOnly = true;
-  nomEl.readOnly = true;
   document.getElementById("photo").value = payload.picture || "";
   document.getElementById("gconnected-photo").src = payload.picture || "";
   document.getElementById("gconnected-name").textContent =
     "Connecté en tant que " + [payload.given_name, payload.family_name].filter(Boolean).join(" ");
   document.getElementById("gconnect").hidden = true;
   document.getElementById("gconnected").hidden = false;
+  googleConnected = true;
 }
 
 document.getElementById("gconnected-reset").addEventListener("click", resetGoogleConnect);
@@ -369,6 +369,11 @@ form.addEventListener("submit", async e => {
   feedback.innerHTML = "";
   const data = new FormData(form);
   if (data.get("botcheck")) return;
+
+  if (!googleConnected) {
+    say("err", "Connecte-toi avec Google pour laisser ton avis.");
+    return;
+  }
 
   const texte = document.getElementById("texte");
   if (data.get("avis").trim().length < 10) {
