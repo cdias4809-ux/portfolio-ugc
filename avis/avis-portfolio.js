@@ -68,26 +68,49 @@
   }
 
   // Affiche tout de suite les derniers avis connus, puis met à jour.
+  var hadCache = false;
   try {
     var cache = JSON.parse(localStorage.getItem("avis-cache") || "null");
-    if (cache && cache.length) draw(cache);
+    if (cache && cache.length) { hadCache = true; draw(cache); }
   } catch (e) { /* pas de cache : tant pis */ }
 
-  fetch(ENDPOINT)
-    .then(function (r) { return r.json(); })
-    .then(function (j) {
-      if (!j || !j.ok || !j.avis) return;
-      try { localStorage.setItem("avis-cache", JSON.stringify(j.avis)); } catch (e) {}
-      if (j.avis.length) {
-        draw(j.avis);
-      } else {
-        // Plus aucun avis publié : on recache la section.
-        root.innerHTML = "";
-        var sec = root.closest("section");
-        if (sec) sec.style.display = "none";
-        var nl = document.getElementById("nav-avis");
-        if (nl) nl.style.display = "none";
-      }
-    })
-    .catch(function () { /* on garde ce qui est affiché */ });
+  function hide() {
+    root.innerHTML = "";
+    var sec = root.closest("section");
+    if (sec) sec.style.display = "none";
+    var nl = document.getElementById("nav-avis");
+    if (nl) nl.style.display = "none";
+  }
+
+  function load(isRetry) {
+    // "no-store" évite qu'une réponse mise en cache par le navigateur
+    // ou un intermédiaire réseau ne serve une version périmée/vide.
+    return fetch(ENDPOINT, { cache: "no-store" })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        if (!j || !j.ok || !j.avis) throw new Error("réponse invalide");
+        if (j.avis.length) {
+          try { localStorage.setItem("avis-cache", JSON.stringify(j.avis)); } catch (e) {}
+          draw(j.avis);
+          return;
+        }
+        // La réponse dit "aucun avis". Si on affichait déjà des avis en
+        // cache, on se méfie d'un aléa réseau/serveur passager : on
+        // retente une fois avant de les faire disparaître pour de bon.
+        if (hadCache && !isRetry) {
+          setTimeout(function () { load(true); }, 1800);
+          return;
+        }
+        hide();
+      })
+      .catch(function () {
+        // Échec réseau/parsing : on garde ce qui est déjà affiché
+        // (cache ou rien) plutôt que de risquer de tout effacer.
+        if (hadCache && !isRetry) {
+          setTimeout(function () { load(true); }, 1800);
+        }
+      });
+  }
+
+  load(false);
 })();
