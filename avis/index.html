@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&display=swap" rel="stylesheet">
-<script src="https://accounts.google.com/gsi/client" async defer></script>
 <style>
 /* Mise en page : colonne étroite, titre fort, mur d'avis en grille, formulaire en carte unique. DA du portfolio : bleu marine #0d1b2a, texte #f5f7fa, doré #c6a15b */
 :root {
@@ -142,7 +141,7 @@ footer { color: var(--accent); font-size: 14px; display: flex; flex-wrap: wrap; 
     <div class="kicker">UGC by Chris · Créateur UGC</div>
     <h1>Ce que les marques disent <span>de moi</span></h1>
     <div class="cta-row">
-      <a class="btn" href="#laisser-un-avis">Laisser mon avis</a>
+      <a class="btn" href="#laisser-un-avis" id="cta-laisser-avis">Laisser mon avis</a>
     </div>
     <div class="stats" id="stats" hidden>
       <div class="stat"><b id="stat-count">0</b><span>avis de marques</span></div>
@@ -177,13 +176,13 @@ footer { color: var(--accent); font-size: 14px; display: flex; flex-wrap: wrap; 
       <input type="hidden" id="photo" name="photo" value="">
 
       <div class="gconnect" id="gconnect">
-        <div id="g_id_signin"></div>
+        <button class="btn ghost" type="button" id="g-connect-btn">Se connecter avec Google</button>
         <p class="fine">La connexion avec Google est nécessaire pour laisser un avis : elle remplit ton prénom, ton nom et ta photo automatiquement.</p>
       </div>
       <div class="gconnected" id="gconnected" hidden>
         <img class="gconnected-avatar" id="gconnected-photo" src="" alt="" referrerpolicy="no-referrer">
         <span id="gconnected-name"></span>
-        <button class="chip" type="button" id="gconnected-reset">Changer</button>
+        <button class="chip" type="button" id="gconnected-reset">Changer de compte</button>
       </div>
 
       <div class="row two">
@@ -302,8 +301,10 @@ filters.addEventListener("click", e => {
 });
 loadAvis();
 
-/* Connexion avec Google (remplit prénom/nom/photo automatiquement) */
+/* Connexion avec Google : redirection classique vers la page de connexion
+   Google, puis retour sur cette page une fois connecté (remplit prénom/nom/photo). */
 const GOOGLE_CLIENT_ID = "997312342530-l4rdgir17cpi211ji5rol5vfg8dgo648.apps.googleusercontent.com";
+const NONCE_KEY = "avis-g-nonce";
 
 function decodeJwt(token) {
   try {
@@ -315,26 +316,34 @@ function decodeJwt(token) {
   } catch (err) { return null; }
 }
 
-let googleConnected = false;
-
-function resetGoogleConnect() {
-  const prenomEl = document.getElementById("prenom");
-  const nomEl = document.getElementById("nom");
-  prenomEl.value = "";
-  nomEl.value = "";
-  document.getElementById("photo").value = "";
-  document.getElementById("gconnected").hidden = true;
-  document.getElementById("gconnect").hidden = false;
-  googleConnected = false;
+function randomNonce() {
+  return Math.random().toString(36).slice(2) + Date.now().toString(36);
 }
 
-function handleGoogleCredential(response) {
-  const payload = decodeJwt(response.credential);
-  if (!payload) return;
-  const prenomEl = document.getElementById("prenom");
-  const nomEl = document.getElementById("nom");
-  prenomEl.value = payload.given_name || "";
-  nomEl.value = payload.family_name || "";
+function googleAuthUrl() {
+  const nonce = randomNonce();
+  try { sessionStorage.setItem(NONCE_KEY, nonce); } catch (err) {}
+  const params = new URLSearchParams({
+    client_id: GOOGLE_CLIENT_ID,
+    redirect_uri: location.origin + location.pathname,
+    response_type: "id_token",
+    scope: "openid profile",
+    nonce: nonce,
+    prompt: "select_account"
+  });
+  return "https://accounts.google.com/o/oauth2/v2/auth?" + params.toString();
+}
+
+let googleConnected = false;
+
+function goToGoogle(e) {
+  if (e) e.preventDefault();
+  location.href = googleAuthUrl();
+}
+
+function applyGoogleProfile(payload) {
+  document.getElementById("prenom").value = payload.given_name || "";
+  document.getElementById("nom").value = payload.family_name || "";
   document.getElementById("photo").value = payload.picture || "";
   document.getElementById("gconnected-photo").src = payload.picture || "";
   document.getElementById("gconnected-name").textContent =
@@ -344,16 +353,43 @@ function handleGoogleCredential(response) {
   googleConnected = true;
 }
 
-document.getElementById("gconnected-reset").addEventListener("click", resetGoogleConnect);
+function resetGoogleConnect() {
+  document.getElementById("prenom").value = "";
+  document.getElementById("nom").value = "";
+  document.getElementById("photo").value = "";
+  document.getElementById("gconnected").hidden = true;
+  document.getElementById("gconnect").hidden = false;
+  googleConnected = false;
+}
 
-window.addEventListener("load", () => {
-  if (window.google && google.accounts && google.accounts.id) {
-    google.accounts.id.initialize({ client_id: GOOGLE_CLIENT_ID, callback: handleGoogleCredential });
-    google.accounts.id.renderButton(document.getElementById("g_id_signin"), {
-      theme: "outline", size: "large", text: "continue_with", locale: "fr"
-    });
-  }
+document.getElementById("cta-laisser-avis").addEventListener("click", e => {
+  if (!googleConnected) goToGoogle(e);
 });
+document.getElementById("g-connect-btn").addEventListener("click", goToGoogle);
+document.getElementById("gconnected-reset").addEventListener("click", goToGoogle);
+
+// Retour depuis la page de connexion Google : le jeton arrive dans le
+// fragment de l'URL (#id_token=...), jamais envoyé à un serveur.
+(function handleGoogleRedirectReturn() {
+  if (!location.hash) return;
+  const params = new URLSearchParams(location.hash.slice(1));
+  const idToken = params.get("id_token");
+  const error = params.get("error");
+  history.replaceState(null, "", location.pathname + location.search);
+  if (error) {
+    document.getElementById("feedback").innerHTML =
+      '<div class="msg err">La connexion avec Google a échoué ou a été annulée.</div>';
+    return;
+  }
+  if (!idToken) return;
+  const payload = decodeJwt(idToken);
+  let nonceAttendu = null;
+  try { nonceAttendu = sessionStorage.getItem(NONCE_KEY); } catch (err) {}
+  try { sessionStorage.removeItem(NONCE_KEY); } catch (err) {}
+  if (!payload || !nonceAttendu || payload.nonce !== nonceAttendu) return;
+  applyGoogleProfile(payload);
+  document.getElementById("laisser-un-avis").scrollIntoView({ block: "start" });
+})();
 
 /* Envoi du formulaire */
 const form = document.getElementById("avis-form");
