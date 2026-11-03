@@ -62,7 +62,7 @@
 
     root.innerHTML = '<div class="au-wrap">' +
       '<div class="au-grid">' + cards + "</div>" +
-      '<a class="au-cta" href="' + esc(LIEN_AVIS) + '">Laisser mon avis</a></div>';
+      '<a class="au-cta" href="' + esc(LIEN_AVIS) + '">Laisser un avis</a></div>';
     // Affiche la section du portfolio (cachée tant qu'il n'y a aucun avis).
     var sec = root.closest("section");
     if (sec) sec.style.display = "";
