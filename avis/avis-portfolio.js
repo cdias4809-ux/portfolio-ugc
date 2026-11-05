@@ -99,10 +99,12 @@
           return;
         }
         // La réponse dit "aucun avis". Si on affichait déjà des avis en
-        // cache, on se méfie d'un aléa réseau/serveur passager : on
-        // retente une fois avant de les faire disparaître pour de bon.
-        if (hadCache && !isRetry) {
-          setTimeout(function () { load(true); }, 1800);
+        // cache, on ne les efface jamais sur la base d'une simple réponse
+        // vide : c'est presque toujours un aléa passager côté Google
+        // (script qui se "réveille"), pas une vraie suppression des avis.
+        // On garde l'affichage en cache et on retente plus tard.
+        if (hadCache) {
+          if (!isRetry) setTimeout(function () { load(true); }, 1800);
           return;
         }
         hide();
