@@ -40,8 +40,10 @@
     + "#avis-ugc .au-cta:hover{background:var(--au-gold);color:#0d1b2a}";
 
   var styled = false;
+  var lastAvis = null; // dernier avis affichés avec succès (pour auto-réparation)
   function draw(list) {
     if (!list || !list.length) return;
+    lastAvis = list;
     if (!styled) {
       var style = document.createElement("style");
       style.textContent = css;
@@ -70,6 +72,32 @@
     var nl = document.getElementById("nav-avis");
     if (nl) nl.style.display = "";
   }
+
+  // Auto-réparation : le site est généré par un framework (React) qui, peu
+  // après le chargement, se re-rend parfois à partir du HTML d'origine
+  // (requête interne vers la page elle-même). Cette re-render peut écraser
+  // ce qu'on vient d'injecter (section remise en display:none, avis
+  // effacés) même si notre script a parfaitement fonctionné. On surveille
+  // donc la zone des avis et on la redessine instantanément si quelque
+  // chose d'externe l'efface.
+  function estEffacee() {
+    if (!lastAvis || !lastAvis.length) return false;
+    var sec = root.closest("section");
+    if (!root.innerHTML) return true;
+    if (sec && sec.style.display === "none") return true;
+    var nl = document.getElementById("nav-avis");
+    if (nl && nl.style.display === "none") return true;
+    return false;
+  }
+  try {
+    var mo = new MutationObserver(function () {
+      if (estEffacee()) draw(lastAvis);
+    });
+    var obsSection = root.closest("section") || root;
+    mo.observe(obsSection, { childList: true, subtree: true, attributes: true, attributeFilter: ["style"] });
+    var navLink = document.getElementById("nav-avis");
+    if (navLink) mo.observe(navLink, { attributes: true, attributeFilter: ["style"] });
+  } catch (e) { /* MutationObserver indisponible : tant pis */ }
 
   // Affiche tout de suite les derniers avis connus, puis met à jour.
   var hadCache = false;
