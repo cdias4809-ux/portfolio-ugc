@@ -21,6 +21,17 @@
     return '<div class="au-stars" role="img" aria-label="' + n + ' sur 5">' + o + "</div>";
   }
 
+  // On ne garde jamais de référence DOM en cache : le framework de la page
+  // (React) peut remplacer entièrement le nœud #avis-ugc / <section> par un
+  // nouveau nœud (plutôt que de le modifier en place) lors d'un nouveau
+  // rendu. Une référence mise en cache deviendrait alors un nœud orphelin,
+  // invisible, et tout ce qu'on y écrirait n'apparaîtrait jamais à l'écran.
+  // On re-cherche donc les éléments à chaque fois.
+  function getEls() {
+    var r = document.getElementById("avis-ugc");
+    return { root: r, sec: r && r.closest("section"), nav: document.getElementById("nav-avis") };
+  }
+
   var css = ""
     + "#avis-ugc{--au-gold:#c6a15b;--au-gold-soft:#e0c484;--au-ink:#f8f5ee;--au-text:#b4c1d0;--au-card:#112236;--au-line:#1a2f4a;color:var(--au-text);font-family:inherit}"
     + "#avis-ugc .au-wrap{display:flex;flex-direction:column;gap:24px}"
@@ -44,6 +55,8 @@
   function draw(list) {
     if (!list || !list.length) return;
     lastAvis = list;
+    var els = getEls();
+    if (!els.root) return; // la section a été retirée du DOM, rien à faire
     if (!styled) {
       var style = document.createElement("style");
       style.textContent = css;
@@ -62,15 +75,13 @@
         "<div><strong>" + esc(a.marque) + "</strong><small>" + esc(sub) + "</small></div></div></article>";
     }).join("");
 
-    root.innerHTML = '<div class="au-wrap">' +
+    els.root.innerHTML = '<div class="au-wrap">' +
       '<div class="au-grid">' + cards + "</div>" +
       '<a class="au-cta" href="' + esc(LIEN_AVIS) + '">Laisser un avis</a></div>';
     // Affiche la section du portfolio (cachée tant qu'il n'y a aucun avis).
-    var sec = root.closest("section");
-    if (sec) sec.style.display = "";
+    if (els.sec) els.sec.style.display = "";
     // Affiche aussi le lien "Avis" du menu.
-    var nl = document.getElementById("nav-avis");
-    if (nl) nl.style.display = "";
+    if (els.nav) els.nav.style.display = "";
   }
 
   // Auto-réparation : le site est généré par un framework (React) qui, peu
@@ -82,21 +93,22 @@
   // chose d'externe l'efface.
   function estEffacee() {
     if (!lastAvis || !lastAvis.length) return false;
-    var sec = root.closest("section");
-    if (!root.innerHTML) return true;
-    if (sec && sec.style.display === "none") return true;
-    var nl = document.getElementById("nav-avis");
-    if (nl && nl.style.display === "none") return true;
+    var els = getEls();
+    if (!els.root || !els.root.innerHTML) return true;
+    if (els.sec && els.sec.style.display === "none") return true;
+    if (els.nav && els.nav.style.display === "none") return true;
     return false;
   }
   try {
+    // On surveille tout le document (pas juste la section avis) : si le
+    // framework remplace carrément le nœud de la section par un nouveau
+    // (plutôt que de le modifier en place), observer uniquement l'ancien
+    // nœud ne verrait plus rien passer. document.body, lui, ne disparaît
+    // jamais.
     var mo = new MutationObserver(function () {
       if (estEffacee()) draw(lastAvis);
     });
-    var obsSection = root.closest("section") || root;
-    mo.observe(obsSection, { childList: true, subtree: true, attributes: true, attributeFilter: ["style"] });
-    var navLink = document.getElementById("nav-avis");
-    if (navLink) mo.observe(navLink, { attributes: true, attributeFilter: ["style"] });
+    mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["style"] });
   } catch (e) { /* MutationObserver indisponible : tant pis */ }
 
   // Affiche tout de suite les derniers avis connus, puis met à jour.
@@ -107,11 +119,10 @@
   } catch (e) { /* pas de cache : tant pis */ }
 
   function hide() {
-    root.innerHTML = "";
-    var sec = root.closest("section");
-    if (sec) sec.style.display = "none";
-    var nl = document.getElementById("nav-avis");
-    if (nl) nl.style.display = "none";
+    var els = getEls();
+    if (els.root) els.root.innerHTML = "";
+    if (els.sec) els.sec.style.display = "none";
+    if (els.nav) els.nav.style.display = "none";
   }
 
   function load(isRetry) {
